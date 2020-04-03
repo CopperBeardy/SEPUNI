@@ -1,4 +1,3 @@
-C:\Projects\SEPUNI\CordEstates\obj\Debug\netcoreapp3.1\CordEstates.csprojAssemblyReference.cache
 C:\Projects\SEPUNI\CordEstates\obj\Debug\netcoreapp3.1\CordEstates.AssemblyInfoInputs.cache
 C:\Projects\SEPUNI\CordEstates\obj\Debug\netcoreapp3.1\CordEstates.AssemblyInfo.cs
 C:\Projects\SEPUNI\CordEstates\obj\Debug\netcoreapp3.1\CordEstates.csproj.CoreCompileInputs.cache
@@ -229,7 +228,6 @@ C:\Projects\SEPUNI\CordEstates\obj\Debug\netcoreapp3.1\Razor\Areas\Staff\Views\S
 C:\Projects\SEPUNI\CordEstates\obj\Debug\netcoreapp3.1\Razor\Areas\Staff\Views\Ticket\Details.cshtml.g.cs
 C:\Projects\SEPUNI\CordEstates\obj\Debug\netcoreapp3.1\Razor\Areas\Staff\Views\Ticket\Edit.cshtml.g.cs
 C:\Projects\SEPUNI\CordEstates\obj\Debug\netcoreapp3.1\Razor\Areas\Staff\Views\Ticket\Index.cshtml.g.cs
-C:\Projects\SEPUNI\CordEstates\obj\Debug\netcoreapp3.1\Razor\Areas\Staff\Views\User\Create.cshtml.g.cs
 C:\Projects\SEPUNI\CordEstates\obj\Debug\netcoreapp3.1\Razor\Areas\Staff\Views\User\Delete.cshtml.g.cs
 C:\Projects\SEPUNI\CordEstates\obj\Debug\netcoreapp3.1\Razor\Areas\Staff\Views\User\Details.cshtml.g.cs
 C:\Projects\SEPUNI\CordEstates\obj\Debug\netcoreapp3.1\Razor\Areas\Staff\Views\User\Edit.cshtml.g.cs

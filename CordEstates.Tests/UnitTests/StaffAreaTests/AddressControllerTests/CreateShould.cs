@@ -21,7 +21,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AddressControllerTests
             sut = new AddressController(fixture.Logger.Object,
                 fixture.repositoryWrapper.Object,
                 fixture.mapper.Object);
-            fixture.repositoryWrapper.Setup(x => x.Address.CreatePhoto(It.IsAny<Address>())).Verifiable();
+            fixture.repositoryWrapper.Setup(x => x.Address.Create(It.IsAny<Address>())).Verifiable();
             fixture.mapper.Setup(x => x.Map<AddressDTO>(It.IsAny<Address>())).Returns(new AddressDTO());
         }
 

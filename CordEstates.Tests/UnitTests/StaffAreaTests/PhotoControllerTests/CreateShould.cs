@@ -80,12 +80,12 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.PhotoControllerTests
 
 
 
-            fixture.repositoryWrapper.Setup(x => x.Photo.CreatePhoto(It.IsAny<Photo>()));
+            fixture.repositoryWrapper.Setup(x => x.Photo.Create(It.IsAny<Photo>()));
 
             var result = await sut.CreatePhoto(photoDTO);
 
             var vr = Assert.IsType<RedirectToActionResult>(result);
-            fixture.repositoryWrapper.Verify(x => x.Photo.CreatePhoto(It.IsAny<Photo>()), Times.Once);
+            fixture.repositoryWrapper.Verify(x => x.Photo.Create(It.IsAny<Photo>()), Times.Once);
             fixture.repositoryWrapper.Verify(y => y.SaveAsync(), Times.Once);
             Assert.Equal("Index", vr.ActionName);
 
