@@ -1,0 +1,36 @@
+﻿@model AppointmentManagementDTO
+
+@{
+    ViewData["Title"] = "Appointment Details";
+}
+
+    <h1>Appointment Details</h1>
+
+<div>
+    <h4>Appointment</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Staff)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Staff.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Time)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Time)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Listing)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Listing.Description)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

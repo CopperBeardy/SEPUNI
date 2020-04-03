@@ -1,0 +1,59 @@
+﻿@model IEnumerable<EventDTO>
+
+@{
+    ViewData["Title"] = "Properties";
+}
+
+<h1>Available Properties</h1>
+
+<div class="container">
+
+    @{ 
+        var active = @Model.FirstOrDefault(a => a.Active.Equals(true));
+        var older = @Model.Where(a => a.Active.Equals(false)).OrderByDescending(x => x.Time);
+    }
+    <div class="row">
+        <div class="row mt-5">
+            <div>
+                <img height="200" width="200" src="~/@active.ImagePath" />
+
+            </div>
+            <div class="col-lg-8">
+                <div class="">
+                    <h5 class="">@active.EventName</h5>
+                    <div class="">
+                        <span>Event Date: @active.Time</span>
+                        <h5>@active.Details</h5>
+                    </div>                  
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+    <div class="row">
+        @foreach (var eve in older)
+        {
+            <div class="row mt-5">
+                <div>
+                    <img height="100" width="100" src="~/@eve.ImagePath" />
+
+                </div>
+                <div class="col-lg-8">
+                    <div class="">
+                        <h5 class="">@eve.EventName</h5>
+                        <div class="">                        
+                            <h5>@eve.Details</h5>
+                        </div>
+                        <p>
+                            @eve.Time
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+
+</div>
+

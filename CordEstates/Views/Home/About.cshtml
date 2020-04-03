@@ -1,0 +1,69 @@
+﻿@model List<UserDTO>
+
+@{
+    ViewData["Title"] = "About";
+}
+
+
+<div class="card card-cascade wider reverse">
+
+ 
+    <div class="view view-cascade overlay">
+        <img class="card-img-top mt-2" src="https://mdbootstrap.com/img/Photos/Slides/img%20(70).jpg"
+             alt="Card image cap">
+        <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+        </a>
+    </div>
+
+
+    <div class="card-body card-body-cascade text-center">
+
+        <h4 class="card-title"><strong>About us</strong></h4>
+     
+        <h6 class="font-weight-bold indigo-text py-2">Photography</h6>
+   
+        <p class="card-text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem perspiciatis
+            voluptatum a, quo nobis, non commodi quia repellendus sequi nulla voluptatem dicta reprehenderit, placeat
+            laborum ut beatae ullam suscipit veniam.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem perspiciatis
+            voluptatum a, quo nobis, non commodi quia repellendus sequi nulla voluptatem dicta reprehenderit, placeat
+            laborum ut beatae ullam suscipit veniam.
+        </p>
+    </div>
+</div>
+
+
+<div class="row mt-4">
+
+    @foreach (var item in Model)
+    {
+        var fullname = $"{item.FirstName} {item.LastName} ";
+
+    
+
+    <div class="col-lg-4 col-md-6 mt-3 card-group">
+        <div class="card card-cascade ">
+            <row class="p-2">
+                <div class="view view-cascade overlay">
+                    <img class="w-100" height="200" src="~/@item.HeadShotUrl" class="card-img-top" alt="normal">
+                    <a>
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+            </row>
+            <row>
+                <div class="card-body card-body-cascade text-center">
+                    <h4 class="card-title"><strong>@fullname</strong></h4>
+                    <h5>Estate Agent</h5>
+
+                    <p class="card-text">
+                        @item.Bio
+                    </p>
+                </div>
+            </row>
+        </div>
+    </div>  
+     }
+</div>

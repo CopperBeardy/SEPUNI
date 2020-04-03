@@ -1,0 +1,35 @@
+﻿@model IEnumerable<ServiceDTO>
+
+@{
+    ViewData["Title"] = "Services";
+}
+
+
+
+<h1>Services</h1>
+
+<div class="container">
+
+    <div class="row">
+
+        @foreach (var service in Model)
+        {
+
+
+            <div class="col-lg-6 mb-2">
+                <div class="card h">
+                    <h4 class="card-header ">@service.ServiceName</h4>
+                    <div class="card-body">
+                        <p class="card-text">@service.Description</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        }
+    </div>
+
+</div>
+
+

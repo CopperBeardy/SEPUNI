@@ -1,0 +1,85 @@
+﻿@model LandingPageViewModel
+@{
+    ViewData["Title"] = "Home";
+
+}
+
+
+@section Header{
+    <div class=""></div>
+    <header>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            @*<ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>*@
+            <div class="carousel-inner" role="listbox">
+
+                    <div class="carousel-item active" style="background-image: url(@Model.Listings[0].ImageUrl)">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>@Model.Listings[0].Price</h3>
+                            <p>@Model.Listings[0].Description.Substring(0, 50)</p>
+                        </div>
+                    </div>
+               
+            </div>
+            @*<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>*@
+        </div>
+    </header>
+
+
+}
+
+<div class="container">
+    <div class="row justify-content-center ">
+        <h2 class="my-2">Upcoming Event</h2>
+    </div>
+    <div class="row justify-content-center">
+        <div class="card col-lg-12 ">
+            <div class="row">
+                <div class="col-lg-3 m-3" >
+                    <img src="@Model.Events.Photo.ImageLink" width="100%"  />
+                </div>
+                <div class="col-lg-8">
+                    <div class="card-body">
+                        <p class="card-text">@Model.Events.Details</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer ">
+                <a asp-controller="Event" asp-action="Index" class="btn btn-primary">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row ">
+        <div class="row justify-content-center">
+            <h2 class="my-2 ">Our Services</h2>
+            <div class="row md mb-2">
+                @foreach (var service in Model.Services)
+                {
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <h4 class="card-header">@service.ServiceName</h4>
+                            <div class="card-body">
+                                <p class="card-text">@service.Description</p>
+                            </div>
+                            <div class="card-footer">
+                                <a asp-action="Index" asp-controller="Service" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

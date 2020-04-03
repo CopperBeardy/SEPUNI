@@ -1,0 +1,50 @@
+﻿@model AddressDTO
+
+@{
+    ViewData["Title"] = "Address Create";
+}
+
+    <h1>Address Create</h1>
+
+<h4>Address</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Number" class="control-label"></label>
+                <input asp-for="Number" class="form-control" />
+                <span asp-validation-for="Number" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstLine" class="control-label"></label>
+                <input asp-for="FirstLine" class="form-control" />
+                <span asp-validation-for="FirstLine" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SecondLine" class="control-label"></label>
+                <input asp-for="SecondLine" class="form-control" />
+                <span asp-validation-for="SecondLine" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TownCity" class="control-label"></label>
+                <input asp-for="TownCity" class="form-control" />
+                <span asp-validation-for="TownCity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Postcode" class="control-label"></label>
+                <input asp-for="Postcode" class="form-control" />
+                <span asp-validation-for="Postcode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

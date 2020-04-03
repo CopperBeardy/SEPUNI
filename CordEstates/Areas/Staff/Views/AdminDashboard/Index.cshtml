@@ -1,0 +1,90 @@
+﻿
+
+@{
+    ViewData["Title"] = "Main Dashboard";
+}
+
+<h1>Main Dashboard</h1>
+
+    <div class="row">
+    @*summary of recent activities*@
+    <div class=" col-lg-6">
+        <h3>Recent Activities</h3>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Activity</th>
+                    <th scope="col">Summary</th>
+                    <th scope="col">Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-active">
+                    <th scope="row">Active</th>
+                    <td>Column content</td>
+
+                    @*construct a *@
+                    <td>Column content</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    @*appoinment and section link*@
+    <div class=" col-lg-6">
+
+        <h3>All Appointements</h3>
+        @*Current Logged in user appointsment*@
+        <div class="row">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Time</th>
+                        <th scope="col">Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-active">
+                        <th scope="row">Active</th>
+                        <td>Column content</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        @*Section Links*@
+        <div class="row">
+            <ul class="list-unstyled">
+                <li class="mb-md-2">
+                    <a type="button" class=" btn btn-lg btn-outline-info" asp-controller="Event" asp-action="Index">Events</a>
+                </li>
+                <li class="mb-md-2">
+                    <a type="button" class=" btn btn-lg  btn-outline-info" asp-controller="Appointment" asp-action="Index"> Appointments</a>
+                </li>
+                <li class="mb-md-2">
+                    <a type="button" class="btn btn-lg btn-outline-info" asp-controller="Listing" asp-action="Index">  Listings </a>
+                </li>
+                <li class="mb-md-2">
+                    <a type="button" class="btn btn-lg btn-outline-info" asp-controller="Service" asp-action="Index"> Services</a>
+                </li>
+                <li class="mb-md-2">
+                    <a type="button" class="btn btn-lg btn-outline-info" asp-controller="Address" asp-action="Index">Address</a>
+                </li>
+
+                <li class="mb-md-2">
+                    <a type="button" class="btn btn-lg btn-outline-info" asp-controller="Ticket" asp-action="Index">Ticket</a>
+                </li>
+                <li class="mb-md-2">
+                    <a type="button" class="btn btn-lg btn-outline-info" asp-controller="Photo" asp-action="Index">Images</a>
+                </li>
+                <li class="mb-md-2">
+                    <a type="button" class="btn btn-lg btn-outline-info" asp-controller="Role" asp-action="Index">Roles</a>
+                </li>
+                <li class="mb-md-2">
+                    <a type="button" class="btn btn-lg btn-outline-info" asp-controller="User" asp-action="Index">Users</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+</div>

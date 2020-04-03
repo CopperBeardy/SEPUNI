@@ -1,0 +1,61 @@
+﻿@model IEnumerable<AddressDTO>
+
+@{
+    ViewData["Title"] = "Address Management";
+}
+
+ <h1>Address Management Dashboard</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstLine)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SecondLine)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TownCity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Postcode)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstLine)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecondLine)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TownCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Postcode)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                @if (User.IsInRole("Admin"))
+                {
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
