@@ -257,3 +257,4 @@ C:\Projects\SEPUNI\CordEstates\obj\Debug\netcoreapp3.1\staticwebassets\CordEstat
 C:\Projects\SEPUNI\CordEstates\obj\Debug\netcoreapp3.1\CordEstates.dll
 C:\Projects\SEPUNI\CordEstates\obj\Debug\netcoreapp3.1\CordEstates.pdb
 C:\Projects\SEPUNI\CordEstates\obj\Debug\netcoreapp3.1\CordEstates.genruntimeconfig.cache
+C:\Projects\SEPUNI\CordEstates\obj\Debug\netcoreapp3.1\CordEstates.csprojAssemblyReference.cache
