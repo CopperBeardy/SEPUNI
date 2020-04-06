@@ -38,14 +38,21 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.ListingControllerTests
             fixture.repositoryWrapper
                     .Setup(x => x.Listing.GetListingByIdAsync(It.IsAny<int>()))
                     .ReturnsAsync(It.IsAny<Listing>);
-            fixture.repositoryWrapper.Setup(x => x.Address.GetAllAddressesAsync()).ReturnsAsync(new List<Address>() { address });
-            fixture.mapper.Setup(x => x.Map<ListingManagementDTO>(It.IsAny<Listing>())).Returns(new ListingManagementDTO() { Address = address });
+            fixture.repositoryWrapper.Setup(x => x.Address.GetAllAddressesNotInUseAsync()).ReturnsAsync(new List<Address>() { address });
+            
+            listingManagementDTO = new ListingManagementDTO()
+            { Id = 1, Address = new Address() { Id = 1 }, Image = new Photo() { Id=1, ImageLink="gfdsfg"}, File = new Mock<IFormFile>().Object };
+
+            fixture.mapper.Setup(x => x.Map<ListingManagementDTO>(It.IsAny<Listing>())).Returns(listingManagementDTO);
+            fixture.mapper.Setup(x => x.Map<Listing>(It.IsAny<ListingManagementDTO>())).Returns(new Listing() { Id=1});
+
+
+
+
             imageUploadWrapper.Setup(x => x.Upload(It.IsAny<IFormFile>(), It.IsAny<IHostEnvironment>()))
                 .Returns("imageurl");
 
-            listingManagementDTO = new ListingManagementDTO()
-            { Id = 1, Address = new Address() { Id = 1 }, File = new Mock<IFormFile>().Object };
-
+            
         }
         [Fact]
         public async void ReturnCreateView()
@@ -75,9 +82,6 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.ListingControllerTests
         [Fact]
         public async void CallCreateListingInRepository()
         {
-
-
-
             fixture.repositoryWrapper.Setup(x => x.Listing.CreateListing(It.IsAny<Listing>()));
 
             var result = await sut.Create(listingManagementDTO);

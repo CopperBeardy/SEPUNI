@@ -3,42 +3,42 @@
 @{
     ViewData["Title"] = "Property Details";
 }
+<hr />
 
-<h1>Property Details</h1>
+<h1> @Model.Address.Number, @Model.Address.FirstLine, @Model.Address.Postcode</h1>
 
 <div>
-    <h4>Listing</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            Views
-        </dt>
-        <dd class="col-sm-10">
-            <img height="200" width="200" src="~/@Model.Url" />
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Address.FirstLine)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Price)
-        </dd>
 
 
-    </dl>
+    <div class="row">
+        <div class="col-6 mt-3">
+
+
+            <h6>Description</h6>
+            <p class="mb-3">
+                @Html.DisplayFor(model => model.Description)
+            </p>
+            <h6>Price</h6>
+            <h5>@Model.Price</h5>
+
+
+
+            </dl>
+        </div>
+        <div class="col-6">
+            <dt class="col-sm-2">
+                Views
+            </dt>
+            <dd class="col-sm-10">
+                <img height="200" width="200" src="~/@Model.Url" />
+            </dd>
+        </div>
+
+    </div>
+
+
 </div>
 <div>
-   
+
     <a asp-action="Index">Back to List</a>
 </div>

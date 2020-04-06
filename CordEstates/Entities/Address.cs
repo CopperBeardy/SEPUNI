@@ -9,6 +9,7 @@ namespace CordEstates.Entities
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+
         [Required]
         public string Number { get; set; }
 

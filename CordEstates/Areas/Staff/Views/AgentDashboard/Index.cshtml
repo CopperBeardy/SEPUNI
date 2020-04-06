@@ -3,7 +3,14 @@
     ViewData["Title"] = "Main Dashboard";
 }
 
-
+    <style>
+        .squarebutton {
+            height: 150px;
+            width: 150px;
+            margin: 5px;
+            justify-content: center
+        }
+    </style>
 
 <div class="row mt=3">
     <div class="col-lg-6 mt-lg-4">
@@ -34,31 +41,31 @@
 
         <h3>Management</h3>
         @*Section Links*@
-        <div class="row">
-            <ul class="list-unstyled">
-                <li class="mb-md-2">
-                    <a type="button" class=" btn btn-lg btn-outline-info" asp-controller="Event" asp-action="Index">Events</a>
-                </li>
-                <li class="mb-md-2">
-                    <a type="button" class=" btn btn-lg  btn-outline-info" asp-controller="Appointment" asp-action="Index"> Appointments</a>
-                </li>
-                <li class="mb-md-2">
-                    <a type="button" class="btn btn-lg btn-outline-info" asp-controller="Listing" asp-action="Index">  Listings </a>
-                </li>
-                <li class="mb-md-2">
-                    <a type="button" class="btn btn-lg btn-outline-info" asp-controller="Service" asp-action="Index"> Services</a>
-                </li>
-                <li class="mb-md-2">
-                    <a type="button" class="btn btn-lg btn-outline-info" asp-controller="Address" asp-action="Index">Address</a>
-                </li>
-               
-                <li class="mb-md-2">
-                    <a type="button" class="btn btn-lg btn-outline-info" asp-controller="Ticket" asp-action="Index">Tickets</a>
-                </li>
+        @*Section Links*@
+        <div>
+            <button type="button" class=" btn btn-lg btn-outline-info squarebutton" asp-controller="Event" asp-action="Index">Events</button>
 
-            </ul>
+            <button type="button" class=" btn btn-lg btn-outline-info squarebutton" asp-controller="Appointment" asp-action="Index">
+                Appointments
+            </button>
+
+            <button type="button" class=" btn btn-lg btn-outline-info squarebutton" asp-controller="Listing" asp-action="Index">
+                Listings
+            </button>
+
+            <button type="button" class=" btn btn-lg btn-outline-info squarebutton" asp-controller="Service" asp-action="Index"> Services</button>
+
+            <button type="button" class=" btn btn-lg btn-outline-info squarebutton" asp-controller="Address" asp-action="Index">Address</button>
+
+            <button type="button" class=" btn btn-lg btn-outline-info squarebutton" asp-controller="Ticket" asp-action="Index">Ticket</button>
+
+            
+
 
         </div>
+
+
+
     </div>
 
 </div>

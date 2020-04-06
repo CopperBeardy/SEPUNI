@@ -36,7 +36,7 @@ namespace CordEstates.Areas.Identity.Data
         public DbSet<Listing> Listings { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<Event> Events { get; set; }
-        public DbSet<CordEstates.Models.DTOs.UserDTO> UserDTO { get; set; }
+
    
 
 

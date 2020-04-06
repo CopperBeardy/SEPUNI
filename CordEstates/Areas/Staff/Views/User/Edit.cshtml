@@ -10,7 +10,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="Edit" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
@@ -24,13 +24,17 @@
                 <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
 
-            @*Todo display the user image*@
-            <div class="form-group">
-                <label asp-for="HeadShotUrl" class="control-label"></label>
-                <input asp-for="HeadShotUrl" class="form-control" />
-                <span asp-validation-for="HeadShotUrl" class="text-danger"></span>
+            <div>
+                <img height="200" width="200" src="~/@Model.HeadShot.ImageLink" />
             </div>
-            @*Todo add upload control for new image*@
+
+            <div class="form-group">
+                <div>
+                    <p>Upload New HeadShot Image</p>
+
+                    <input type="file" class="form-control-file" asp-for="File" />
+                </div>
+            </div>
 
             <div class="form-group">
                 <label asp-for="Bio" class="control-label"></label>

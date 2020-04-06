@@ -15,9 +15,26 @@ namespace CordEstates.Repositories
         {           
         }
 
-        public async Task<List<Address>> GetAllAddressesAsync()
+        public async Task<List<Address>> GetAllAddressesAsync() 
             => await FindAll().ToListAsync();
-      
+
+        public async Task<List<Address>> GetAllAddressesNotInUseAsync()
+        {
+            List<int> addressIds = _context.Listings.Select(x => x.AddressId).ToList();
+            var address = await FindAll().ToListAsync();
+
+            List<Address> response = new List<Address>();
+            foreach(var addr in address)
+            {
+                if(!addressIds.Contains(addr.Id))
+                {
+                    response.Add(addr);
+                }
+            }
+            return response;
+
+        }
+
         public async Task<Address> GetAddressByIdAsync(int? id) 
             => await FindByCondition( a => a.Id.Equals(id)).FirstOrDefaultAsync();
       

@@ -11,7 +11,9 @@ using AutoMapper;
 using CordEstates.Wrappers.Interfaces;
 using CordEstates.Helpers;
 using CordEstates.Areas.Staff.Models.DTOs;
-
+using static CordEstates.Helpers.ImageUpload;
+using Microsoft.Extensions.Hosting;
+using CordEstates.Entities;
 
 namespace CordEstates.Areas.Staff.Controllers
 {
@@ -23,13 +25,17 @@ namespace CordEstates.Areas.Staff.Controllers
         readonly IMapper _mapper;
         readonly IRepositoryWrapper _repositoryWrapper;
 
+        readonly IImageUploadWrapper _imageUploadWrapper;
         readonly ILoggerManager _logger;
+        readonly IHostEnvironment _hostEnvironment;
 
-
-        public UserController(ILoggerManager logger, IRepositoryWrapper repositoryWrapper, IMapper mapper)
+        public UserController(ILoggerManager logger, IRepositoryWrapper repositoryWrapper, IMapper mapper, IHostEnvironment hostEnvironment, IImageUploadWrapper imageUploadWrapper)
         {
+            _hostEnvironment = hostEnvironment;
             _logger = logger;
+            _imageUploadWrapper = imageUploadWrapper;
             _repositoryWrapper = repositoryWrapper;
+
             _mapper = mapper;
 
         }
@@ -86,8 +92,14 @@ namespace CordEstates.Areas.Staff.Controllers
             {
                 try
                 {
-                    //todo upload image of headshot for user and delete any current ones
-                    _repositoryWrapper.User.UpdateUser(_mapper.Map<ApplicationUser>(userManagementDTO));
+                    if(userManagementDTO.File != null)
+                    {
+                        userManagementDTO.HeadShot = new Photo()
+                        { ImageLink = _imageUploadWrapper.Upload(userManagementDTO.File, _hostEnvironment) };
+                    }
+
+
+                    _repositoryWrapper.User.UpdateUser( _mapper.Map<ApplicationUser>(userManagementDTO));
                     await _repositoryWrapper.SaveAsync();
                 }
                 catch (Exception ex)

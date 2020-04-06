@@ -24,7 +24,7 @@ namespace CordEstates.Repositories
       
 
         public async Task<ApplicationUser> GetStaffByIdAsync(string id) 
-            => await FindByCondition(x => x.Id.Equals(id)).FirstOrDefaultAsync();
+            => await FindByCondition(x => x.Id.Equals(id)).Include(h =>h.HeadShot).FirstOrDefaultAsync();
       
 
         public async Task<List<ApplicationUser>> GetAllStaffAsync()

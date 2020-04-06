@@ -1,4 +1,12 @@
-﻿/*
+﻿.squarebutton {
+    height: 150px;
+    width: 150px;
+    margin: 5px;
+    justify-content: center
+}
+
+
+/*
 
 a.navbar-brand {
   white-space: normal;

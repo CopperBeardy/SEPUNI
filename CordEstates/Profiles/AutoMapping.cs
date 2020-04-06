@@ -16,6 +16,7 @@ namespace CordEstates.Profiles
             CreateMap<Listing,ListingManagementDTO>()
                 .ForMember(des => des.Image, o => o.MapFrom(src => src.Image))
                   .ForMember(des => des.Address, o => o.MapFrom(src => src.Address)).ReverseMap() ;
+  
             CreateMap<List<Listing>, ListingManagementDTO>()
              
                 .ReverseMap();
@@ -52,7 +53,10 @@ namespace CordEstates.Profiles
             CreateMap<Event, EventManagementDTO>().ReverseMap();
              
 
-            CreateMap<ApplicationUser, UserManagementDTO > ().ReverseMap();
+            CreateMap<ApplicationUser, UserManagementDTO > ()
+                    .ForMember(des => des.HeadShot, o => o.MapFrom(src => src.HeadShot))
+                  
+            .ReverseMap();
             CreateMap<List<ApplicationUser>, UserManagementDTO>().ReverseMap();
             CreateMap<ApplicationUser, UserDTO>()
                 .ForMember(des => des.FirstName, o => o.MapFrom(src => src.FirstName))

@@ -61,8 +61,8 @@ namespace CordEstates.Areas.Staff.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            var listing = _mapper.Map<ListingManagementDTO>(await _repositoryWrapper.Listing.GetListingByIdAsync(id));
-           
+            ListingManagementDTO listing = _mapper.Map<ListingManagementDTO>(await _repositoryWrapper.Listing.GetListingByIdAsync(id));
+           //todo change address tostring representation of the address. 
 
             return View(nameof(Details), listing);
         }
@@ -72,13 +72,13 @@ namespace CordEstates.Areas.Staff.Controllers
         {
 
             ViewData["AddressId"] = await GetAddresses(null);
-
+           
             return View(nameof(Create));
         }
 
         private async Task<List<SelectListItem>> GetAddresses(int? id)
         {
-            List<Address> addressEntities = await _repositoryWrapper.Address.GetAllAddressesAsync();
+            List<Address> addressEntities = await _repositoryWrapper.Address.GetAllAddressesNotInUseAsync();
             List<SelectListItem> addresses = new List<SelectListItem>();
             foreach (Address address in addressEntities)
             {
@@ -104,18 +104,25 @@ namespace CordEstates.Areas.Staff.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(ListingManagementDTO listingManagementDTO)
         {
-
+           
             if (ModelState.IsValid)
             {
-                listingManagementDTO.Image = new Photo()
+                try
                 {
-                    ImageLink = _imageUploadWrapper.Upload(listingManagementDTO.File, _hostEnvironment)
-                };
-               listingManagementDTO.Address = await _repositoryWrapper.Address.GetAddressByIdAsync(listingManagementDTO.Address.Id);
-            
-                _repositoryWrapper.Listing.CreateListing(_mapper.Map<Listing>(listingManagementDTO));
-                await _repositoryWrapper.SaveAsync();
-                return RedirectToAction(nameof(Index));
+                    var mapped = _mapper.Map<Listing>(listingManagementDTO);
+                    mapped.Image = new Photo()
+                    {
+                        ImageLink = _imageUploadWrapper.Upload(listingManagementDTO.File, _hostEnvironment)
+                    };
+             
+                    _repositoryWrapper.Listing.CreateListing(mapped);
+                    await _repositoryWrapper.SaveAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError($"Error creating listing: {ex}");
+                }
             }
             ViewData["AddressId"] = await GetAddresses(null);
             return View(nameof(Create), listingManagementDTO);
@@ -131,7 +138,7 @@ namespace CordEstates.Areas.Staff.Controllers
             }
 
             var listing = _mapper.Map<ListingManagementDTO>(await _repositoryWrapper.Listing.GetListingByIdAsync(id));
-        
+
 
 
             ViewData["AddressId"] = await GetAddresses(listing.Address.Id);
@@ -152,18 +159,30 @@ namespace CordEstates.Areas.Staff.Controllers
                     return RedirectToAction(nameof(Index));
                 }
 
-            //TODO addlogic for processing the photo
+           
             if (ModelState.IsValid)
             {
                 try
                 {
-
-                    listingManagementDTO.Image = new Photo()
+                    var mapped = _mapper.Map<Listing>(listingManagementDTO);
+                    if(listingManagementDTO.File != null)
                     {
-                        ImageLink = _imageUploadWrapper.Upload(listingManagementDTO.File, _hostEnvironment)
-                    };
-                   
-                    _repositoryWrapper.Listing.UpdateListing(_mapper.Map<Listing>(listingManagementDTO));
+                        mapped.Image = new Photo()
+                        {
+                            ImageLink = _imageUploadWrapper.Upload(listingManagementDTO.File, _hostEnvironment)
+                        };
+                    } else
+                    {
+                       var listing = await _repositoryWrapper.Listing.GetListingByIdAsync(id);
+                        mapped.Image = listing.Image;
+                        mapped.ImageId = listing.ImageId;
+                    }
+                    
+               
+                    mapped.Address = await _repositoryWrapper.Address.GetAddressByIdAsync(listingManagementDTO.AddressId);
+
+                    _repositoryWrapper.Listing.UpdateListing(mapped);
+           
                     await _repositoryWrapper.SaveAsync();
 
                 }

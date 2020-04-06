@@ -74,7 +74,7 @@ namespace CordEstates.Areas.Staff.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            var addressDTO = _mapper.Map<AddressDTO>(await _repositoryWrapper.Address.GetAddressByIdAsync(id));
+            AddressDTO addressDTO = _mapper.Map<AddressDTO>(await _repositoryWrapper.Address.GetAddressByIdAsync(id));
         
             return View(nameof(Edit), addressDTO);
         }
@@ -88,8 +88,8 @@ namespace CordEstates.Areas.Staff.Controllers
 
             if (ModelState.IsValid)
             {
-               
-                    var address = _mapper.Map<Address>(addressDTO);
+
+                Address address = _mapper.Map<Address>(addressDTO);
                     _repositoryWrapper.Address.UpdateAddress(address);
                     await _repositoryWrapper.SaveAsync();
 
