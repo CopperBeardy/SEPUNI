@@ -4,7 +4,7 @@
     ViewData["Title"] = "Event Management";
 }
 
-<h1>Event Management Dashboard</h1>
+<h1 class="mt-3">Event Management Dashboard</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -15,12 +15,9 @@
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.EventName)
+                    Title
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Details)
-                </th>
-              
+                
                 <th>
                     @Html.DisplayNameFor(model => model.Time)
                 </th>
@@ -38,9 +35,7 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.EventName)
                     </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Details)
-                    </td>
+                    
                    
                     <td>
                         @Html.DisplayFor(modelItem => item.Time)

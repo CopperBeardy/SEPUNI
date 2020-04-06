@@ -4,7 +4,7 @@
     ViewData["Title"] = "Appointment Management";
 }
 
-<h1>Appointment Management Dashboard </h1>
+<h1 class="mt-3">Appointment Management Dashboard </h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -15,7 +15,7 @@
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Staff.UserName)
+                    User
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Time)
@@ -37,7 +37,7 @@
                         @Html.DisplayFor(modelItem => item.Time)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Listing.Description)
+                        @item.Listing.Address.Number, @item.Listing.Address.FirstLine, @item.Listing.Address.Postcode
                     </td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
