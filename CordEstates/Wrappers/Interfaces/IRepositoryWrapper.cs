@@ -10,12 +10,19 @@ namespace CordEstates.Wrappers.Interfaces
         IListingRepository Listing { get; }
 
         IServiceRepository Service { get; }
+
         IEventRepository Event { get; }
+
         IUserRepository User { get; }
+
         IAppointmentRepository Appointment { get; }
 
         IAddressRepository Address { get; }
+
         IPhotoRepository Photo { get; }
+
+        IBuyerRepository Buyer{ get;   }
+        ISaleRepository Sale { get;}
         Task SaveAsync();
     }
 }

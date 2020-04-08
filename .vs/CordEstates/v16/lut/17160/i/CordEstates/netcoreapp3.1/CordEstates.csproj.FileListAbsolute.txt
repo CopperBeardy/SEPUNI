@@ -59,6 +59,11 @@ C:\Projects\SEPUNI\.vs\CordEstates\v16\lut\0\i\CordEstates\netcoreapp3.1\Razor\A
 C:\Projects\SEPUNI\.vs\CordEstates\v16\lut\0\i\CordEstates\netcoreapp3.1\Razor\Areas\Staff\Views\Appointment\Details.cshtml.g.cs
 C:\Projects\SEPUNI\.vs\CordEstates\v16\lut\0\i\CordEstates\netcoreapp3.1\Razor\Areas\Staff\Views\Appointment\Edit.cshtml.g.cs
 C:\Projects\SEPUNI\.vs\CordEstates\v16\lut\0\i\CordEstates\netcoreapp3.1\Razor\Areas\Staff\Views\Appointment\Index.cshtml.g.cs
+C:\Projects\SEPUNI\.vs\CordEstates\v16\lut\0\i\CordEstates\netcoreapp3.1\Razor\Areas\Staff\Views\Buyer\Create.cshtml.g.cs
+C:\Projects\SEPUNI\.vs\CordEstates\v16\lut\0\i\CordEstates\netcoreapp3.1\Razor\Areas\Staff\Views\Buyer\Delete.cshtml.g.cs
+C:\Projects\SEPUNI\.vs\CordEstates\v16\lut\0\i\CordEstates\netcoreapp3.1\Razor\Areas\Staff\Views\Buyer\Details.cshtml.g.cs
+C:\Projects\SEPUNI\.vs\CordEstates\v16\lut\0\i\CordEstates\netcoreapp3.1\Razor\Areas\Staff\Views\Buyer\Edit.cshtml.g.cs
+C:\Projects\SEPUNI\.vs\CordEstates\v16\lut\0\i\CordEstates\netcoreapp3.1\Razor\Areas\Staff\Views\Buyer\Index.cshtml.g.cs
 C:\Projects\SEPUNI\.vs\CordEstates\v16\lut\0\i\CordEstates\netcoreapp3.1\Razor\Areas\Staff\Views\Event\Create.cshtml.g.cs
 C:\Projects\SEPUNI\.vs\CordEstates\v16\lut\0\i\CordEstates\netcoreapp3.1\Razor\Areas\Staff\Views\Event\Delete.cshtml.g.cs
 C:\Projects\SEPUNI\.vs\CordEstates\v16\lut\0\i\CordEstates\netcoreapp3.1\Razor\Areas\Staff\Views\Event\Details.cshtml.g.cs

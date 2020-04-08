@@ -1,4 +1,5 @@
 ﻿using CordEstates.Areas.Identity.Data;
+using CordEstates.Models.Enums;
 using CordEstates.Repositories;
 using CordEstates.Repositories.Interfaces;
 using CordEstates.Wrappers.Interfaces;
@@ -19,6 +20,8 @@ namespace CordEstates.Wrappers
         private TicketRepository _ticket;
         private UserRepository _user;
         private PhotoRepository _photo;
+        private BuyerRepository _buyer;
+        private SaleRepository _sale;
 
 
 
@@ -129,6 +132,33 @@ namespace CordEstates.Wrappers
                 return _photo;
             }
         }
+
+        public IBuyerRepository Buyer
+        {
+            get
+            {
+                if (_buyer == null)
+                {
+                    _buyer = new BuyerRepository(_context);
+                }
+
+                return _buyer;
+            }
+        }
+
+        public ISaleRepository Sale
+        {
+            get
+            {
+                if (_sale == null)
+                {
+                    _sale = new SaleRepository(_context);
+                }
+
+                return _sale;
+            }
+        }
+
         public async Task SaveAsync()
         {
             await _context.SaveChangesAsync();
