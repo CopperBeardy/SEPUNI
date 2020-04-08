@@ -18,7 +18,7 @@ namespace CordEstates.Areas.Staff.Controllers
     public class PhotoController : Controller
     {
 
-        //Todo create viewmodels to view photos and manage them
+
 
         readonly IMapper _mapper;
         readonly IRepositoryWrapper _repositoryWrapper;
@@ -26,7 +26,7 @@ namespace CordEstates.Areas.Staff.Controllers
         readonly ILoggerManager _logger;
         readonly IHostEnvironment _hostEnvironment;
 
-        public PhotoController(ILoggerManager logger, IRepositoryWrapper repositoryWrapper, IMapper mapper,IHostEnvironment hostEnvironment, IImageUploadWrapper imageUploadWrapper)
+        public PhotoController(ILoggerManager logger, IRepositoryWrapper repositoryWrapper, IMapper mapper, IHostEnvironment hostEnvironment, IImageUploadWrapper imageUploadWrapper)
         {
             _hostEnvironment = hostEnvironment;
             _logger = logger;
@@ -61,29 +61,29 @@ namespace CordEstates.Areas.Staff.Controllers
             if (ModelState.IsValid)
             {
                 photo.ImageLink = _imageUploadWrapper.Upload(photo.File, _hostEnvironment);
-                
+
                 _repositoryWrapper.Photo.Create(_mapper.Map<Photo>(photo));
 
                 await _repositoryWrapper.SaveAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(nameof(CreatePhoto),photo);
+            return View(nameof(CreatePhoto), photo);
         }
 
 
         // GET: Admin/Photo/Delete/5
         public async Task<IActionResult> Delete(int id)
         {
-            if ( id <=0)
+            if (id <= 0)
             {
                 _logger.LogError($"Invalid ID: {id} was passed to {nameof(Delete)} in the PhotoController ");
                 return RedirectToAction(nameof(Index));
             }
 
             PhotoDTO photo = _mapper.Map<PhotoDTO>(await _repositoryWrapper.Photo.GetPhotoByIdAsync(id));
-          
 
-            return View(nameof(Delete),photo);
+
+            return View(nameof(Delete), photo);
         }
 
         // POST: Admin/Photo/Delete/5

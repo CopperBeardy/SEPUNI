@@ -12,8 +12,8 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.TicketControllerTests
 {
     public class EditShould
     {
-        private SetupFixture fixture;
-        private TicketController sut;
+        private readonly SetupFixture fixture;
+        private readonly TicketController sut;
 
         public EditShould()
         {

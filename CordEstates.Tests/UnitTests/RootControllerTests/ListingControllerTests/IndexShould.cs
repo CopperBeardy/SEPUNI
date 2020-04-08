@@ -4,7 +4,6 @@ using CordEstates.Models.DTOs;
 using CordEstates.Tests.SetupFixtures;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xunit;
@@ -14,8 +13,8 @@ namespace CordEstates.Tests.UnitTests.RootControllerTests.ListingControllerTests
 {
     public class IndexShould
     {
-        private ListingController sut;
-        SetupFixture fixture;
+        private readonly ListingController sut;
+        readonly SetupFixture fixture;
 
         public IndexShould()
         {

@@ -10,7 +10,11 @@ namespace CordEstates.Repositories
 {
     public class ServiceRepository : RepositoryBase<Service>, IServiceRepository
     {
-        public ServiceRepository(ApplicationDbContext context) : base(context) { }
+        public ServiceRepository(ApplicationDbContext context) : base(context)
+        {
+
+
+        }
 
         public async Task<List<Service>> GetAllServicesAsync() => await FindAll().ToListAsync();
 

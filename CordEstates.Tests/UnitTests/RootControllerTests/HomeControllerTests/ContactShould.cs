@@ -12,8 +12,8 @@ namespace CordEstates.Tests.UnitTests.RootControllerTests.HomeControllerTests
     public class ContactShould
     {
 
-        private HomeController sut;
-        private SetupFixture fixture;
+        private readonly HomeController sut;
+        private readonly SetupFixture fixture;
 
         public ContactShould()
         {

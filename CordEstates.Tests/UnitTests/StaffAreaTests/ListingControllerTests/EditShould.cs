@@ -15,12 +15,12 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.ListingControllerTests
 {
     public class EditShould
     {
-        private SetupFixture fixture;
-        private ListingController sut;
-        private Mock<IHostEnvironment> env;
-        private Mock<IImageUploadWrapper> imageUploadWrapper;
-        private ListingManagementDTO listingManagementDTO;
-        private Address address;
+        private readonly SetupFixture fixture;
+        private readonly ListingController sut;
+        private readonly Mock<IHostEnvironment> env;
+        private readonly Mock<IImageUploadWrapper> imageUploadWrapper;
+        private readonly ListingManagementDTO listingManagementDTO;
+        private readonly Address address;
         public EditShould()
         {
             fixture = new SetupFixture();

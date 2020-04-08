@@ -14,9 +14,9 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AppointmentControllerTests
     public class CreateShould
     {
         private readonly SetupFixture fixture;
-        private ClaimsPrincipal claimsPrincipal;
+        private readonly ClaimsPrincipal claimsPrincipal;
 
-        private AppointmentController sut;
+        private readonly AppointmentController sut;
 
         public CreateShould()
         {

@@ -15,10 +15,10 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.ListingControllerTests
 {
     public class IndexShould
     {
-        private SetupFixture fixture;
-        private ListingController sut;
-        private Mock<IHostEnvironment> env;
-        private Mock<IImageUploadWrapper> imageUploadWrapper;
+        private readonly SetupFixture fixture;
+        private readonly ListingController sut;
+        private readonly Mock<IHostEnvironment> env;
+        private readonly Mock<IImageUploadWrapper> imageUploadWrapper;
         public IndexShould()
         {
 

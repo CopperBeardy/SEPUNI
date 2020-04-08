@@ -1,19 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
 using CordEstates.Areas.Identity.Data;
-using CordEstates.Models.DTOs;
-using AutoMapper;
-using CordEstates.Wrappers.Interfaces;
-using CordEstates.Helpers;
 using CordEstates.Areas.Staff.Models.DTOs;
-using static CordEstates.Helpers.ImageUpload;
-using Microsoft.Extensions.Hosting;
 using CordEstates.Entities;
+using CordEstates.Helpers;
+using CordEstates.Wrappers.Interfaces;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Hosting;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using static CordEstates.Helpers.ImageUpload;
 
 namespace CordEstates.Areas.Staff.Controllers
 {
@@ -53,13 +49,13 @@ namespace CordEstates.Areas.Staff.Controllers
         {
             if (id == null)
             {
-                return RedirectToAction(nameof(Index)); 
+                return RedirectToAction(nameof(Index));
             }
-            
-            var userManagementDTO = _mapper.Map<UserManagementDTO>( await _repositoryWrapper.User.GetStaffByIdAsync(id));
-            
 
-            return View(nameof(Details),userManagementDTO);
+            var userManagementDTO = _mapper.Map<UserManagementDTO>(await _repositoryWrapper.User.GetStaffByIdAsync(id));
+
+
+            return View(nameof(Details), userManagementDTO);
         }
 
 
@@ -71,9 +67,9 @@ namespace CordEstates.Areas.Staff.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            var usermangagementDTO = _mapper.Map<UserManagementDTO>( await _repositoryWrapper.User.GetStaffByIdAsync(id));
-         
-            return View(nameof(Edit),usermangagementDTO);
+            var usermangagementDTO = _mapper.Map<UserManagementDTO>(await _repositoryWrapper.User.GetStaffByIdAsync(id));
+
+            return View(nameof(Edit), usermangagementDTO);
         }
 
         // POST: Staff/User/Edit/5
@@ -81,7 +77,7 @@ namespace CordEstates.Areas.Staff.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id,UserManagementDTO userManagementDTO)
+        public async Task<IActionResult> Edit(string id, UserManagementDTO userManagementDTO)
         {
             if (id != userManagementDTO.Id)
             {
@@ -92,14 +88,14 @@ namespace CordEstates.Areas.Staff.Controllers
             {
                 try
                 {
-                    if(userManagementDTO.File != null)
+                    if (userManagementDTO.File != null)
                     {
                         userManagementDTO.HeadShot = new Photo()
                         { ImageLink = _imageUploadWrapper.Upload(userManagementDTO.File, _hostEnvironment) };
                     }
 
 
-                    _repositoryWrapper.User.UpdateUser( _mapper.Map<ApplicationUser>(userManagementDTO));
+                    _repositoryWrapper.User.UpdateUser(_mapper.Map<ApplicationUser>(userManagementDTO));
                     await _repositoryWrapper.SaveAsync();
                 }
                 catch (Exception ex)
@@ -108,7 +104,7 @@ namespace CordEstates.Areas.Staff.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(nameof(Edit),userManagementDTO);
+            return View(nameof(Edit), userManagementDTO);
         }
 
         // GET: Staff/User/Delete/5
@@ -120,8 +116,8 @@ namespace CordEstates.Areas.Staff.Controllers
             }
 
             UserManagementDTO userManagementDTO = _mapper.Map<UserManagementDTO>(await _repositoryWrapper.User.GetStaffByIdAsync(id));
-            
-            return View(nameof(Delete),userManagementDTO);
+
+            return View(nameof(Delete), userManagementDTO);
         }
 
         // POST: Staff/User/Delete/5
@@ -135,6 +131,6 @@ namespace CordEstates.Areas.Staff.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-      
+
     }
 }

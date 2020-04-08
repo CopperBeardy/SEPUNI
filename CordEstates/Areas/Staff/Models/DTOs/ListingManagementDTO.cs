@@ -1,9 +1,7 @@
 ﻿using CordEstates.Entities;
 using CordEstates.Models.Enums;
 using Microsoft.AspNetCore.Http;
-using System;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
 
 namespace CordEstates.Areas.Staff.Models.DTOs
 {
@@ -18,7 +16,7 @@ namespace CordEstates.Areas.Staff.Models.DTOs
         public double Price { get; set; }
         public SaleStatus Status { get; set; }
         public Photo Image { get; set; }
-      
+
 
         [NotMapped]
         public IFormFile File { get; set; }

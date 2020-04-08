@@ -7,7 +7,6 @@ using CordEstates.Wrappers.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace CordEstates.Controllers
@@ -24,6 +23,7 @@ namespace CordEstates.Controllers
             _repositoryWrapper = repositoryWrapper;
             _mapper = mapper;
             _logger = logger;
+
         }
 
         public async Task<IActionResult> Index()

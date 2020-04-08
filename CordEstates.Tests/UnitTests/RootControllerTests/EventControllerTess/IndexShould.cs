@@ -14,9 +14,9 @@ namespace CordEstates.Tests.UnitTests.RootControllerTests.EventControllerTess
 {
     public class IndexShould
     {
-        private EventController sut;
+        private readonly EventController sut;
 
-        private SetupFixture fixture;
+        private readonly SetupFixture fixture;
 
 
         public IndexShould()

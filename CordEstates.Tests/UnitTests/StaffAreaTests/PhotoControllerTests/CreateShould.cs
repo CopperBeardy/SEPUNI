@@ -15,12 +15,12 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.PhotoControllerTests
     public class CreateShould
     {
         private readonly SetupFixture fixture;
-        private PhotoController sut;
-        private Mock<IHostEnvironment> env;
-        private Mock<IImageUploadWrapper> imageUploadWrapper;
+        private readonly PhotoController sut;
+        private readonly Mock<IHostEnvironment> env;
+        private readonly Mock<IImageUploadWrapper> imageUploadWrapper;
 
-        private Photo photo;
-        private PhotoDTO photoDTO;
+        private readonly Photo photo;
+        private readonly PhotoDTO photoDTO;
         public CreateShould()
         {
             fixture = new SetupFixture();

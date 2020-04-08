@@ -11,8 +11,9 @@ namespace CordEstates.Repositories
 {
     public class AppointmentRepository : RepositoryBase<Appointment>, IAppointmentRepository
     {
-          public AppointmentRepository(ApplicationDbContext context) : base(context)
+        public AppointmentRepository(ApplicationDbContext context) : base(context)
         {
+
         }
 
         // GET: Employees/Appointment
@@ -21,21 +22,21 @@ namespace CordEstates.Repositories
             .Include(a => a.Listing)
             .ThenInclude(a => a.Address)
             .Include(a => a.Staff).ToListAsync();
-     
+
         public async Task<List<Appointment>> GetAllAppointmentsByStaffIdAsync(string Id)
-        
-          =>   await FindAll()
+
+          => await FindAll()
                 .Where(x => x.StaffId == Id).Where(y => y.Time > DateTime.Now.AddDays(-1))
                 .Include(a => a.Listing)
                 .ThenInclude(a => a.Address)
                 .Include(a => a.Staff)
                 .ToListAsync();
-      
+
 
         // GET: Employees/Appointment/Details/5
         public async Task<Appointment> GetAppointmentByIdAsync(int? id)
-      
-      =>     await FindByCondition(m => m.Id.Equals(id))
+
+      => await FindByCondition(m => m.Id.Equals(id))
                 .Include(a => a.Listing)
                 .ThenInclude(a => a.Address)
                 .Include(a => a.Staff)
@@ -49,9 +50,9 @@ namespace CordEstates.Repositories
 
         public void DeleteAppointment(Appointment appointment) => Delete(appointment);
 
-        public bool Exists(int id) =>       
+        public bool Exists(int id) =>
            _context.Appointments.Any(x => x.Id.Equals(id));
-    
+
 
     }
 }

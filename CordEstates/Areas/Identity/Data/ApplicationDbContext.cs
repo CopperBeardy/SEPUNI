@@ -1,17 +1,13 @@
 ﻿using CordEstates.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using CordEstates.Models.DTOs;
 
 
 namespace CordEstates.Areas.Identity.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext()
-        {
 
-        }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
@@ -20,7 +16,7 @@ namespace CordEstates.Areas.Identity.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            // builder.ApplyConfiguration(new RoleConfiguration());
+            //builder.ApplyConfiguration(new RoleConfiguration());
 
 
 
@@ -36,8 +32,10 @@ namespace CordEstates.Areas.Identity.Data
         public DbSet<Listing> Listings { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<Event> Events { get; set; }
+        public DbSet<Sale> Sales { get; set; }
+        public DbSet<Buyer> Buyers { get; set; }
 
-   
+
 
 
     }

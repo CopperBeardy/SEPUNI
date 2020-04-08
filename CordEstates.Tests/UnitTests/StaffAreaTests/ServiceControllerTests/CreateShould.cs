@@ -12,7 +12,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.ServiceControllerTests
     {
         private readonly SetupFixture fixture;
 
-        private ServiceController sut;
+        private readonly ServiceController sut;
 
         public CreateShould()
         {

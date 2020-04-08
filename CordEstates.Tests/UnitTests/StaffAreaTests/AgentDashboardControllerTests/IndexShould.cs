@@ -13,9 +13,9 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AgentDashboardControllerTes
 {
     public class IndexShould
     {
-        private SetupFixture fixture;
-        private AgentDashboardController sut;
-        private ClaimsPrincipal claimsPrincipal;
+        private readonly SetupFixture fixture;
+        private readonly AgentDashboardController sut;
+        private readonly ClaimsPrincipal claimsPrincipal;
 
 
         public IndexShould()

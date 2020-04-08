@@ -14,10 +14,10 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.EventControllerTests
 {
     public class IndexShould
     {
-        private SetupFixture fixture;
-        private EventController sut;
-        private Mock<IHostEnvironment> env;
-        private Mock<IImageUploadWrapper> imageUploadWrapper;
+        private readonly SetupFixture fixture;
+        private readonly EventController sut;
+        private readonly Mock<IHostEnvironment> env;
+        private readonly Mock<IImageUploadWrapper> imageUploadWrapper;
         public IndexShould()
         {
 

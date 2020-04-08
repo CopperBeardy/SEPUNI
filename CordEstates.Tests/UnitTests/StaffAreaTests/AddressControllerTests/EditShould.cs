@@ -4,16 +4,15 @@ using CordEstates.Models.DTOs;
 using CordEstates.Tests.SetupFixtures;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
-using System;
 using Xunit;
 
 namespace CordEstates.Tests.UnitTests.StaffAreaTests.AddressControllerTests
 {
     public class EditShould
     {
-        private SetupFixture fixture;
-        private AddressController sut;
-        private Address address;
+        private readonly SetupFixture fixture;
+        private readonly AddressController sut;
+        private readonly Address address;
 
         public EditShould()
         {

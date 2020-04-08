@@ -13,10 +13,10 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AppointmentControllerTests
 {
     public class DeleteShould
     {
-        private SetupFixture fixture;
-        private ClaimsPrincipal claimsPrincipal;
+        private readonly SetupFixture fixture;
+        private readonly ClaimsPrincipal claimsPrincipal;
 
-        private AppointmentController sut;
+        private readonly AppointmentController sut;
 
         public DeleteShould()
         {

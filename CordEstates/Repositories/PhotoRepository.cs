@@ -16,10 +16,10 @@ namespace CordEstates.Repositories
         //TODO also remove from storage
         public void DeletePhoto(Photo photo) => Delete(photo);
 
-        public bool Exists(int id) => _context.Photos.Any(x => x.Id.Equals( id));       
+        public bool Exists(int id) => _context.Photos.Any(x => x.Id.Equals(id));
 
         public async Task<List<Photo>> GetAllPhotosAsync() => await FindAll().ToListAsync();
-        public async Task<Photo> GetPhotoByIdAsync(int id) => await FindByCondition(x=>x.Id.Equals(id)).FirstOrDefaultAsync();
+        public async Task<Photo> GetPhotoByIdAsync(int id) => await FindByCondition(x => x.Id.Equals(id)).FirstOrDefaultAsync();
 
         public void UploadPhoto(Photo photo) => Create(photo);
     }

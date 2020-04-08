@@ -13,8 +13,8 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.TicketControllerTests
 {
     public class IndexShould
     {
-        private SetupFixture fixture;
-        private TicketController sut;
+        private readonly SetupFixture fixture;
+        private readonly TicketController sut;
 
         public IndexShould()
         {

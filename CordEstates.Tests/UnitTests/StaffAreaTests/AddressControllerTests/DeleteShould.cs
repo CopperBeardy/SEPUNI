@@ -11,9 +11,9 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AddressControllerTests
 {
     public class DeleteShould
     {
-        private SetupFixture fixture;
-        private AddressController sut;
-        private Address address;
+        private readonly SetupFixture fixture;
+        private readonly AddressController sut;
+        private readonly Address address;
 
         public DeleteShould()
         {

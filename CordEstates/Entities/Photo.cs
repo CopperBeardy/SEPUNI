@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CordEstates.Entities
 {
-   
+
     public class Photo
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

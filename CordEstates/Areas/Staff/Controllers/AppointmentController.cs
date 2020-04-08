@@ -1,13 +1,9 @@
 ﻿using AutoMapper;
-
-using CordEstates.Areas.Identity.Data;
 using CordEstates.Areas.Staff.Models.DTOs;
 using CordEstates.Entities;
 using CordEstates.Helpers;
-using CordEstates.Repositories.Interfaces;
 using CordEstates.Wrappers.Interfaces;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
@@ -26,13 +22,13 @@ namespace CordEstates.Areas.Staff.Controllers
 
         readonly IMapper _mapper;
         readonly IRepositoryWrapper _repositoryWrapper;
-    
+
         readonly ILoggerManager _logger;
 
 
         public AppointmentController(ILoggerManager logger, IRepositoryWrapper repositoryWrapper, IMapper mapper)
         {
-            _logger = logger;                    
+            _logger = logger;
             _repositoryWrapper = repositoryWrapper;
             _mapper = mapper;
 
@@ -43,23 +39,23 @@ namespace CordEstates.Areas.Staff.Controllers
         {
             var appointments = _mapper.Map<List<AppointmentManagementDTO>>(await _repositoryWrapper.Appointment.GetAllAppointmentsAsync());
             appointments = appointments.OrderBy(x => x.Time).ToList();
-     
+
             return View(nameof(Index), appointments);
         }
 
         // GET: Admin/Appointment/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || id<=0)
+            if (id == null || id <= 0)
             {
                 _logger.LogWarn($"Null value passed to method {nameof(Details)} in AppointmentController");
                 return RedirectToAction(nameof(Index));
             }
 
             var appointment = _mapper.Map<AppointmentManagementDTO>(await _repositoryWrapper.Appointment.GetAppointmentByIdAsync(id));
-           
 
-            return View(nameof(Details),appointment);
+
+            return View(nameof(Details), appointment);
         }
 
 
@@ -68,10 +64,10 @@ namespace CordEstates.Areas.Staff.Controllers
             List<SelectListItem> list = await ParseListingForSelectList();
             CreateAppointmentDTO app = new CreateAppointmentDTO()
             { StaffId = await _repositoryWrapper.User.GetUserId(User) };
-      
+
             ViewBag.listing = list;
 
-            return View(nameof(Create),app);
+            return View(nameof(Create), app);
         }
 
 
@@ -83,19 +79,19 @@ namespace CordEstates.Areas.Staff.Controllers
             if (ModelState.IsValid)
             {
                 Appointment app = _mapper.Map<Appointment>(appointment);
-              
-                
+
+
                 _repositoryWrapper.Appointment.CreateAppointment(app);
                 await _repositoryWrapper.SaveAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(nameof(Create),appointment);
+            return View(nameof(Create), appointment);
         }
 
 
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || id <=0)
+            if (id == null || id <= 0)
             {
                 _logger.LogWarn($"Invalid value passed to method {nameof(Edit)} in AppointmentController");
                 return RedirectToAction(nameof(Index));
@@ -103,7 +99,7 @@ namespace CordEstates.Areas.Staff.Controllers
 
 
             EditAppointmentManagementDTO appointment = _mapper.Map<EditAppointmentManagementDTO>(await _repositoryWrapper.Appointment.GetAppointmentByIdAsync(id));
-          
+
 
 
             List<Listing> x = await _repositoryWrapper.Listing.GetAllListingsAsync();
@@ -122,7 +118,7 @@ namespace CordEstates.Areas.Staff.Controllers
             }
             ViewBag.listing = list;
 
-            return View(nameof(Edit),appointment);
+            return View(nameof(Edit), appointment);
         }
 
 
@@ -141,7 +137,7 @@ namespace CordEstates.Areas.Staff.Controllers
                 try
                 {
                     Appointment app = _mapper.Map<Appointment>(appointment);
-                   
+
 
                     _repositoryWrapper.Appointment.UpdateAppointment(app);
                     await _repositoryWrapper.SaveAsync();
@@ -149,15 +145,15 @@ namespace CordEstates.Areas.Staff.Controllers
                 catch (Exception ex)
                 {
                     _logger.LogError($"error occcured when updating {appointment.Id}. {ex}");
-                    
+
                 }
                 return RedirectToAction(nameof(Index));
             }
 
-            return View(nameof(Edit),appointment);
+            return View(nameof(Edit), appointment);
         }
 
-    
+
 
         private async Task<List<SelectListItem>> ParseListingForSelectList()
         {
@@ -176,16 +172,16 @@ namespace CordEstates.Areas.Staff.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || id<=0 )
+            if (id == null || id <= 0)
             {
                 _logger.LogWarn($"Null value passed to method {nameof(Details)} in AppointmentController");
                 return RedirectToAction(nameof(Index));
             }
 
             var appointment = _mapper.Map<AppointmentManagementDTO>(await _repositoryWrapper.Appointment.GetAppointmentByIdAsync(id));
-          
 
-            return View(nameof(Delete),appointment);
+
+            return View(nameof(Delete), appointment);
         }
 
         // POST: Admin/Appointment/Delete/5
@@ -209,6 +205,6 @@ namespace CordEstates.Areas.Staff.Controllers
         }
     }
 
-        
-    }
+
+}
 

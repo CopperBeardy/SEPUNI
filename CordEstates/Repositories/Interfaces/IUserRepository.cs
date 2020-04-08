@@ -7,7 +7,7 @@ namespace CordEstates.Repositories.Interfaces
 {
     public interface IUserRepository : IRepositoryBase<ApplicationUser>
     {
-   
+
         bool Exists(string id);
         void DeleteUser(ApplicationUser user);
         void UpdateUser(ApplicationUser user);

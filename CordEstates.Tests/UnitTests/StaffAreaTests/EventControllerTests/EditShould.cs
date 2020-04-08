@@ -14,11 +14,11 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.EventControllerTests
 {
     public class EditShould
     {
-        private SetupFixture fixture;
-        private EventController sut;
-        private Mock<IHostEnvironment> env;
-        private Mock<IImageUploadWrapper> imageUploadWrapper;
-        EventManagementDTO eve;
+        private readonly SetupFixture fixture;
+        private readonly EventController sut;
+        private readonly Mock<IHostEnvironment> env;
+        private readonly Mock<IImageUploadWrapper> imageUploadWrapper;
+        readonly EventManagementDTO eve;
         public EditShould()
         {
 

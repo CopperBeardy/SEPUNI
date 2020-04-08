@@ -3,8 +3,6 @@ using CordEstates.Repositories;
 using CordEstates.Repositories.Interfaces;
 using CordEstates.Wrappers.Interfaces;
 using Microsoft.AspNetCore.Identity;
-using System;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace CordEstates.Wrappers

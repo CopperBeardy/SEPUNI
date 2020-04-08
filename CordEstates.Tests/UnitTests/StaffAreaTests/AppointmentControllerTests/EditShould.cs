@@ -14,10 +14,10 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AppointmentControllerTests
 {
     public class EditShould
     {
-        private SetupFixture fixture;
-        private AppointmentController sut;
-        private ClaimsPrincipal claimsPrincipal;
-        private EditAppointmentManagementDTO app;
+        private readonly SetupFixture fixture;
+        private readonly AppointmentController sut;
+        private readonly ClaimsPrincipal claimsPrincipal;
+        private readonly EditAppointmentManagementDTO app;
 
         public EditShould()
         {

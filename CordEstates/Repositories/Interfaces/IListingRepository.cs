@@ -10,7 +10,7 @@ namespace CordEstates.Repositories.Interfaces
         Task<List<Listing>> GetAllListingsForSaleAsync();
 
         Task<List<Listing>> GetLandingPageListingsAsync(int amount);
-        Task<Listing> GetListingByIdAsync(int? id);   
+        Task<Listing> GetListingByIdAsync(int? id);
         void CreateListing(Listing listing);
         void DeleteListing(Listing listing);
         void UpdateListing(Listing listing);

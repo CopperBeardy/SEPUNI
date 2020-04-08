@@ -12,7 +12,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AddressControllerTests
     {
         private readonly SetupFixture fixture;
         private readonly AddressController sut;
-        AddressDTO addressDTO;
+        readonly AddressDTO addressDTO;
 
         public CreateShould()
         {

@@ -16,8 +16,8 @@ namespace CordEstates.Tests.UnitTests.RootControllerTests.ServiceControllerTests
     public class IndexShould
     {
 
-        private ServiceController sut;
-        SetupFixture fixture;
+        private readonly ServiceController sut;
+        readonly SetupFixture fixture;
 
         public IndexShould()
         {

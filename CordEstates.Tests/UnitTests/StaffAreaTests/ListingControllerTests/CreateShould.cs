@@ -15,11 +15,11 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.ListingControllerTests
     public class CreateShould
     {
         private readonly SetupFixture fixture;
-        private ListingController sut;
-        private Mock<IHostEnvironment> env;
-        private Mock<IImageUploadWrapper> imageUploadWrapper;
-        private ListingManagementDTO listingManagementDTO;
-        private Address address;
+        private readonly ListingController sut;
+        private readonly Mock<IHostEnvironment> env;
+        private readonly Mock<IImageUploadWrapper> imageUploadWrapper;
+        private readonly ListingManagementDTO listingManagementDTO;
+        private readonly Address address;
         public CreateShould()
         {
             fixture = new SetupFixture();
@@ -39,12 +39,12 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.ListingControllerTests
                     .Setup(x => x.Listing.GetListingByIdAsync(It.IsAny<int>()))
                     .ReturnsAsync(It.IsAny<Listing>);
             fixture.repositoryWrapper.Setup(x => x.Address.GetAllAddressesNotInUseAsync()).ReturnsAsync(new List<Address>() { address });
-            
+
             listingManagementDTO = new ListingManagementDTO()
-            { Id = 1, Address = new Address() { Id = 1 }, Image = new Photo() { Id=1, ImageLink="gfdsfg"}, File = new Mock<IFormFile>().Object };
+            { Id = 1, Address = new Address() { Id = 1 }, Image = new Photo() { Id = 1, ImageLink = "gfdsfg" }, File = new Mock<IFormFile>().Object };
 
             fixture.mapper.Setup(x => x.Map<ListingManagementDTO>(It.IsAny<Listing>())).Returns(listingManagementDTO);
-            fixture.mapper.Setup(x => x.Map<Listing>(It.IsAny<ListingManagementDTO>())).Returns(new Listing() { Id=1});
+            fixture.mapper.Setup(x => x.Map<Listing>(It.IsAny<ListingManagementDTO>())).Returns(new Listing() { Id = 1 });
 
 
 
@@ -52,7 +52,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.ListingControllerTests
             imageUploadWrapper.Setup(x => x.Upload(It.IsAny<IFormFile>(), It.IsAny<IHostEnvironment>()))
                 .Returns("imageurl");
 
-            
+
         }
         [Fact]
         public async void ReturnCreateView()

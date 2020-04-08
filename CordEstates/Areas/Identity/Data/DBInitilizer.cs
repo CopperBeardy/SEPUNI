@@ -178,7 +178,7 @@ namespace CordEstates.Areas.Identity.Data
 
             //#region Event
 
-            //var events = new Event[] 
+            //var events = new Event[]
             //{
             //    new Event{PhotoId=12, EventName="Open house", Details="open house will be at property balasdjfsdjf dsfsdf sdfsd fs dfsdf", Time=DateTime.UtcNow.AddDays(26), Active= true },
             //    new Event{PhotoId=13, EventName="Open house", Details="open house will be at property balasdjfsdjf dsfsdf sdfsd fs dfsdf", Time=DateTime.UtcNow.AddDays(-26), Active= false }
@@ -190,24 +190,24 @@ namespace CordEstates.Areas.Identity.Data
             //context.SaveChanges();
 
 
-            //#endregion
+            //  #endregion
 
             #region Appointments
 
             var appointments = new Appointment[]
             {
 
-                new Appointment {  ListingId=1,Time=DateTime.Now.AddDays(6),StaffId="9ad08ba8-3c2b-4a01-a384-884ea729dd77" },
-                new Appointment { ListingId=2,Time=DateTime.Now.AddDays(3),StaffId="9ad08ba8-3c2b-4a01-a384-884ea729dd77" },
-                new Appointment {  ListingId=2,Time=DateTime.Now.AddDays(2),StaffId="9ad08ba8-3c2b-4a01-a384-884ea729dd77" },
-                new Appointment { ListingId=3,Time=DateTime.Now.AddDays(4),StaffId="9ad08ba8-3c2b-4a01-a384-884ea729dd77" },
-                new Appointment { ListingId=1,Time=DateTime.Now.AddDays(2),StaffId="9ad08ba8-3c2b-4a01-a384-884ea729dd77" },
-                new Appointment {  ListingId=2,Time=DateTime.Now.AddDays(5),StaffId="5da5aeb7-f198-442d-8998-0ec87604d07b" },
-                new Appointment {  ListingId=4,Time=DateTime.Now.AddDays(2),StaffId="5da5aeb7-f198-442d-8998-0ec87604d07b" },
-                new Appointment {  ListingId=4,Time=DateTime.Now.AddDays(4),StaffId="5da5aeb7-f198-442d-8998-0ec87604d07b" },
-                new Appointment {  ListingId=5,Time=DateTime.Now.AddDays(5),StaffId="860d343d-c6a3-4667-add2-4023f2b89fc6" },
-                new Appointment {  ListingId=1,Time=DateTime.Now.AddDays(2),StaffId="a8784218-d52c-4171-b755-0a78a92a3851" },
-                new Appointment {  ListingId=3,Time=DateTime.Now.AddDays(8),StaffId="ebc291f8-be9f-46ab-968a-c5f99b747a41" },
+                new Appointment {  ListingId=1,Time=DateTime.Now.AddDays(6),StaffId="1a93906b-69d9-435f-af15-68b3ca347ba7" },
+                new Appointment { ListingId=2,Time=DateTime.Now.AddDays(3),StaffId="1a93906b-69d9-435f-af15-68b3ca347ba7" },
+                new Appointment {  ListingId=2,Time=DateTime.Now.AddDays(2),StaffId="1a93906b-69d9-435f-af15-68b3ca347ba7" },
+                new Appointment { ListingId=3,Time=DateTime.Now.AddDays(4),StaffId="1a93906b-69d9-435f-af15-68b3ca347ba7" },
+                new Appointment { ListingId=1,Time=DateTime.Now.AddDays(2),StaffId="1a93906b-69d9-435f-af15-68b3ca347ba7" },
+                new Appointment {  ListingId=2,Time=DateTime.Now.AddDays(5),StaffId="1a93906b-69d9-435f-af15-68b3ca347ba7" },
+                new Appointment {  ListingId=4,Time=DateTime.Now.AddDays(2),StaffId="2cf0e013-e516-4895-9b42-d097f961d032" },
+                new Appointment {  ListingId=4,Time=DateTime.Now.AddDays(4),StaffId="2cf0e013-e516-4895-9b42-d097f961d032" },
+                new Appointment {  ListingId=5,Time=DateTime.Now.AddDays(5),StaffId="2cf0e013-e516-4895-9b42-d097f961d032" },
+                new Appointment {  ListingId=1,Time=DateTime.Now.AddDays(2),StaffId="5f845dda-49e2-4b5f-909c-984a479e75eb" },
+                new Appointment {  ListingId=3,Time=DateTime.Now.AddDays(8),StaffId="5f845dda-49e2-4b5f-909c-984a479e75eb" },
 
 
             };

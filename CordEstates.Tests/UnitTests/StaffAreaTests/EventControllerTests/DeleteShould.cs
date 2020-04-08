@@ -14,12 +14,12 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.EventControllerTests
 {
     public class DeleteShould
     {
-        private SetupFixture fixture;
-        private EventController sut;
+        private readonly SetupFixture fixture;
+        private readonly EventController sut;
 
 
-        private Mock<IHostEnvironment> env;
-        private Mock<IImageUploadWrapper> imageUploadWrapper;
+        private readonly Mock<IHostEnvironment> env;
+        private readonly Mock<IImageUploadWrapper> imageUploadWrapper;
         public DeleteShould()
         {
 

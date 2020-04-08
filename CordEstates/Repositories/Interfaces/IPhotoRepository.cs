@@ -7,7 +7,7 @@ namespace CordEstates.Repositories.Interfaces
     public interface IPhotoRepository : IRepositoryBase<Photo>
     {
         Task<List<Photo>> GetAllPhotosAsync();
-         
+
         void UploadPhoto(Photo photo);
         void DeletePhoto(Photo photo);
 

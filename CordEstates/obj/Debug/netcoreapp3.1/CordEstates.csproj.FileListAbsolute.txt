@@ -80,6 +80,7 @@ C:\Projects\SEPUNI\CordEstates\bin\Debug\netcoreapp3.1\System.Composition.TypedP
 C:\Projects\SEPUNI\CordEstates\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
 C:\Projects\SEPUNI\CordEstates\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
 C:\Projects\SEPUNI\CordEstates\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Projects\SEPUNI\CordEstates\bin\Debug\netcoreapp3.1\System.Text.Json.dll
 C:\Projects\SEPUNI\CordEstates\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
 C:\Projects\SEPUNI\CordEstates\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
 C:\Projects\SEPUNI\CordEstates\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll

@@ -15,8 +15,8 @@ namespace CordEstates.Tests.UnitTests.RootControllerTests.ListingControllerTests
     public class DetailsShould
     {
 
-        private ListingController sut;
-        SetupFixture fixture;
+        private readonly ListingController sut;
+        readonly SetupFixture fixture;
 
 
         public DetailsShould()

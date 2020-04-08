@@ -6,7 +6,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
 
 namespace CordEstates.Entities
-{[ExcludeFromCodeCoverage]
+{
+    [ExcludeFromCodeCoverage]
     public class Appointment
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

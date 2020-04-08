@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace CordEstates.Entities
 {
-[ExcludeFromCodeCoverage]
+    [ExcludeFromCodeCoverage]
     public class Address
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

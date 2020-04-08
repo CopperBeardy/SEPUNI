@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CordEstates.Models.DTOs
@@ -14,7 +13,7 @@ namespace CordEstates.Models.DTOs
         [NotMapped]
         public IFormFile File { get; set; }
 
-    
+
         public DateTime Time { get; set; }
         public bool Active { get; set; }
 

@@ -12,9 +12,9 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.ServiceControllerTests
 {
     public class EditShould
     {
-        private SetupFixture fixture;
-        private ServiceController sut;
-        private ServiceDTO service;
+        private readonly SetupFixture fixture;
+        private readonly ServiceController sut;
+        private readonly ServiceDTO service;
 
         public EditShould()
         {

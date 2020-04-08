@@ -5,10 +5,8 @@ using CordEstates.Models.DTOs;
 using CordEstates.Wrappers.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace CordEstates.Areas.Staff.Controllers
@@ -22,7 +20,7 @@ namespace CordEstates.Areas.Staff.Controllers
         readonly ILoggerManager _logger;
 
 
-        public ServiceController(ILoggerManager loggerManager ,IRepositoryWrapper repositoryWrapper, IMapper mapper)
+        public ServiceController(ILoggerManager loggerManager, IRepositoryWrapper repositoryWrapper, IMapper mapper)
         {
             _logger = loggerManager;
             _repositoryWrapper = repositoryWrapper;
@@ -35,7 +33,7 @@ namespace CordEstates.Areas.Staff.Controllers
         public async Task<IActionResult> Index()
         {
             List<ServiceDTO> result = _mapper.Map<List<ServiceDTO>>(await _repositoryWrapper.Service.GetAllServicesAsync());
-           
+
             return View(nameof(Index), result);
         }
 
@@ -58,21 +56,21 @@ namespace CordEstates.Areas.Staff.Controllers
                 await _repositoryWrapper.SaveAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(nameof(Create),serviceDTO);
+            return View(nameof(Create), serviceDTO);
         }
 
         // GET: Employees/Service/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || id <=0)
+            if (id == null || id <= 0)
             {
                 _logger.LogError($"{id} was passed to Staff.ServiceController.Edit _get_");
                 return RedirectToAction(nameof(Index));
             }
 
             var serviceDTO = _mapper.Map<ServiceDTO>(await _repositoryWrapper.Service.GetServiceByIdAsync(id));
-            
-            return View(nameof(Edit),serviceDTO);
+
+            return View(nameof(Edit), serviceDTO);
         }
 
         // POST: Employees/Service/Edit/5   
@@ -101,7 +99,7 @@ namespace CordEstates.Areas.Staff.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(nameof(Edit),serviceDTO);
+            return View(nameof(Edit), serviceDTO);
 
         }
 
@@ -116,9 +114,9 @@ namespace CordEstates.Areas.Staff.Controllers
             }
 
             var service = _mapper.Map<ServiceDTO>(await _repositoryWrapper.Service.GetServiceByIdAsync(id));
-                       
 
-            return View(nameof(Delete),service);
+
+            return View(nameof(Delete), service);
         }
 
         [Authorize(Roles = "Admin")]
@@ -140,6 +138,6 @@ namespace CordEstates.Areas.Staff.Controllers
             }
         }
 
-        
+
     }
 }

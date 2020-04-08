@@ -11,21 +11,21 @@ namespace CordEstates.Repositories
 {
     public class UserRepository : RepositoryBase<ApplicationUser>, IUserRepository
     {
-   
+
         readonly UserManager<ApplicationUser> _userManager;
 
-        public UserRepository(ApplicationDbContext context, UserManager<ApplicationUser> _userManager) :base(context)
+        public UserRepository(ApplicationDbContext context, UserManager<ApplicationUser> _userManager) : base(context)
         {
-            this._userManager = _userManager;      
+            this._userManager = _userManager;
 
         }
-        public void CreateUser(   ApplicationUser user) => CreateUser(user);
+        public void CreateUser(ApplicationUser user) => CreateUser(user);
 
-      
 
-        public async Task<ApplicationUser> GetStaffByIdAsync(string id) 
-            => await FindByCondition(x => x.Id.Equals(id)).Include(h =>h.HeadShot).FirstOrDefaultAsync();
-      
+
+        public async Task<ApplicationUser> GetStaffByIdAsync(string id)
+            => await FindByCondition(x => x.Id.Equals(id)).Include(h => h.HeadShot).FirstOrDefaultAsync();
+
 
         public async Task<List<ApplicationUser>> GetAllStaffAsync()
         {

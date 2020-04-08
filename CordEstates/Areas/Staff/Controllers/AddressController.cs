@@ -5,10 +5,8 @@ using CordEstates.Models.DTOs;
 using CordEstates.Wrappers.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace CordEstates.Areas.Staff.Controllers
@@ -23,7 +21,7 @@ namespace CordEstates.Areas.Staff.Controllers
         readonly IMapper _mapper;
         readonly IRepositoryWrapper _repositoryWrapper;
         readonly ILoggerManager _logger;
-        public AddressController(ILoggerManager logger,IRepositoryWrapper repositoryWrapper, IMapper mapper)
+        public AddressController(ILoggerManager logger, IRepositoryWrapper repositoryWrapper, IMapper mapper)
         {
             _logger = logger;
             _repositoryWrapper = repositoryWrapper;
@@ -35,7 +33,7 @@ namespace CordEstates.Areas.Staff.Controllers
         public async Task<IActionResult> Index()
         {
             var result = _mapper.Map<List<AddressDTO>>(await _repositoryWrapper.Address.GetAllAddressesAsync());
-           
+
             return View(nameof(Index), result);
 
         }
@@ -75,7 +73,7 @@ namespace CordEstates.Areas.Staff.Controllers
             }
 
             AddressDTO addressDTO = _mapper.Map<AddressDTO>(await _repositoryWrapper.Address.GetAddressByIdAsync(id));
-        
+
             return View(nameof(Edit), addressDTO);
         }
 
@@ -90,18 +88,18 @@ namespace CordEstates.Areas.Staff.Controllers
             {
 
                 Address address = _mapper.Map<Address>(addressDTO);
-                    _repositoryWrapper.Address.UpdateAddress(address);
-                    await _repositoryWrapper.SaveAsync();
+                _repositoryWrapper.Address.UpdateAddress(address);
+                await _repositoryWrapper.SaveAsync();
 
             }
             return View(nameof(Edit), addressDTO);
         }
 
-     
+
         [Authorize(Roles = " Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || id<= 0)
+            if (id == null || id <= 0)
             {
                 _logger.LogError($"Null passed to Staff.Address.Delete");
                 return RedirectToAction(nameof(Index));
@@ -133,7 +131,7 @@ namespace CordEstates.Areas.Staff.Controllers
             }
         }
 
-    
+
 
     }
 }

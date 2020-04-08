@@ -1,5 +1,4 @@
-﻿using CordEstates.Areas.Identity.Data;
-using System;
+﻿using System;
 
 namespace CordEstates.Areas.Staff.Models.DTOs
 {

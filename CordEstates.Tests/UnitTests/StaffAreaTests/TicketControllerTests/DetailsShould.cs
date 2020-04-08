@@ -4,7 +4,6 @@ using CordEstates.Entities;
 using CordEstates.Tests.SetupFixtures;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
-using System;
 using Xunit;
 
 
@@ -12,8 +11,8 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.TicketControllerTests
 {
     public class DetailsShould
     {
-        private SetupFixture fixture;
-        private TicketController sut;
+        private readonly SetupFixture fixture;
+        private readonly TicketController sut;
 
         public DetailsShould()
         {

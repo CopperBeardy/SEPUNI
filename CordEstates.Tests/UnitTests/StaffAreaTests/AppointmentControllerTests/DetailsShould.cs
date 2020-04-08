@@ -4,7 +4,6 @@ using CordEstates.Entities;
 using CordEstates.Tests.SetupFixtures;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
-using System;
 using System.Collections.Generic;
 using System.Security.Claims;
 using Xunit;
@@ -14,10 +13,10 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AppointmentControllerTests
 {
     public class DetailsShould
     {
-        private SetupFixture fixture;
-        private ClaimsPrincipal claimsPrincipal;
+        private readonly SetupFixture fixture;
+        private readonly ClaimsPrincipal claimsPrincipal;
 
-        private AppointmentController sut;
+        private readonly AppointmentController sut;
 
         public DetailsShould()
         {

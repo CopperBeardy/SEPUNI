@@ -35,15 +35,17 @@ namespace CordEstates.Areas.Identity.Pages.Account.Manage
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
 
+            [Display(Name = "First Name")]
             public string FirstName { get; set; }
 
-
+            [Display(Name = "Last Name")]
             public string LastName { get; set; }
 
             //public Photo HeadShot { get; set; }
 
             public string Bio { get; set; }
 
+            //Todo add control for viewing current head shot and add upload image control to allow for the changing of the head shot
 
 
         }

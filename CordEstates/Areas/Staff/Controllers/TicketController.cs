@@ -4,10 +4,8 @@ using CordEstates.Entities;
 using CordEstates.Helpers;
 using CordEstates.Wrappers.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace CordEstates.Areas.Staff.Controllers
@@ -33,7 +31,7 @@ namespace CordEstates.Areas.Staff.Controllers
         public async Task<IActionResult> Index()
         {
             var tickets = _mapper.Map<List<TicketManagementDTO>>(await _repositoryWrapper.Ticket.GetAllTicketsAsync());
-            
+
             return View(nameof(Index), tickets);
         }
 
@@ -46,9 +44,9 @@ namespace CordEstates.Areas.Staff.Controllers
             }
 
             var ticket = _mapper.Map<TicketManagementDTO>(await _repositoryWrapper.Ticket.GetTicketByIdAsync(id));
-           
 
-            return View(nameof(Details),ticket);
+
+            return View(nameof(Details), ticket);
         }
 
 
@@ -75,7 +73,7 @@ namespace CordEstates.Areas.Staff.Controllers
         {
             if (id != ticket.Id)
             {
-                _logger.LogError($"Id did not match when editing Ticket: Expected id was - {id}, Received id was -{ticket.Id}"); 
+                _logger.LogError($"Id did not match when editing Ticket: Expected id was - {id}, Received id was -{ticket.Id}");
                 return RedirectToAction(nameof(Index));
             }
 
@@ -94,12 +92,12 @@ namespace CordEstates.Areas.Staff.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(nameof(Edit),ticket);
+            return View(nameof(Edit), ticket);
         }
 
 
 
-        
+
 
     }
 }

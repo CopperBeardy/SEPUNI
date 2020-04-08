@@ -13,12 +13,12 @@ namespace CordEstates.Profiles
         {
 
             CreateMap<Listing, LandingListingDTO>().ForMember(des => des.ImageUrl, o => o.MapFrom(src => src.Image.ImageLink));
-            CreateMap<Listing,ListingManagementDTO>()
+            CreateMap<Listing, ListingManagementDTO>()
                 .ForMember(des => des.Image, o => o.MapFrom(src => src.Image))
-                  .ForMember(des => des.Address, o => o.MapFrom(src => src.Address)).ReverseMap() ;
-  
+                  .ForMember(des => des.Address, o => o.MapFrom(src => src.Address)).ReverseMap();
+
             CreateMap<List<Listing>, ListingManagementDTO>()
-             
+
                 .ReverseMap();
             CreateMap<Listing, ListingDTO>().ForMember(desc => desc.Url, o => o.MapFrom(src => src.Image.ImageLink));
             CreateMap<Listing, ListingDetailDTO>().ForMember(desc => desc.Url, o => o.MapFrom(src => src.Image.ImageLink));
@@ -26,16 +26,16 @@ namespace CordEstates.Profiles
 
 
             CreateMap<Address, AddressDTO>().ReverseMap();
-  
+
             CreateMap<Appointment, CreateAppointmentDTO>()
-                .ForMember(desc => desc.Time, o =>o.MapFrom(src => src.Time))
-                .ReverseMap();        
+                .ForMember(desc => desc.Time, o => o.MapFrom(src => src.Time))
+                .ReverseMap();
             CreateMap<Appointment, AppointmentDTO>().ReverseMap();
             CreateMap<Appointment, AppointmentManagementDTO>().ReverseMap();
             CreateMap<Appointment, EditAppointmentManagementDTO>().ReverseMap();
 
 
-            CreateMap<Ticket, CreateTicketDTO>().ReverseMap();          
+            CreateMap<Ticket, CreateTicketDTO>().ReverseMap();
             CreateMap<Ticket, TicketManagementDTO>().ReverseMap();
 
             CreateMap<Photo, PhotoDTO>().ReverseMap();
@@ -51,11 +51,11 @@ namespace CordEstates.Profiles
              .ForMember(des => des.ImagePath, o => o.MapFrom(src => src.Photo.ImageLink)).ReverseMap();
             CreateMap<List<Event>, EventDTO>();
             CreateMap<Event, EventManagementDTO>().ReverseMap();
-             
 
-            CreateMap<ApplicationUser, UserManagementDTO > ()
+
+            CreateMap<ApplicationUser, UserManagementDTO>()
                     .ForMember(des => des.HeadShot, o => o.MapFrom(src => src.HeadShot))
-                  
+
             .ReverseMap();
             CreateMap<List<ApplicationUser>, UserManagementDTO>().ReverseMap();
             CreateMap<ApplicationUser, UserDTO>()

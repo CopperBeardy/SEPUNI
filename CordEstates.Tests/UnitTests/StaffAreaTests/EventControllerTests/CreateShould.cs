@@ -15,8 +15,8 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.EventControllerTests
     {
         private readonly SetupFixture fixture;
         private readonly EventController sut;
-        private Mock<IHostEnvironment> env;
-        private Mock<IImageUploadWrapper> imageUploadWrapper;
+        private readonly Mock<IHostEnvironment> env;
+        private readonly Mock<IImageUploadWrapper> imageUploadWrapper;
         public CreateShould()
         {
 

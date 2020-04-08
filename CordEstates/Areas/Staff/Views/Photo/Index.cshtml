@@ -22,10 +22,16 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.ImageLink)
+                @{
+                    var link = item.ImageLink;
+                    link = link.Substring(link.IndexOf("/") + 1, link.Length - 11);
+                 }
+                @link.ToString()
+                      @*@Html.DisplayFor(modelItem => item.ImageLink)*@
             </td>
             <td>
                 <img width="100" height="100" src="~/@item.ImageLink" />

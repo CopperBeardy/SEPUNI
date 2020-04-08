@@ -3,7 +3,7 @@ using System;
 
 namespace CordEstates.Areas.Staff.Models.DTOs
 {
-    public class AppointmentDTO 
+    public class AppointmentDTO
     {
 
         public int Id { get; set; }
@@ -15,6 +15,6 @@ namespace CordEstates.Areas.Staff.Models.DTOs
 
         public DateTime Time { get; set; }
 
-       
+
     }
 }

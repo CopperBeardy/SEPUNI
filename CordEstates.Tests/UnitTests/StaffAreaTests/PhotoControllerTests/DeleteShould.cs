@@ -14,12 +14,12 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.PhotoControllerTests
 {
     public class DeleteShould
     {
-        private SetupFixture fixture;
-        private PhotoController sut;
-        private Mock<IHostEnvironment> env;
-        private Mock<IImageUploadWrapper> imageUploadWrapper;
-        private Photo photo;
-        private PhotoDTO photoDTO;
+        private readonly SetupFixture fixture;
+        private readonly PhotoController sut;
+        private readonly Mock<IHostEnvironment> env;
+        private readonly Mock<IImageUploadWrapper> imageUploadWrapper;
+        private readonly Photo photo;
+        private readonly PhotoDTO photoDTO;
         public DeleteShould()
         {
 

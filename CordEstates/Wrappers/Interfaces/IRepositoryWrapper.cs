@@ -1,6 +1,4 @@
 ﻿using CordEstates.Repositories.Interfaces;
-using System;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace CordEstates.Wrappers.Interfaces

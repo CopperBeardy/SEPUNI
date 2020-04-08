@@ -6,10 +6,6 @@ using CordEstates.Wrappers;
 using CordEstates.Wrappers.Interfaces;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using static CordEstates.Helpers.ImageUpload;
 
 namespace CordEstates.Extensions
@@ -24,6 +20,8 @@ namespace CordEstates.Extensions
             services.AddTransient<IEventRepository, EventRepository>();
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IAppointmentRepository, AppointmentRepository>();
+            services.AddTransient<IBuyerRepository, BuyerRepository>();
+            services.AddTransient<ISaleRepository, SaleRepository>();
             services.AddTransient<IAddressRepository, AddressRepository>();
             services.AddTransient<IPhotoRepository, PhotoRepository>();
             services.AddScoped<ILoggerManager, LoggerManager>();

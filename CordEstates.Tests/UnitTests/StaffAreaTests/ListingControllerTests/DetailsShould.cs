@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting;
 using Moq;
-using System;
 using Xunit;
 using static CordEstates.Helpers.ImageUpload;
 
@@ -14,10 +13,10 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.ListingControllerTests
 {
     public class DetailsShould
     {
-        private SetupFixture fixture;
-        private ListingController sut;
-        private Mock<IHostEnvironment> env;
-        private Mock<IImageUploadWrapper> imageUploadWrapper;
+        private readonly SetupFixture fixture;
+        private readonly ListingController sut;
+        private readonly Mock<IHostEnvironment> env;
+        private readonly Mock<IImageUploadWrapper> imageUploadWrapper;
         public DetailsShould()
         {
 

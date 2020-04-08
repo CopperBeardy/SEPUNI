@@ -12,8 +12,8 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AppointmentControllerTests
 {
     public class IndexShould
     {
-        private SetupFixture fixture;
-        private AppointmentController sut;
+        private readonly SetupFixture fixture;
+        private readonly AppointmentController sut;
 
 
         public IndexShould()

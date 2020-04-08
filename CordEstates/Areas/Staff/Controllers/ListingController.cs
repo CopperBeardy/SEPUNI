@@ -1,18 +1,14 @@
 ﻿using AutoMapper;
 using CordEstates.Areas.Staff.Models.DTOs;
-using CordEstates.Areas.Staff.Models.ViewModels;
 using CordEstates.Entities;
 using CordEstates.Helpers;
-using CordEstates.Repositories;
 using CordEstates.Wrappers.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using static CordEstates.Helpers.ImageUpload;
 
@@ -32,7 +28,7 @@ namespace CordEstates.Areas.Staff.Controllers
         readonly IImageUploadWrapper _imageUploadWrapper;
 
         public ListingController(ILoggerManager logger, IRepositoryWrapper repositoryWrapper,
-            IMapper mapper,IHostEnvironment hostEnvironment,IImageUploadWrapper imageUploadWrapper)
+            IMapper mapper, IHostEnvironment hostEnvironment, IImageUploadWrapper imageUploadWrapper)
         {
             _imageUploadWrapper = imageUploadWrapper;
             _hostEnvironment = hostEnvironment;
@@ -40,7 +36,7 @@ namespace CordEstates.Areas.Staff.Controllers
             _repositoryWrapper = repositoryWrapper;
 
             _mapper = mapper;
-            
+
         }
 
         // GET: Admin/Listing
@@ -48,21 +44,21 @@ namespace CordEstates.Areas.Staff.Controllers
         {
             List<ListingManagementDTO> listing = _mapper.Map<List<ListingManagementDTO>>(await _repositoryWrapper.Listing.GetAllListingsAsync());
 
-            
+
             return View(nameof(Index), listing);
         }
 
         // GET: Admin/Listing/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || id<= 0)
+            if (id == null || id <= 0)
             {
-                _logger.LogError($"Invalid id past to {nameof(Details)}"); 
+                _logger.LogError($"Invalid id past to {nameof(Details)}");
                 return RedirectToAction(nameof(Index));
             }
 
             ListingManagementDTO listing = _mapper.Map<ListingManagementDTO>(await _repositoryWrapper.Listing.GetListingByIdAsync(id));
-           //todo change address tostring representation of the address. 
+         
 
             return View(nameof(Details), listing);
         }
@@ -72,7 +68,7 @@ namespace CordEstates.Areas.Staff.Controllers
         {
 
             ViewData["AddressId"] = await GetAddresses(null);
-           
+
             return View(nameof(Create));
         }
 
@@ -104,7 +100,7 @@ namespace CordEstates.Areas.Staff.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(ListingManagementDTO listingManagementDTO)
         {
-           
+
             if (ModelState.IsValid)
             {
                 try
@@ -114,7 +110,7 @@ namespace CordEstates.Areas.Staff.Controllers
                     {
                         ImageLink = _imageUploadWrapper.Upload(listingManagementDTO.File, _hostEnvironment)
                     };
-             
+
                     _repositoryWrapper.Listing.CreateListing(mapped);
                     await _repositoryWrapper.SaveAsync();
                     return RedirectToAction(nameof(Index));
@@ -153,45 +149,46 @@ namespace CordEstates.Areas.Staff.Controllers
         public async Task<IActionResult> Edit(int id, ListingManagementDTO listingManagementDTO)
         {
             if (id != listingManagementDTO.Id)
-             
-                {
-                    _logger.LogError($"Id did not match for to {nameof(Edit)}.  Expected:{id}, Actual{listingManagementDTO.Id}");
-                    return RedirectToAction(nameof(Index));
-                }
 
-           
+            {
+                _logger.LogError($"Id did not match for to {nameof(Edit)}.  Expected:{id}, Actual{listingManagementDTO.Id}");
+                return RedirectToAction(nameof(Index));
+            }
+
+
             if (ModelState.IsValid)
             {
                 try
                 {
                     var mapped = _mapper.Map<Listing>(listingManagementDTO);
-                    if(listingManagementDTO.File != null)
+                    if (listingManagementDTO.File != null)
                     {
                         mapped.Image = new Photo()
                         {
                             ImageLink = _imageUploadWrapper.Upload(listingManagementDTO.File, _hostEnvironment)
                         };
-                    } else
+                    }
+                    else
                     {
-                       var listing = await _repositoryWrapper.Listing.GetListingByIdAsync(id);
+                        var listing = await _repositoryWrapper.Listing.GetListingByIdAsync(id);
                         mapped.Image = listing.Image;
                         mapped.ImageId = listing.ImageId;
                     }
-                    
-               
+
+
                     mapped.Address = await _repositoryWrapper.Address.GetAddressByIdAsync(listingManagementDTO.AddressId);
 
                     _repositoryWrapper.Listing.UpdateListing(mapped);
-           
+
                     await _repositoryWrapper.SaveAsync();
 
                 }
                 catch (Exception ex)
                 {
-                    
-                        _logger.LogError($"Error updating listing: {ex}");
-                       
-                 
+
+                    _logger.LogError($"Error updating listing: {ex}");
+
+
                 }
                 return RedirectToAction(nameof(Index));
             }
@@ -205,11 +202,11 @@ namespace CordEstates.Areas.Staff.Controllers
             if (id == null || id <= 0)
             {
                 _logger.LogError($"invaliud value passed to Listing controller, method : {nameof(Delete)}");
-              return  RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index));
             }
 
             var listing = _mapper.Map<ListingManagementDTO>(await _repositoryWrapper.Listing.GetListingByIdAsync(id));
-           
+
 
             return View(nameof(Delete), listing);
         }
@@ -234,7 +231,7 @@ namespace CordEstates.Areas.Staff.Controllers
             }
         }
 
-       
+
 
     }
 }

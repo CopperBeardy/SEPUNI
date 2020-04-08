@@ -5,7 +5,6 @@ using CordEstates.Tests.SetupFixtures;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -14,8 +13,8 @@ namespace CordEstates.Tests.UnitTests.RootControllerTests.HomeControllerTests
 
     public class AboutShould
     {
-        private HomeController sut;
-        private SetupFixture fixture;
+        private readonly HomeController sut;
+        private readonly SetupFixture fixture;
 
         public AboutShould()
         {

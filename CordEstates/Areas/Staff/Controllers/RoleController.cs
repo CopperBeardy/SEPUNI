@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-using CordEstates.Areas.Identity.Data;
+﻿using CordEstates.Areas.Identity.Data;
 using CordEstates.Models.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Threading.Tasks;
 
 namespace CordEstates.Areas.Staff.Controllers
 {
@@ -15,9 +13,9 @@ namespace CordEstates.Areas.Staff.Controllers
     [Authorize(Roles = "Admin")]
     public class RoleController : Controller
     {
-        
-            private RoleManager<IdentityRole> roleManager;
-        private UserManager<ApplicationUser> userManager;
+
+        private readonly RoleManager<IdentityRole> roleManager;
+        private readonly UserManager<ApplicationUser> userManager;
 
         public RoleController(RoleManager<IdentityRole> roleMgr, UserManager<ApplicationUser> userMrg)
         {
@@ -25,40 +23,40 @@ namespace CordEstates.Areas.Staff.Controllers
             userManager = userMrg;
         }
 
-        public ViewResult Index() => View(nameof(Index),roleManager.Roles);
+        public ViewResult Index() => View(nameof(Index), roleManager.Roles);
 
-            public IActionResult Create() => View(nameof(Create));
+        public IActionResult Create() => View(nameof(Create));
 
-            [HttpPost]
-            public async Task<IActionResult> Create([Required]string name)
+        [HttpPost]
+        public async Task<IActionResult> Create([Required]string name)
+        {
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
-                {
-                    IdentityResult result = await roleManager.CreateAsync(new IdentityRole(name));
-                    if (result.Succeeded)
-                        return RedirectToAction(nameof(Index));
-                    else
-                        Errors(result);
-                }
-                return View(name);
-            }
-
-            [HttpPost]
-            public async Task<IActionResult> Delete(string id)
-            {
-                IdentityRole role = await roleManager.FindByIdAsync(id);
-                if (role != null)
-                {
-                    IdentityResult result = await roleManager.DeleteAsync(role);
-                    if (result.Succeeded)
-                        return RedirectToAction(nameof(Index));
-                    else
-                        Errors(result);
-                }
+                IdentityResult result = await roleManager.CreateAsync(new IdentityRole(name));
+                if (result.Succeeded)
+                    return RedirectToAction(nameof(Index));
                 else
-                    ModelState.AddModelError("", "No role found");
-                return View(nameof(Index), roleManager.Roles);
+                    Errors(result);
             }
+            return View(name);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(string id)
+        {
+            IdentityRole role = await roleManager.FindByIdAsync(id);
+            if (role != null)
+            {
+                IdentityResult result = await roleManager.DeleteAsync(role);
+                if (result.Succeeded)
+                    return RedirectToAction(nameof(Index));
+                else
+                    Errors(result);
+            }
+            else
+                ModelState.AddModelError("", "No role found");
+            return View(nameof(Index), roleManager.Roles);
+        }
 
         public async Task<IActionResult> Update(string id)
         {
@@ -109,7 +107,7 @@ namespace CordEstates.Areas.Staff.Controllers
             if (ModelState.IsValid)
                 return RedirectToAction(nameof(Index));
             else
-                return await Update(  model.RoleId);
+                return await Update(model.RoleId);
         }
 
         private void Errors(IdentityResult result)
@@ -119,5 +117,5 @@ namespace CordEstates.Areas.Staff.Controllers
         }
     }
 }
-    
+
 

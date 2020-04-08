@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace CordEstates.Repositories
 {
-    public class EventRepository : RepositoryBase<Event> ,IEventRepository
+    public class EventRepository : RepositoryBase<Event>, IEventRepository
     {
-     
+
 
         public EventRepository(ApplicationDbContext context) : base(context)
         {
@@ -20,9 +20,9 @@ namespace CordEstates.Repositories
         public async Task<Event> GetActiveEventAsync() => await FindByCondition(x => x.Active.Equals(true)).Include(y => y.Photo).FirstOrDefaultAsync();
 
 
-        public async Task<Event> GetEventByIdAsync(int? id) => 
+        public async Task<Event> GetEventByIdAsync(int? id) =>
             await FindByCondition(x => x.Id.Equals(id)).Include(y => y.Photo).FirstOrDefaultAsync();
-        
+
 
         public async Task<List<Event>> GetAllEventsAsync() => await FindAll().Include(x => x.Photo).ToListAsync();
 
@@ -33,8 +33,8 @@ namespace CordEstates.Repositories
 
         public void DeleteEvent(Event eventItem) => Delete(eventItem);
 
-        public bool Exists(int id)=>  _context.Events.Any(x => x.Id.Equals(id));
+        public bool Exists(int id) => _context.Events.Any(x => x.Id.Equals(id));
 
-       
+
     }
 }
