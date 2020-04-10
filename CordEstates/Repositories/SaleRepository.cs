@@ -19,10 +19,10 @@ namespace CordEstates.Repositories
 
      
         public async Task<Sale> GetSaleByIdAsync(int? id) =>
-            await FindByCondition(x => x.Id.Equals(id)).Include(b => b.Buyer).FirstOrDefaultAsync();
+            await FindByCondition(x => x.Id.Equals(id)).Include(b => b.Buyer).Include(s => s.SellingAgent).Include(p => p.SoldProperty).FirstOrDefaultAsync();
 
 
-        public async Task<List<Sale>> GetAllSalesAsync() => await FindAll().Include(b => b.Buyer).ToListAsync();
+        public async Task<List<Sale>> GetAllSalesAsync() => await FindAll().Include(b => b.Buyer).Include(s => s.SellingAgent).ToListAsync();
 
 
         public void CreateSale(Sale eve) => Create(eve);

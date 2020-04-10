@@ -3,6 +3,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using CordEstates.Entities;
+using CordEstates.Models.Enums;
 
 namespace CordEstates.Areas.Staff.Models.DTOs
 {
@@ -27,5 +28,8 @@ namespace CordEstates.Areas.Staff.Models.DTOs
         public string AgentId { get; set; }
     
         public int PropertyId { get; set; }
+
+        [NotMapped]
+        public SaleStatus Status { get; set; }
     }
 }

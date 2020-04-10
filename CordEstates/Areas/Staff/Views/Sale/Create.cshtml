@@ -1,0 +1,89 @@
+﻿@model SaleManagementDTO
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Sale</h4>
+<hr />
+<div class="row">
+    <div class="col col-12" >
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="row">
+                <div class="col  w-50">
+                    <div class="form-group">
+                        <label asp-for="@Model.Buyer.Title" class="control-label"></label>
+                        <input asp-for="@Model.Buyer.Title" class="form-control" />
+                        <span asp-validation-for="@Model.Buyer.Title" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.Buyer.FirstName" class="control-label"></label>
+                        <input asp-for="@Model.Buyer.FirstName" class="form-control" />
+                        <span asp-validation-for="@Model.Buyer.FirstName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.Buyer.LastName" class="control-label"></label>
+                        <input asp-for="@Model.Buyer.LastName" class="form-control" />
+                        <span asp-validation-for="@Model.Buyer.LastName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.Buyer.HouseNumber" class="control-label"></label>
+                        <input asp-for="@Model.Buyer.HouseNumber" class="form-control" />
+                        <span asp-validation-for="@Model.Buyer.HouseNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.Buyer.FirstLine" class="control-label"></label>
+                        <input asp-for="@Model.Buyer.FirstLine" class="form-control" />
+                        <span asp-validation-for="@Model.Buyer.FirstLine" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.Buyer.Postcode" class="control-label"></label>
+                        <input asp-for="@Model.Buyer.Postcode" class="form-control" />
+                        <span asp-validation-for="@Model.Buyer.Postcode" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.Buyer.PhoneNumber" class="control-label"></label>
+                        <input asp-for="@Model.Buyer.PhoneNumber" class="form-control" />
+                        <span asp-validation-for="@Model.Buyer.PhoneNumber" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col  w-50">
+                    <div class="form-group">
+                        <label asp-for="PropertyId " class="control-label"></label>
+                        <select asp-for="PropertyId" class="form-control" asp-items="ViewBag.Addresses"></select>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Status" class="control-label"></label>
+                        <select asp-for="Status" asp-items="@Html.GetEnumSelectList<SaleStatus>()" class="form-control"></select>
+                        <span asp-validation-for="Status" class="text-danger"></span>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label asp-for="AgreedPrice" class="control-label"></label>
+                        <input asp-for="AgreedPrice" class="form-control" />
+                        <span asp-validation-for="AgreedPrice" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+         
+         
+
+
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

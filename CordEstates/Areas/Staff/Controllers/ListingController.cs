@@ -130,7 +130,7 @@ namespace CordEstates.Areas.Staff.Controllers
             if (id == null || id <= 0)
             {
                 _logger.LogError($"Invalid id past to {nameof(Edit)}");
-                return RedirectToAction(nameof(Details));
+                return RedirectToAction(nameof(Index));
             }
 
             var listing = _mapper.Map<ListingManagementDTO>(await _repositoryWrapper.Listing.GetListingByIdAsync(id));

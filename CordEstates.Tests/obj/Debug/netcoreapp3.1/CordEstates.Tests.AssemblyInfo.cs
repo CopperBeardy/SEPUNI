@@ -12,7 +12,7 @@ using System;
 using System.Reflection;
 
 [assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap4")]
-[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("CordEstates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Projects\\SEPUNI\\CordEstates", "CordEstates.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("CordEstates", "C:\\Projects\\SEPUNI\\CordEstates", "CordEstates.csproj", "0")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("CordEstates.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
