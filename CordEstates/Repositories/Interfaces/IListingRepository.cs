@@ -6,6 +6,7 @@ namespace CordEstates.Repositories.Interfaces
 {
     public interface IListingRepository : IRepositoryBase<Listing>
     {
+        Listing GetListingsIdByAddressID(int id);
         Task<List<Listing>> GetAllListingsAsync();
         Task<List<Listing>> GetAllListingsForSaleAsync();
 

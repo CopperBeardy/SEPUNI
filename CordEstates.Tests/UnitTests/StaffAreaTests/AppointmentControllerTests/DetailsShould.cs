@@ -9,39 +9,29 @@ using System.Security.Claims;
 using Xunit;
 
 
-namespace CordEstates.Tests.UnitTests.StaffAreaTests.AppointmentControllerTests
+
+namespace CordEstates.Tests.UnitTests.StaffAreaTests.BuyerControllerTests
 {
     public class DetailsShould
     {
         private readonly SetupFixture fixture;
-        private readonly ClaimsPrincipal claimsPrincipal;
-
-        private readonly AppointmentController sut;
+        private readonly BuyerController sut;
 
         public DetailsShould()
         {
+
             fixture = new SetupFixture();
 
-            sut = new AppointmentController(fixture.Logger.Object,
+            sut = new BuyerController(fixture.Logger.Object,
                 fixture.repositoryWrapper.Object,
-                fixture.mapper.Object
-
-              );
-
+                fixture.mapper.Object);
 
             fixture.repositoryWrapper
-                .Setup(x => x.Appointment.GetAppointmentByIdAsync(It.IsAny<int>()))
-                .ReturnsAsync(new Appointment());
-            fixture.repositoryWrapper
-                .Setup(x => x.Listing.GetAllListingsAsync())
-                .ReturnsAsync(new List<Listing>());
+                .Setup(x => x.Buyer.GetBuyerByIdAsync(It.IsAny<int>())).ReturnsAsync(new Buyer() { Id = 1 });
 
-            fixture.repositoryWrapper
-                .Setup(x => x.User.GetUserId(claimsPrincipal))
-                .ReturnsAsync(string.Empty);
+            fixture.mapper.Setup(x => x.Map<BuyerManagementDTO>(It.IsAny<Buyer>())).
+                    Returns(new BuyerManagementDTO() { Id = 1 });
 
-            fixture.mapper.Setup(x => x.Map<AppointmentManagementDTO>(It.IsAny<Appointment>()))
-                  .Returns(new AppointmentManagementDTO());
         }
 
 
@@ -55,9 +45,9 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AppointmentControllerTests
             var result = await sut.Details(id);
             var vr = Assert.IsType<ViewResult>(result);
 
-            fixture.repositoryWrapper.Verify(y => y.Appointment.GetAppointmentByIdAsync(id), Times.Once);
+            fixture.repositoryWrapper.Verify(y => y.Buyer.GetBuyerByIdAsync(id), Times.Once);
             Assert.Equal("Details", vr.ViewName);
-            Assert.IsAssignableFrom<AppointmentManagementDTO>(vr.Model);
+            Assert.IsAssignableFrom<BuyerManagementDTO>(vr.Model);
         }
 
         [Theory]
@@ -69,7 +59,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AppointmentControllerTests
             var result = await sut.Details(id);
 
             Assert.IsAssignableFrom<RedirectToActionResult>(result);
-            fixture.repositoryWrapper.Verify(y => y.Appointment.GetAppointmentByIdAsync(id), Times.Never);
+            fixture.repositoryWrapper.Verify(y => y.Buyer.GetBuyerByIdAsync(id), Times.Never);
 
         }
 

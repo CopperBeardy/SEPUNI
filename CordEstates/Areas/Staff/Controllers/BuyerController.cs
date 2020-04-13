@@ -57,7 +57,7 @@ namespace CordEstates.Areas.Staff.Controllers
         // GET: Staff/Buyer/Create
         public IActionResult Create()
         {
-            return View();
+            return View(nameof(Create));
         }
 
         // POST: Staff/Buyer/Create
@@ -150,10 +150,18 @@ namespace CordEstates.Areas.Staff.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var buyer = await _repositoryWrapper.Buyer.GetBuyerByIdAsync(id);
-
-            _repositoryWrapper.Buyer.DeleteBuyer(buyer);
+            try
+            {
+_repositoryWrapper.Buyer.DeleteBuyer(buyer);
             await _repositoryWrapper.SaveAsync();
             return RedirectToAction(nameof(Index));
+            }
+              catch (Exception ex)
+            {
+                _logger.LogError($"unable to delete buyer: {ex}");
+                return RedirectToAction(nameof(Delete), id);
+    }
+    
         }
 
     }

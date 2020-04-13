@@ -95,7 +95,9 @@ namespace CordEstates.Areas.Staff.Controllers
             {
                 try
                 {
-                    sale.AgentId = await _repositoryWrapper.User.GetUserId(User); 
+                   
+                    sale.AgentId = await _repositoryWrapper.User.GetUserId(User);
+                    UpdateListing(sale);
                     _repositoryWrapper.Sale.CreateSale(_mapper.Map<Sale>(sale));
                     await _repositoryWrapper.SaveAsync();
                 }
@@ -107,10 +109,16 @@ namespace CordEstates.Areas.Staff.Controllers
           
                 return RedirectToAction(nameof(Index));
             }
-            //ViewData["BuyerId"] = new SelectList(_context.Buyers, "Id", "FirstLine", sale.BuyerId);
-
-            ViewBag["Addresses"] = await GetAddresses(null);
+          
+            ViewData["Addresses"] = await GetAddresses(null);
             return View(nameof(Create), sale);
+        }
+
+        private void UpdateListing(SaleManagementDTO sale)
+        {
+            Listing listing = _repositoryWrapper.Listing.GetListingsIdByAddressID(sale.PropertyId);
+            listing.Status = sale.Status;
+            _repositoryWrapper.Listing.UpdateListing(listing);
         }
 
         // GET: Staff/Sale/Edit/5
@@ -121,15 +129,11 @@ namespace CordEstates.Areas.Staff.Controllers
                 _logger.LogError($"{id} passed to the Sale Edit method is invalid");
                 return RedirectToAction(nameof(Index));
             }
+           
+                var sale = _mapper.Map<SaleManagementDTO>(await _repositoryWrapper.Sale.GetSaleByIdAsync(id));
 
-            var sale = _mapper.Map<SaleManagementDTO>(await _repositoryWrapper.Sale.GetSaleByIdAsync(id));
 
-
-
-            //ViewData["BuyerId"] = new SelectList(_context.Buyers, "Id", "FirstLine", sale.BuyerId);
-            //ViewData["AgentId"] = new SelectList(_context.Users, "Id", "Id", sale.AgentId);
-            //ViewData["PropertyId"] = new SelectList(_context.Addresses, "Id", "FirstLine", sale.PropertyId);
-            ViewBag["Addresses"] = await GetAddresses(null);
+           ViewData["Addresses"] = await GetAddresses(null);
             return View(nameof(Edit),sale);
         }
 
@@ -150,6 +154,9 @@ namespace CordEstates.Areas.Staff.Controllers
             {
                 try
                 {
+                    //todo set the sale date.
+                    //todo change the status of the property that has been sold or moved to under contract.
+                    UpdateListing(sale);
                     _repositoryWrapper.Sale.UpdateSale(_mapper.Map<Sale>(sale));
                     await _repositoryWrapper.SaveAsync();
                 } catch(Exception ex)
@@ -159,9 +166,8 @@ namespace CordEstates.Areas.Staff.Controllers
 
                 return RedirectToAction(nameof(Index));
             }
-            //ViewData["BuyerId"] = new SelectList(_context.Buyers, "Id", "FirstLine", sale.BuyerId);
-
-            ViewBag["Addresses"] = await GetAddresses(null);
+          
+            ViewData["Addresses"] = await GetAddresses(null);
             return View(nameof(Edit), sale);
         }
 
@@ -185,11 +191,20 @@ namespace CordEstates.Areas.Staff.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var sale = await _repositoryWrapper.Sale.GetSaleByIdAsync(id);
-            _repositoryWrapper.Sale.DeleteSale(sale);
-            await _repositoryWrapper.SaveAsync();
-            return RedirectToAction(nameof(Index));
-        }
+            try
+            {
+                var sale = await _repositoryWrapper.Sale.GetSaleByIdAsync(id);
+                _repositoryWrapper.Sale.DeleteSale(sale);
+                await _repositoryWrapper.SaveAsync();
+                return RedirectToAction(nameof(Index));
+            }
+              
+            catch (Exception ex)
+            {
+                _logger.LogError($"unable to delete sale: {ex}");
+                return RedirectToAction(nameof(Delete), id);
+    }
+}
 
     }
 }
