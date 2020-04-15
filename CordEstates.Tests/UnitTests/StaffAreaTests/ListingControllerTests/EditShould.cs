@@ -1,7 +1,7 @@
 ﻿using CordEstates.Areas.Staff.Controllers;
 using CordEstates.Areas.Staff.Models.DTOs;
 using CordEstates.Entities;
-using CordEstates.Tests.SetupFixtures;
+using CordEstates.Tests.Setup;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting;
@@ -40,7 +40,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.ListingControllerTests
                     .Setup(x => x.Listing.GetListingByIdAsync(It.IsAny<int>()))
                     .ReturnsAsync(It.IsAny<Listing>);
             fixture.repositoryWrapper.Setup(x => x.Address.GetAllAddressesNotInUseAsync()).ReturnsAsync(new List<Address>() { address });
-            fixture.mapper.Setup(x => x.Map<ListingManagementDTO>(It.IsAny<Listing>())).Returns(new ListingManagementDTO() { Address = address });
+            fixture.mapper.Setup(x => x.Map<ListingManagementDTO>(It.IsAny<Listing>())).Returns(new ListingManagementDTO() { Address =address });
             imageUploadWrapper.Setup(x => x.Upload(It.IsAny<IFormFile>(), It.IsAny<IHostEnvironment>()))
                 .Returns("imageurl");
             fixture.mapper.Setup(x => x.Map<Listing>(It.IsAny<ListingManagementDTO>())).Returns(new Listing() { Id = 1 });

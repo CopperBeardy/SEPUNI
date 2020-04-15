@@ -1,7 +1,7 @@
 ﻿using CordEstates.Areas.Staff.Controllers;
 using CordEstates.Entities;
 using CordEstates.Models.DTOs;
-using CordEstates.Tests.SetupFixtures;
+using CordEstates.Tests.Setup;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using Xunit;
@@ -12,12 +12,12 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AddressControllerTests
     {
         private readonly SetupFixture fixture;
         private readonly AddressController sut;
-        readonly AddressDTO addressDTO;
+        readonly AddressDTO AddressDTO;
 
         public CreateShould()
         {
             fixture = new SetupFixture();
-            addressDTO = new AddressDTO() { Number = "1", FirstLine = "FirstLine", SecondLine = "SecondLine" };
+            AddressDTO = new AddressDTO() { Number = "1", FirstLine = "FirstLine", SecondLine = "SecondLine" };
             sut = new AddressController(fixture.Logger.Object,
                 fixture.repositoryWrapper.Object,
                 fixture.mapper.Object);
@@ -37,11 +37,11 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AddressControllerTests
         [Fact]
         public async void ReturnViewIfModelStateInvalid()
         {
-            AddressDTO addressDTO = new AddressDTO() { Number = "1" };
+            AddressDTO AddressDTO = new AddressDTO() { Number = "1" };
             sut.ModelState.AddModelError(string.Empty, "Invalid AddressDTO");
 
 
-            var result = await sut.Create(addressDTO);
+            var result = await sut.Create(AddressDTO);
 
             var vr = Assert.IsType<ViewResult>(result);
             fixture.repositoryWrapper.Verify(x => x.Address.CreateAddress(It.IsAny<Address>()), Times.Never);
@@ -57,7 +57,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AddressControllerTests
 
 
 
-            var result = await sut.Create(addressDTO);
+            var result = await sut.Create(AddressDTO);
 
             var vr = Assert.IsType<RedirectToActionResult>(result);
             fixture.repositoryWrapper.Verify(x => x.Address.CreateAddress(It.IsAny<Address>()), Times.Once);

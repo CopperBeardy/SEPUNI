@@ -1,7 +1,7 @@
 ﻿using CordEstates.Areas.Staff.Controllers;
 using CordEstates.Entities;
 using CordEstates.Models.DTOs;
-using CordEstates.Tests.SetupFixtures;
+using CordEstates.Tests.Setup;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting;

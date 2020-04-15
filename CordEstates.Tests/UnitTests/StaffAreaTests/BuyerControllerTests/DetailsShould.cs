@@ -1,7 +1,7 @@
 ﻿using CordEstates.Areas.Staff.Controllers;
 using CordEstates.Areas.Staff.Models.DTOs;
 using CordEstates.Entities;
-using CordEstates.Tests.SetupFixtures;
+using CordEstates.Tests.Setup;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using System.Collections.Generic;

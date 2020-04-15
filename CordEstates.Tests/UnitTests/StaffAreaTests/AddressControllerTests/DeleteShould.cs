@@ -1,7 +1,7 @@
 ﻿using CordEstates.Areas.Staff.Controllers;
 using CordEstates.Entities;
 using CordEstates.Models.DTOs;
-using CordEstates.Tests.SetupFixtures;
+using CordEstates.Tests.Setup;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using System;
@@ -13,7 +13,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AddressControllerTests
     {
         private readonly SetupFixture fixture;
         private readonly AddressController sut;
-        private readonly Address address;
+        private readonly Address Address;
 
         public DeleteShould()
         {
@@ -23,10 +23,10 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AddressControllerTests
             sut = new AddressController(fixture.Logger.Object,
                 fixture.repositoryWrapper.Object,
                 fixture.mapper.Object);
-            address = new Address() { Id = 1, FirstLine = "FirstLine", SecondLine = "SecondLine" };
+            Address = new Address() { Id = 1, FirstLine = "FirstLine", SecondLine = "SecondLine" };
             fixture.repositoryWrapper.Setup(x => x.Address.DeleteAddress(It.IsAny<Address>())).Verifiable();
 
-            fixture.repositoryWrapper.Setup(x => x.Address.GetAddressByIdAsync(It.IsAny<int>())).ReturnsAsync(address);
+            fixture.repositoryWrapper.Setup(x => x.Address.GetAddressByIdAsync(It.IsAny<int>())).ReturnsAsync(Address);
 
             fixture.mapper.Setup(x => x.Map<AddressDTO>(It.IsAny<Address>())).Returns(new AddressDTO());
 

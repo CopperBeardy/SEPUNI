@@ -1,7 +1,7 @@
 ﻿using CordEstates.Areas.Staff.Controllers;
 using CordEstates.Entities;
 using CordEstates.Models.DTOs;
-using CordEstates.Tests.SetupFixtures;
+using CordEstates.Tests.Setup;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using Xunit;
@@ -12,7 +12,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AddressControllerTests
     {
         private readonly SetupFixture fixture;
         private readonly AddressController sut;
-        private readonly Address address;
+        private readonly Address Address;
 
         public EditShould()
         {
@@ -22,8 +22,8 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AddressControllerTests
             sut = new AddressController(fixture.Logger.Object,
                 fixture.repositoryWrapper.Object,
                 fixture.mapper.Object);
-            address = new Address() { Id = 1, FirstLine = "FirstLine", SecondLine = "SecondLine" };
-            fixture.repositoryWrapper.Setup(x => x.Address.GetAddressByIdAsync(It.IsAny<int>())).ReturnsAsync(address);
+            Address = new Address() { Id = 1, FirstLine = "FirstLine", SecondLine = "SecondLine" };
+            fixture.repositoryWrapper.Setup(x => x.Address.GetAddressByIdAsync(It.IsAny<int>())).ReturnsAsync(Address);
 
 
             fixture.mapper.Setup(x => x.Map<AddressDTO>(It.IsAny<Address>())).Returns(new AddressDTO());
@@ -62,11 +62,11 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AddressControllerTests
         [Fact]
         public async void ReturnViewIfModelStateInvalid()
         {
-            AddressDTO addressDTO = new AddressDTO() { Number = "1" };
+            AddressDTO AddressDTO = new AddressDTO() { Number = "1" };
             sut.ModelState.AddModelError(string.Empty, "Invalid AddressDTO");
 
 
-            var result = await sut.Edit(addressDTO);
+            var result = await sut.Edit(AddressDTO);
 
             var vr = Assert.IsType<ViewResult>(result);
             fixture.repositoryWrapper.Verify(x => x.Address.UpdateAddress(It.IsAny<Address>()), Times.Never);
@@ -80,10 +80,10 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AddressControllerTests
         [Fact]
         public async void UpdateModelWithAValidModelState()
         {
-            AddressDTO addressDTO = new AddressDTO() { Number = "1" };
+            AddressDTO AddressDTO = new AddressDTO() { Number = "1" };
 
 
-            var result = await sut.Edit(addressDTO);
+            var result = await sut.Edit(AddressDTO);
 
             var vr = Assert.IsType<ViewResult>(result);
             fixture.repositoryWrapper.Verify(x => x.Address.UpdateAddress(It.IsAny<Address>()), Times.Once);

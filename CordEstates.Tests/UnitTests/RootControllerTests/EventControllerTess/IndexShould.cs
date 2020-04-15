@@ -1,7 +1,7 @@
 ﻿using CordEstates.Controllers;
 using CordEstates.Entities;
 using CordEstates.Models.DTOs;
-using CordEstates.Tests.SetupFixtures;
+using CordEstates.Tests.Setup;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using System;

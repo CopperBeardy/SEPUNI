@@ -1,7 +1,7 @@
 ﻿using CordEstates.Areas.Staff.Controllers;
 using CordEstates.Areas.Staff.Models.DTOs;
 using CordEstates.Entities;
-using CordEstates.Tests.SetupFixtures;
+using CordEstates.Tests.Setup;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting;
@@ -38,7 +38,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.ListingControllerTests
             fixture.repositoryWrapper
                     .Setup(x => x.Listing.GetListingByIdAsync(It.IsAny<int>()))
                     .ReturnsAsync(It.IsAny<Listing>);
-            fixture.repositoryWrapper.Setup(x => x.Address.GetAllAddressesNotInUseAsync()).ReturnsAsync(new List<Address>() { address });
+            fixture.repositoryWrapper.Setup(x => x.Address.GetAllAddressesNotInUseAsync()).ReturnsAsync(new List<Address>() { address});
 
             listingManagementDTO = new ListingManagementDTO()
             { Id = 1, Address = new Address() { Id = 1 }, Image = new Photo() { Id = 1, ImageLink = "gfdsfg" }, File = new Mock<IFormFile>().Object };

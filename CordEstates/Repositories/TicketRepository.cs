@@ -13,7 +13,7 @@ namespace CordEstates.Repositories
         public TicketRepository(ApplicationDbContext context) : base(context)
         { }
         public void CreateTicket(Ticket ticket)
-            => CreateTicket(ticket);
+            => Create(ticket);
         public async Task<Ticket> GetTicketByIdAsync(string id)
             => await FindByCondition(i => i.Id.Equals(id)).FirstOrDefaultAsync();
 
