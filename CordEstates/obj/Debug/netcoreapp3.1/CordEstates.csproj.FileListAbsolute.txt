@@ -153,6 +153,7 @@ C:\Projects\SEPUNI\CordEstates\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e
 C:\Projects\SEPUNI\CordEstates\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Projects\SEPUNI\CordEstates\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Projects\SEPUNI\CordEstates\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Projects\SEPUNI\CordEstates\obj\Debug\netcoreapp3.1\CordEstates.csprojAssemblyReference.cache
 C:\Projects\SEPUNI\CordEstates\obj\Debug\netcoreapp3.1\CordEstates.AssemblyInfoInputs.cache
 C:\Projects\SEPUNI\CordEstates\obj\Debug\netcoreapp3.1\CordEstates.AssemblyInfo.cs
 C:\Projects\SEPUNI\CordEstates\obj\Debug\netcoreapp3.1\CordEstates.csproj.CoreCompileInputs.cache
