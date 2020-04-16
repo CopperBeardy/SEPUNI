@@ -15,9 +15,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AgentDashboardControllerTes
     {
         private readonly SetupFixture fixture;
         private readonly AgentDashboardController sut;
-        private readonly ClaimsPrincipal claimsPrincipal;
-
-
+  
         public IndexShould()
         {
             fixture = new SetupFixture();
@@ -27,8 +25,8 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AgentDashboardControllerTes
                 fixture.mapper.Object
               );
             fixture.repositoryWrapper
-             .Setup(x => x.User.GetUserId(claimsPrincipal))
-             .ReturnsAsync(string.Empty);
+           .Setup(x => x.User.GetUserId(new ClaimsPrincipal()))
+           .ReturnsAsync(string.Empty);
             fixture.repositoryWrapper
              .Setup(x => x.Appointment.GetAllAppointmentsByStaffIdAsync(It.IsAny<string>()))
              .ReturnsAsync(new List<Appointment>() { It.IsAny<Appointment>() });

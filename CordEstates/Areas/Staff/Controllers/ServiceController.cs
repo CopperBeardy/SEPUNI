@@ -95,7 +95,7 @@ namespace CordEstates.Areas.Staff.Controllers
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError($"Error occured whilst attempting to update Service with id {id}");
+                    _logger.LogError($"Error occured whilst attempting to update Service with id- {id}: {ex}");
                 }
                 return RedirectToAction(nameof(Index));
             }

@@ -16,7 +16,7 @@ namespace CordEstates.Tests.IntergrationTests.EventRepositoryTests
 {
     public class UpdateShould 
     {
-        DatabaseSetup setup;
+        readonly DatabaseSetup setup;
         public UpdateShould()
         {
             setup = new DatabaseSetup();

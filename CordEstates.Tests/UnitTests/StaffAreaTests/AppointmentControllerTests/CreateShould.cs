@@ -14,8 +14,6 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AppointmentControllerTests
     public class CreateShould
     {
         private readonly SetupFixture fixture;
-        private readonly ClaimsPrincipal claimsPrincipal;
-
         private readonly AppointmentController sut;
 
         public CreateShould()
@@ -28,7 +26,9 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AppointmentControllerTests
 
               );
 
-
+            fixture.repositoryWrapper
+        .Setup(x => x.User.GetUserId(new ClaimsPrincipal()))
+        .ReturnsAsync(string.Empty);
             fixture.repositoryWrapper
                 .Setup(x => x.Appointment.GetAppointmentByIdAsync(It.IsAny<int>()))
                 .ReturnsAsync(new Appointment());
@@ -36,9 +36,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AppointmentControllerTests
                 .Setup(x => x.Listing.GetAllListingsAsync())
                 .ReturnsAsync(new List<Listing>());
 
-            fixture.repositoryWrapper
-                .Setup(x => x.User.GetUserId(claimsPrincipal))
-                .ReturnsAsync(string.Empty);
+      
 
             fixture.mapper.Setup(x => x.Map<CreateAppointmentDTO>(It.IsAny<Appointment>()))
                   .Returns(new CreateAppointmentDTO());
@@ -75,7 +73,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AppointmentControllerTests
         {
 
 
-            CreateAppointmentDTO createAppointmentDTO = new CreateAppointmentDTO() { StaffId = "dsfdsfs", ListingId = 1, Time = It.IsAny<DateTime>() };
+            CreateAppointmentDTO createAppointmentDTO = new CreateAppointmentDTO() { StaffId = "a test", ListingId = 1, Time = It.IsAny<DateTime>() };
             var result = await sut.Create(createAppointmentDTO);
 
             var vr = Assert.IsType<RedirectToActionResult>(result);

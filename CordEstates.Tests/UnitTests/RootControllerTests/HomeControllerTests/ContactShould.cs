@@ -27,16 +27,16 @@ namespace CordEstates.Tests.UnitTests.RootControllerTests.HomeControllerTests
 
 
         [Fact]
-        public async void ShouldCallAddTicket()
+        public void ShouldCallAddTicket()
         {
-            await sut.Contact(It.IsAny<CreateTicketDTO>());
+             sut.Contact(It.IsAny<CreateTicketDTO>());
             fixture.repositoryWrapper.Verify(x => x.Ticket.CreateTicket(It.IsAny<Ticket>()));
         }
 
         [Fact]
-        public async void RedirectOnSuccessfulAddingTicketToDatabase()
+        public  void RedirectOnSuccessfulAddingTicketToDatabase()
         {
-            var result = await sut.Contact(It.IsAny<CreateTicketDTO>());
+            var result =  sut.Contact(It.IsAny<CreateTicketDTO>());
             var redirect = Assert.IsType<RedirectToActionResult>(result);
             fixture.repositoryWrapper.Verify(x => x.Ticket.CreateTicket(It.IsAny<Ticket>()));
             Assert.Equal("Index", redirect.ActionName);
@@ -44,20 +44,20 @@ namespace CordEstates.Tests.UnitTests.RootControllerTests.HomeControllerTests
 
 
         [Fact]
-        public async void ReturnContactViewOnInvalidModelState()
+        public void ReturnContactViewOnInvalidModelState()
         {
             sut.ModelState.AddModelError("FirstName", "Required");
-            var result = await sut.Contact(It.IsAny<CreateTicketDTO>());
+            var result =  sut.Contact(It.IsAny<CreateTicketDTO>());
             var viewResult = Assert.IsType<ViewResult>(result);
             Assert.Equal("Contact", viewResult.ViewName);
         }
 
         [Fact]
 
-        public async void ThrowExceptionIfErrorEncounterAddingTicketToDatabase()
+        public  void ThrowExceptionIfErrorEncounterAddingTicketToDatabase()
         {
             fixture.repositoryWrapper.Setup(x => x.Ticket.CreateTicket(It.IsAny<Ticket>())).Throws<Exception>();
-            await Assert.ThrowsAsync<Exception>(() => sut.Contact(It.IsAny<CreateTicketDTO>()));
+            Assert.Throws<Exception>(() => sut.Contact(It.IsAny<CreateTicketDTO>()));
         }
     }
 }

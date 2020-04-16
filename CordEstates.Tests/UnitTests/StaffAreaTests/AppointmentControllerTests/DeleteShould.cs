@@ -14,7 +14,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AppointmentControllerTests
     public class DeleteShould
     {
         private readonly SetupFixture fixture;
-        private readonly ClaimsPrincipal claimsPrincipal;
+      
 
         private readonly AppointmentController sut;
 
@@ -37,7 +37,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AppointmentControllerTests
                 .ReturnsAsync(new List<Listing>());
 
             fixture.repositoryWrapper
-                .Setup(x => x.User.GetUserId(claimsPrincipal))
+                .Setup(x => x.User.GetUserId(new ClaimsPrincipal()))
                 .ReturnsAsync(string.Empty);
 
             fixture.mapper.Setup(x => x.Map<AppointmentManagementDTO>(It.IsAny<Appointment>()))

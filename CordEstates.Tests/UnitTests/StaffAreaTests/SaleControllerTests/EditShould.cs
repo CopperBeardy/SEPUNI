@@ -18,7 +18,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.SaleControllerTests
     {
         private readonly SetupFixture fixture;
         private readonly SaleController sut;
-        private readonly ClaimsPrincipal claimsPrincipal;
+ 
         public EditShould()
         {
 
@@ -40,8 +40,8 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.SaleControllerTests
 
 
             fixture.repositoryWrapper
-                .Setup(x => x.User.GetUserId(claimsPrincipal))
-                .ReturnsAsync("aasfsdfsdfsffsd");
+                .Setup(x => x.User.GetUserId(new ClaimsPrincipal()))
+                .ReturnsAsync("A test");
 
             fixture.mapper.Setup(x => x.Map<SaleManagementDTO>(It.IsAny<Sale>())).
                     Returns(new SaleManagementDTO() { Id=1});

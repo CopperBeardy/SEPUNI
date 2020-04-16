@@ -1,3 +1,7 @@
+C:\Projects\SEPUNI\CordEstates.Tests\obj\Debug\netcoreapp3.1\CordEstates.Tests.csprojAssemblyReference.cache
+C:\Projects\SEPUNI\CordEstates.Tests\obj\Debug\netcoreapp3.1\CordEstates.Tests.AssemblyInfoInputs.cache
+C:\Projects\SEPUNI\CordEstates.Tests\obj\Debug\netcoreapp3.1\CordEstates.Tests.AssemblyInfo.cs
+C:\Projects\SEPUNI\CordEstates.Tests\obj\Debug\netcoreapp3.1\CordEstates.Tests.csproj.CoreCompileInputs.cache
 C:\Projects\SEPUNI\CordEstates.Tests\bin\Debug\netcoreapp3.1\CordEstates.Views.dll
 C:\Projects\SEPUNI\CordEstates.Tests\bin\Debug\netcoreapp3.1\CordEstates.Views.pdb
 C:\Projects\SEPUNI\CordEstates.Tests\bin\Debug\netcoreapp3.1\appsettings.Development.json
@@ -498,10 +502,6 @@ C:\Projects\SEPUNI\CordEstates.Tests\bin\Debug\netcoreapp3.1\runtimes\win\lib\ne
 C:\Projects\SEPUNI\CordEstates.Tests\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Projects\SEPUNI\CordEstates.Tests\bin\Debug\netcoreapp3.1\CordEstates.dll
 C:\Projects\SEPUNI\CordEstates.Tests\bin\Debug\netcoreapp3.1\CordEstates.pdb
-C:\Projects\SEPUNI\CordEstates.Tests\obj\Debug\netcoreapp3.1\CordEstates.Tests.csprojAssemblyReference.cache
-C:\Projects\SEPUNI\CordEstates.Tests\obj\Debug\netcoreapp3.1\CordEstates.Tests.AssemblyInfoInputs.cache
-C:\Projects\SEPUNI\CordEstates.Tests\obj\Debug\netcoreapp3.1\CordEstates.Tests.AssemblyInfo.cs
-C:\Projects\SEPUNI\CordEstates.Tests\obj\Debug\netcoreapp3.1\CordEstates.Tests.csproj.CoreCompileInputs.cache
 C:\Projects\SEPUNI\CordEstates.Tests\obj\Debug\netcoreapp3.1\CordEstates.Tests.csproj.CopyComplete
 C:\Projects\SEPUNI\CordEstates.Tests\obj\Debug\netcoreapp3.1\CordEstates.Tests.dll
 C:\Projects\SEPUNI\CordEstates.Tests\obj\Debug\netcoreapp3.1\CordEstates.Tests.pdb

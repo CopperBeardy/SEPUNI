@@ -50,7 +50,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.PhotoControllerTests
 
         }
         [Fact]
-        public async void ReturnCreateView()
+        public  void ReturnCreateView()
         {
             var result = sut.CreatePhoto();
             var vr = Assert.IsType<ViewResult>(result);

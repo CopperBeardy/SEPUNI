@@ -16,7 +16,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AppointmentControllerTests
     {
         private readonly SetupFixture fixture;
         private readonly AppointmentController sut;
-        private readonly ClaimsPrincipal claimsPrincipal;
+       
         private readonly EditAppointmentManagementDTO app;
 
         public EditShould()
@@ -35,9 +35,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AppointmentControllerTests
                 .Setup(x => x.Listing.GetAllListingsAsync())
                 .ReturnsAsync(new List<Listing>());
 
-            fixture.repositoryWrapper
-                .Setup(x => x.User.GetUserId(claimsPrincipal))
-                .ReturnsAsync(string.Empty);
+    
             fixture.repositoryWrapper
             .Setup(x => x.Listing.GetAllListingsAsync())
             .ReturnsAsync(new List<Listing>());

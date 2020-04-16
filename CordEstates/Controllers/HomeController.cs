@@ -77,7 +77,7 @@ namespace CordEstates.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Contact(CreateTicketDTO model)
+        public IActionResult Contact(CreateTicketDTO model)
         {
 
             if (ModelState.IsValid)

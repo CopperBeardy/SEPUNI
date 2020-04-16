@@ -41,12 +41,9 @@
 
 
   <ItemGroup>
-    <Folder Include="IntergrationTests\AppointmentRepositoryTests\" />
     <Folder Include="IntergrationTests\ListingRepositoryTests\" />
     <Folder Include="IntergrationTests\UserRepositoryTests\" />
-    <Folder Include="IntergrationTests\ServiceRepositoryTests\" />
     <Folder Include="IntergrationTests\SaleRepositoryTests\" />
-    <Folder Include="IntergrationTests\PhotoRepositoryTests\" />
     <Folder Include="UnitTests\StaffAreaTests\AdminDashboardControllerTests\" />
   </ItemGroup>
 
