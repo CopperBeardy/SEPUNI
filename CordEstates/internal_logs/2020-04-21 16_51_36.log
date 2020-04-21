@@ -1,0 +1,7 @@
+2020-04-21 16:51:36.8308 CordEstates.Helpers.LoggerManager Error occurred when updating user with id 27cdf02f-ebd1-4cd0-9b1c-55d8fcaeb16d; System.InvalidOperationException: A second operation started on this context before a previous operation completed. This is usually caused by different threads using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at CordEstates.Repositories.PhotoRepository.GetPhotoByName(String name) in C:\Projects\SEPUNI\CordEstates\Repositories\PhotoRepository.cs:line 23
+   at CordEstates.Areas.Staff.Controllers.EmployeeController.Edit(String id, EmployeeManagementDTO userManagementDTO) in C:\Projects\SEPUNI\CordEstates\Areas\Staff\Controllers\EmployeeController.cs:line 101

@@ -62,54 +62,68 @@ namespace CordEstates.Areas.Staff.Controllers
       
         }
 
-
+        #region edit
         // GET: Staff/User/Edit/5
-        public async Task<IActionResult> Edit(string id)
-        {
-            if (id == null)
-            {
-                return RedirectToAction(nameof(Index));
-            }
+        //public async Task<IActionResult> Edit(string id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return RedirectToAction(nameof(Index));
+        //    }
 
-            var usermangagementDTO = _mapper.Map<EmployeeManagementDTO>(await _repositoryWrapper.Employee.GetStaffByIdAsync(id));
+        //    var usermangagementDTO = _mapper.Map<EmployeeManagementDTO>(await _repositoryWrapper.Employee.GetStaffByIdAsync(id));
 
-            return View(nameof(Edit), usermangagementDTO);
-        }
+        //    return View(nameof(Edit), usermangagementDTO);
+        //}
 
-        // POST: Staff/User/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, EmployeeManagementDTO userManagementDTO)
-        {
-            if (id != userManagementDTO.Id)
-            {
-                return RedirectToAction(nameof(Index));
-            }
+        //// POST: Staff/User/Edit/5
+        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        //// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Edit(string id, EmployeeManagementDTO userManagementDTO)
+        //{
+        //    if (id != userManagementDTO.Id)
+        //    {
+        //        return RedirectToAction(nameof(Index));
+        //    }
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    if (userManagementDTO.File != null)
-                    {
-                        userManagementDTO.HeadShot = new Photo()
-                        { ImageLink = _imageUploadWrapper.Upload(userManagementDTO.File, _hostEnvironment) };
-                    }
+        //    if (ModelState.IsValid)
+        //    {
+        //        try
+        //        {
+        //            var mapped = _mapper.Map<ApplicationUser>(userManagementDTO);
+        //            if (userManagementDTO.File != null)
+        //            {
+        //                //    var photo = new Photo(){ ImageLink = _imageUploadWrapper.Upload(userManagementDTO.File, _hostEnvironment) };
+        //                //    _repositoryWrapper.Photo.UploadPhoto(photo);
+        //                //   await _repositoryWrapper.SaveAsync();
+        //                //    mapped.HeadShot = await _repositoryWrapper.Photo.GetPhotoByName(photo.ImageLink);
+        //                //
+        //                mapped.HeadShot = new Photo()
+        //                {
+        //                    ImageLink = _imageUploadWrapper.Upload(userManagementDTO.File, _hostEnvironment)
+        //                };
+        //            }
+        //            else
+        //            {
+        //                var employee = await _repositoryWrapper.Employee.GetStaffByIdAsync(id);
+        //                mapped.HeadShot = employee.HeadShot;
+        //            }
 
+        //           await _repositoryWrapper.Employee.UpdateUser(mapped);
+        //            await _repositoryWrapper.SaveAsync();
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            _logger.LogError($"Error occurred when updating user with id {id}; {ex}");
+        //        }
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    return View(nameof(Edit), userManagementDTO);
+        //}
 
-                    _repositoryWrapper.Employee.UpdateUser(_mapper.Map<ApplicationUser>(userManagementDTO));
-                    await _repositoryWrapper.SaveAsync();
-                }
-                catch (Exception ex)
-                {
-                    _logger.LogError($"Error occurred when updating user with id {id}; {ex}");
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(nameof(Edit), userManagementDTO);
-        }
+#endregion
 
         // GET: Staff/User/Delete/5
         public async Task<IActionResult> Delete(string id)

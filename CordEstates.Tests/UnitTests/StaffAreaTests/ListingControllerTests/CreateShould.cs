@@ -20,6 +20,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.ListingControllerTests
         private readonly Mock<IImageUploadWrapper> imageUploadWrapper;
         private readonly ListingManagementDTO listingManagementDTO;
         private readonly Address address;
+        private readonly Address address2;
         public CreateShould()
         {
             fixture = new SetupFixture();
@@ -33,27 +34,21 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.ListingControllerTests
                                         env.Object,
                                         imageUploadWrapper.Object);
 
-            address = new Address()
-            { FirstLine = "TestFirstLine", Number = "23", TownCity = "TestCity", Postcode = "Xf343xs", Id = 1 };
-
+            address = new Address() { FirstLine = "TestFirstLine", Number = "23", TownCity = "TestCity", Postcode = "Xf343xs", Id = 1 };
+            address2 = new Address() { FirstLine = "FirstLine", Number = "33", TownCity = "TestCity", Postcode = "Xf343xs", Id = 1 };
             fixture.repositoryWrapper
                     .Setup(x => x.Listing.GetListingByIdAsync(It.IsAny<int>()))
                     .ReturnsAsync(It.IsAny<Listing>);
-
-            fixture.repositoryWrapper.Setup(x => x.Address.GetAllAddressesNotInUseAsync())
-                .ReturnsAsync(new List<Address>() { address});
-
-            listingManagementDTO = new ListingManagementDTO()
-            { Id = 1, Address = new Address() { Id = 1 }, 
-                Image = new Photo() { Id = 1, ImageLink = "gfdsfg" }, File = new Mock<IFormFile>().Object };
-
-            fixture.mapper.Setup(x => x.Map<ListingManagementDTO>(It.IsAny<Listing>()))
-                .Returns(listingManagementDTO);
-            fixture.mapper.Setup(x => x.Map<Listing>(It.IsAny<ListingManagementDTO>()))
-                .Returns(new Listing() { Id = 1 });
-
+            fixture.repositoryWrapper.Setup(x => x.Address.GetAllAddressesNotInUseAsync()).ReturnsAsync(new List<Address>() { address });
+            fixture.repositoryWrapper.Setup(x => x.Address.GetAddressByIdAsync(It.IsAny<int>())).ReturnsAsync(address2);
+            fixture.mapper.Setup(x => x.Map<ListingManagementDTO>(It.IsAny<Listing>())).Returns(new ListingManagementDTO() { Address = address });
             imageUploadWrapper.Setup(x => x.Upload(It.IsAny<IFormFile>(), It.IsAny<IHostEnvironment>()))
                 .Returns("imageurl");
+            fixture.mapper.Setup(x => x.Map<Listing>(It.IsAny<ListingManagementDTO>())).Returns(new Listing() { Id = 1 });
+
+
+            listingManagementDTO = new ListingManagementDTO()
+            { Id = 1, Address = new Address() { Id = 1 }, File = new Mock<IFormFile>().Object };
 
         }
         [Fact]

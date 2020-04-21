@@ -46,7 +46,11 @@ namespace CordEstates.Repositories
             return agents;
         }
 
-        public void UpdateUser(ApplicationUser user) => Update(user);
+        //public async Task UpdateUser(ApplicationUser user)
+        //{ 
+        //    await _userManager.UpdateAsync(user);
+        //}
+
 
         public void DeleteUser(ApplicationUser user) => Delete(user);
 

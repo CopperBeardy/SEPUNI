@@ -13,7 +13,7 @@ namespace CordEstates.Repositories.Interfaces
         Task<List<ApplicationUser>> GetAllUsers();
         bool Exists(string id);
         void DeleteUser(ApplicationUser user);
-        void UpdateUser(ApplicationUser user);
+        //Task UpdateUser(ApplicationUser user);
    
         Task<List<ApplicationUser>> GetAllStaffAsync();
         Task<ApplicationUser> GetStaffByIdAsync(string id);

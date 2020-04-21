@@ -58,7 +58,7 @@ namespace CordEstates.Profiles
             CreateMap<List<Sale>, SaleManagementDTO>().ReverseMap();
 
 
-            CreateMap<Service, ServiceDTO>();
+            CreateMap<Service, ServiceDTO>().ReverseMap();
 
            
             CreateMap<Ticket, CreateTicketDTO>().ReverseMap();

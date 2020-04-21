@@ -1,4 +1,7 @@
+using System;
+using NLog.Web;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Hosting;
 
 namespace CordEstates
@@ -15,6 +18,11 @@ namespace CordEstates
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                });
+                }).ConfigureLogging(logging =>
+                {
+                    logging.ClearProviders();
+                    logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
+                })
+      .UseNLog();
     }
 }

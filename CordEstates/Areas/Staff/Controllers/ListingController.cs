@@ -75,6 +75,11 @@ namespace CordEstates.Areas.Staff.Controllers
         private async Task<List<SelectListItem>> GetAddresses(int? id)
         {
             List<Address> addressEntities = await _repositoryWrapper.Address.GetAllAddressesNotInUseAsync();
+
+            if(id != null)
+            {
+                addressEntities.Add(await _repositoryWrapper.Address.GetAddressByIdAsync(id));
+            }
             List<SelectListItem> addresses = new List<SelectListItem>();
             foreach (Address address in addressEntities)
             {

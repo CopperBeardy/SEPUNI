@@ -64,20 +64,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.EventControllerTests
         public async void CallCreateEventInRepository()
         {
 
-            fixture = new SetupFixture();
-
-            env = new Mock<IHostEnvironment>();
-            imageUploadWrapper = new Mock<IImageUploadWrapper>();
-            env.Setup(m => m.EnvironmentName).Returns("Hosting:UnitTestEnvironment");
-            sut = new EventController(fixture.Logger.Object,
-                                      fixture.repositoryWrapper.Object,
-                                      fixture.mapper.Object,
-                                      env.Object,
-                                      imageUploadWrapper.Object);
-            fixture.mapper.Setup(x => x.Map<EventManagementDTO>(It.IsAny<Event>())).Verifiable();
-            imageUploadWrapper.Setup(x => x.Upload(It.IsAny<IFormFile>(), It.IsAny<IHostEnvironment>()))
-                .Returns("imageurl");
-
+           
             EventManagementDTO uploadEventDTO = new EventManagementDTO()
             {
                 Active = true,

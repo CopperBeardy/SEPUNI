@@ -1,0 +1,8 @@
+2020-04-21 16:18:34.8670 CordEstates.Helpers.LoggerManager Error occured whilst attempting to update Service with id- 1: AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+ServiceDTO -> Service
+CordEstates.Models.DTOs.ServiceDTO -> CordEstates.Entities.Service
+   at lambda_method(Closure , ServiceDTO , Service , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at CordEstates.Areas.Staff.Controllers.ServiceController.Edit(Int32 id, ServiceDTO serviceDTO) in C:\Projects\SEPUNI\CordEstates\Areas\Staff\Controllers\ServiceController.cs:line 91

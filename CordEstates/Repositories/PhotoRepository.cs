@@ -20,6 +20,7 @@ namespace CordEstates.Repositories
 
         public async Task<List<Photo>> GetAllPhotosAsync() => await FindAll().ToListAsync();
         public async Task<Photo> GetPhotoByIdAsync(int id) => await FindByCondition(x => x.Id.Equals(id)).FirstOrDefaultAsync();
+        public async Task<Photo> GetPhotoByName(string name) => await FindByCondition(x => x.ImageLink.Equals(name)).FirstOrDefaultAsync();
 
         public void UploadPhoto(Photo photo) => Create(photo);
     }

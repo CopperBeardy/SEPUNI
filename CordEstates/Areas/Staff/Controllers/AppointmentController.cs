@@ -66,7 +66,7 @@ namespace CordEstates.Areas.Staff.Controllers
             { StaffId = await _repositoryWrapper.Employee.GetUserId(User) };
 
             ViewBag.listing = list;
-
+            ViewData["UserId"] = await _repositoryWrapper.Employee.GetUserId(User);
             return View(nameof(Create), app);
         }
 
@@ -136,6 +136,7 @@ namespace CordEstates.Areas.Staff.Controllers
             {
                 try
                 {
+                 
                     Appointment app = _mapper.Map<Appointment>(appointment);
 
 

@@ -21,6 +21,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.ListingControllerTests
         private readonly Mock<IImageUploadWrapper> imageUploadWrapper;
         private readonly ListingManagementDTO listingManagementDTO;
         private readonly Address address;
+        private readonly Address address2;
         public EditShould()
         {
             fixture = new SetupFixture();
@@ -34,12 +35,13 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.ListingControllerTests
                                         env.Object,
                                         imageUploadWrapper.Object);
 
-            address = new Address()
-            { FirstLine = "TestFirstLine", Number = "23", TownCity = "TestCity", Postcode = "Xf343xs", Id = 1 };
+            address = new Address() { FirstLine = "TestFirstLine", Number = "23", TownCity = "TestCity", Postcode = "Xf343xs", Id = 1 };
+            address2 = new Address() { FirstLine = "FirstLine", Number = "33", TownCity = "TestCity", Postcode = "Xf343xs", Id = 1 };
             fixture.repositoryWrapper
                     .Setup(x => x.Listing.GetListingByIdAsync(It.IsAny<int>()))
                     .ReturnsAsync(It.IsAny<Listing>);
             fixture.repositoryWrapper.Setup(x => x.Address.GetAllAddressesNotInUseAsync()).ReturnsAsync(new List<Address>() { address });
+            fixture.repositoryWrapper.Setup(x => x.Address.GetAddressByIdAsync(It.IsAny<int>())).ReturnsAsync(address2);
             fixture.mapper.Setup(x => x.Map<ListingManagementDTO>(It.IsAny<Listing>())).Returns(new ListingManagementDTO() { Address =address });
             imageUploadWrapper.Setup(x => x.Upload(It.IsAny<IFormFile>(), It.IsAny<IHostEnvironment>()))
                 .Returns("imageurl");
