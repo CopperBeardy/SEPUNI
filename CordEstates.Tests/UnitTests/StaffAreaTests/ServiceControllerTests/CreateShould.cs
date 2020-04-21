@@ -20,14 +20,14 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.ServiceControllerTests
 
             sut = new ServiceController(fixture.Logger.Object,
                 fixture.repositoryWrapper.Object,
-                fixture.mapper.Object
-              );
-
+                fixture.mapper.Object);
 
             fixture.repositoryWrapper
                .Setup(x => x.Service.GetServiceByIdAsync(It.IsAny<int>()))
                .ReturnsAsync(new Service());
-            fixture.mapper.Setup(x => x.Map<ServiceDTO>(It.IsAny<Service>())).Returns(new ServiceDTO());
+            
+            fixture.mapper.Setup(x => x.Map<ServiceDTO>(It.IsAny<Service>()))
+                .Returns(new ServiceDTO());
 
         }
 

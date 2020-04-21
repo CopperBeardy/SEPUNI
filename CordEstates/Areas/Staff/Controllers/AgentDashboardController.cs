@@ -31,7 +31,7 @@ namespace CordEstates.Areas.Staff.Controllers
         // GET: Employees/Appointment
         public async Task<IActionResult> Index()
         {
-            string id = await _repositoryWrapper.User.GetUserId(User);
+            string id = await _repositoryWrapper.Employee.GetUserId(User);
             List<AppointmentDTO> appointments =
                 _mapper.Map<List<AppointmentDTO>>(await _repositoryWrapper.Appointment.GetAllAppointmentsByStaffIdAsync(id));
             appointments = appointments.OrderBy(o => o.Time).ToList();

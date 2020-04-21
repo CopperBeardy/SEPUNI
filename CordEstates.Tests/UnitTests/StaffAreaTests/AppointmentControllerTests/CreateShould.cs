@@ -27,7 +27,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AppointmentControllerTests
               );
 
             fixture.repositoryWrapper
-        .Setup(x => x.User.GetUserId(new ClaimsPrincipal()))
+        .Setup(x => x.Employee.GetUserId(new ClaimsPrincipal()))
         .ReturnsAsync(string.Empty);
             fixture.repositoryWrapper
                 .Setup(x => x.Appointment.GetAppointmentByIdAsync(It.IsAny<int>()))

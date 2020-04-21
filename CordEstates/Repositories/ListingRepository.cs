@@ -34,6 +34,8 @@ namespace CordEstates.Repositories
 
         public async Task<List<Listing>> GetLandingPageListingsAsync(int amount)
             => await FindAll().Take(amount).Include(x => x.Image).ToListAsync();
+
+
         public Listing GetListingsIdByAddressID(int id)
         {
             return  _context.Listings.FirstOrDefault(x => x.AddressId.Equals(id));

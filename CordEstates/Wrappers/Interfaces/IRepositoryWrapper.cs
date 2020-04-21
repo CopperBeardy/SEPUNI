@@ -13,7 +13,7 @@ namespace CordEstates.Wrappers.Interfaces
 
         IEventRepository Event { get; }
 
-        IUserRepository User { get; }
+        IEmployeeRepository Employee { get; }
 
         IAppointmentRepository Appointment { get; }
 

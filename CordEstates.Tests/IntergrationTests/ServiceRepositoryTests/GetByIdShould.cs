@@ -1,5 +1,4 @@
-﻿using CordEstates.Areas.Identity.Data;
-using CordEstates.Entities;
+﻿using CordEstates.Entities;
 using CordEstates.Repositories;
 using CordEstates.Tests.Setup;
 using Microsoft.EntityFrameworkCore;
@@ -13,7 +12,7 @@ using Xunit.Sdk;
 
 namespace CordEstates.Tests.IntergrationTests.ServiceRepositoryTests
 {
-    public class GetByIdShould 
+    public class GetByIdShould
     {
         readonly DatabaseSetup setup;
         public GetByIdShould()
@@ -22,30 +21,26 @@ namespace CordEstates.Tests.IntergrationTests.ServiceRepositoryTests
         }
 
         [Fact]
-        public async void GetServiceById() 
+        public async void GetServiceById()
         {
-           var s = setup.services.First();
-           setup.context.Add(s);
-
+            var s = setup.services.First();
+            setup.context.Add(s);
 
             setup.context.SaveChanges();
 
             var id = setup.context.Services.First().Id;
-           
-           var service = await setup.serviceRepository.GetServiceByIdAsync(id);
-            
-        
 
-            using(setup.contextConfirm)
+            var service = await setup.serviceRepository.GetServiceByIdAsync(id);
+
+            using (setup.contextConfirm)
             {
-                var result = setup.contextConfirm.Services.First();            
+                var result = setup.contextConfirm.Services.First();
                 Assert.IsAssignableFrom<Service>(service);
                 Assert.IsAssignableFrom<Service>(result);
                 Assert.Equal(service.Id, result.Id);
-            
             }
-           
+
         }
-  
+
     }
 }

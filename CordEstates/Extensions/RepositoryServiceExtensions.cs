@@ -18,7 +18,7 @@ namespace CordEstates.Extensions
             services.AddTransient<IListingRepository, ListingRepository>();
             services.AddTransient<IServiceRepository, ServiceRepository>();
             services.AddTransient<IEventRepository, EventRepository>();
-            services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IEmployeeRepository, EmployeeRepository>();
             services.AddTransient<IAppointmentRepository, AppointmentRepository>();
             services.AddTransient<IBuyerRepository, BuyerRepository>();
             services.AddTransient<ISaleRepository, SaleRepository>();

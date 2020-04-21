@@ -71,6 +71,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.ListingControllerTests
         [InlineData(-5434)]
         public async void RedirectToIndexForInvalidId(int? id)
         {
+
             var result = await sut.Edit(id);
 
             Assert.IsAssignableFrom<RedirectToActionResult>(result);
@@ -108,6 +109,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.ListingControllerTests
         public async void UpdateModelWhenImageChanged()
         {
 
+         
             var result = await sut.Edit(1, listingManagementDTO);
             Assert.IsAssignableFrom<RedirectToActionResult>(result);
 

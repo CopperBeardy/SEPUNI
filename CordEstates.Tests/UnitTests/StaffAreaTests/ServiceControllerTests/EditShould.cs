@@ -25,6 +25,8 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.ServiceControllerTests
             fixture.repositoryWrapper
                 .Setup(x => x.Service.GetServiceByIdAsync(It.IsAny<int>()))
                 .ReturnsAsync(new Service());
+
+
             fixture.mapper.Setup(x => x.Map<ServiceDTO>(It.IsAny<Service>())).Returns(new ServiceDTO());
 
             service = new ServiceDTO() { Id = 1, };

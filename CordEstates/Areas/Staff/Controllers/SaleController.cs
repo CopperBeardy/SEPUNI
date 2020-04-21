@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using CordEstates.Areas.Identity.Data;
 using CordEstates.Entities;
 using Microsoft.AspNetCore.Authorization;
 using AutoMapper;
@@ -96,7 +95,7 @@ namespace CordEstates.Areas.Staff.Controllers
                 try
                 {
                    
-                    sale.AgentId = await _repositoryWrapper.User.GetUserId(User);
+                    sale.AgentId = await _repositoryWrapper.Employee.GetUserId(User);
                     UpdateListing(sale);
                     _repositoryWrapper.Sale.CreateSale(_mapper.Map<Sale>(sale));
                     await _repositoryWrapper.SaveAsync();

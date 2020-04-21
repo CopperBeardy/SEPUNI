@@ -23,7 +23,7 @@ namespace CordEstates.Tests.Setup
         public EventRepository eventRepository;
         public ListingRepository listingRepository;
         public ServiceRepository serviceRepository;
-        public UserRepository userRepository;
+        public EmployeeRepository userRepository;
         public PhotoRepository photoRepository;
         public BuyerRepository buyerRepository;
         public SaleRepository saleRepository;
@@ -38,7 +38,7 @@ namespace CordEstates.Tests.Setup
         public List<Sale> sales;
         public List<Service> services;
         public List<Ticket> tickets;
-
+        public List<ApplicationUser> users;
 
         public DatabaseSetup()
         {
@@ -147,7 +147,7 @@ namespace CordEstates.Tests.Setup
             listings = new List<Listing>() {
                 new Listing { Id=1,  AddressId= 1, ImageId= 1, Price=44000, Status= SaleStatus.ForSale, Description="blah blskdf sdf sdf sdf sdfwef fwejfegu sdfmsdf msdfm sdfo sdf " },
                 new Listing { Id=2, AddressId= 2, ImageId= 2, Price=112000, Status= SaleStatus.ForSale, Description="blah blskdf sdf sdf sdf sdfwef fwejfegu sdfmsdf msdfm sdfo sdf " },
-                new Listing { Id=3, AddressId= 3, ImageId= 3, Price=68000, Status= SaleStatus.ForSale, Description="blah blskdf sdf sdf sdf sdfwef fwejfegu sdfmsdf msdfm sdfo sdf " },
+                new Listing { Id=3, AddressId= 3, ImageId= 3, Price=68000, Status= SaleStatus.Sold, Description="blah blskdf sdf sdf sdf sdfwef fwejfegu sdfmsdf msdfm sdfo sdf " },
                };
 
             
@@ -181,8 +181,13 @@ events = new List<Event>()
                 new Service {Id=3, ServiceName="Service 3", Description="this is the description for the Service 3 for the project" }
             };
 
-           
-
+            users = new List<ApplicationUser>()
+            {
+                new ApplicationUser { Id = "User1", Bio = "bio1", Email = "user1@user.com", FirstName = "user1", LastName = "user1" },
+                new ApplicationUser { Id = "User2", Bio = "bio2", Email = "user2@user.com", FirstName = "user2", LastName = "user2" },
+                new ApplicationUser { Id = "User3", Bio = "bio2", Email = "user3@user.com", FirstName = "user3", LastName = "user3" },
+            }; 
+            
 
         }
 

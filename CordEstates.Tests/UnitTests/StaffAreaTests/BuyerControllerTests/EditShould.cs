@@ -94,6 +94,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.BuyerControllerTests
         [Fact]
         public async void ThrowDbUpdateConcurrentExceptionWhenUpdatingBuyer()
         {
+
             fixture.repositoryWrapper.Setup(x => x.Buyer.UpdateBuyer(It.IsAny<Buyer>())).Throws(new Exception("error in the update process"));
 
 

@@ -52,7 +52,7 @@ namespace CordEstates.Controllers
             List<UserDTO> staff = new List<UserDTO>();
             try
             {
-                var mod = await _repositoryWrapper.User.GetAllStaffAsync();
+                var mod = await _repositoryWrapper.Employee.GetAllStaffAsync();
                 staff = _mapper.Map<List<UserDTO>>(mod);
 
             }

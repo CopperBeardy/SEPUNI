@@ -23,7 +23,7 @@ namespace CordEstates.Tests.UnitTests.RootControllerTests.HomeControllerTests
             sut = new HomeController(fixture.Logger.Object,
                 fixture.mapper.Object,
                 fixture.repositoryWrapper.Object);
-            fixture.repositoryWrapper.Setup(x => x.User.GetAllStaffAsync()).ReturnsAsync(It.IsAny<List<ApplicationUser>>());
+            fixture.repositoryWrapper.Setup(x => x.Employee.GetAllStaffAsync()).ReturnsAsync(It.IsAny<List<ApplicationUser>>());
             fixture.mapper.Setup(x => x.Map<List<UserDTO>>(It.IsAny<List<UserDTO>>())).Returns(new List<UserDTO>());
 
         }

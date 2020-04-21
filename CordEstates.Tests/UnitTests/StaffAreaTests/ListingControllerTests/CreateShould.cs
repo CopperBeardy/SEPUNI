@@ -35,23 +35,25 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.ListingControllerTests
 
             address = new Address()
             { FirstLine = "TestFirstLine", Number = "23", TownCity = "TestCity", Postcode = "Xf343xs", Id = 1 };
+
             fixture.repositoryWrapper
                     .Setup(x => x.Listing.GetListingByIdAsync(It.IsAny<int>()))
                     .ReturnsAsync(It.IsAny<Listing>);
-            fixture.repositoryWrapper.Setup(x => x.Address.GetAllAddressesNotInUseAsync()).ReturnsAsync(new List<Address>() { address});
+
+            fixture.repositoryWrapper.Setup(x => x.Address.GetAllAddressesNotInUseAsync())
+                .ReturnsAsync(new List<Address>() { address});
 
             listingManagementDTO = new ListingManagementDTO()
-            { Id = 1, Address = new Address() { Id = 1 }, Image = new Photo() { Id = 1, ImageLink = "gfdsfg" }, File = new Mock<IFormFile>().Object };
+            { Id = 1, Address = new Address() { Id = 1 }, 
+                Image = new Photo() { Id = 1, ImageLink = "gfdsfg" }, File = new Mock<IFormFile>().Object };
 
-            fixture.mapper.Setup(x => x.Map<ListingManagementDTO>(It.IsAny<Listing>())).Returns(listingManagementDTO);
-            fixture.mapper.Setup(x => x.Map<Listing>(It.IsAny<ListingManagementDTO>())).Returns(new Listing() { Id = 1 });
-
-
-
+            fixture.mapper.Setup(x => x.Map<ListingManagementDTO>(It.IsAny<Listing>()))
+                .Returns(listingManagementDTO);
+            fixture.mapper.Setup(x => x.Map<Listing>(It.IsAny<ListingManagementDTO>()))
+                .Returns(new Listing() { Id = 1 });
 
             imageUploadWrapper.Setup(x => x.Upload(It.IsAny<IFormFile>(), It.IsAny<IHostEnvironment>()))
                 .Returns("imageurl");
-
 
         }
         [Fact]
@@ -67,7 +69,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.ListingControllerTests
         public async void ReturnViewIfModelStateInvalid()
         {
 
-            sut.ModelState.AddModelError(string.Empty, "Invalid UploadEventDTO");
+            sut.ModelState.AddModelError(string.Empty, "Invalid ListingDTO");
 
             var result = await sut.Create(listingManagementDTO);
 

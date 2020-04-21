@@ -40,7 +40,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.SaleControllerTests
 
 
             fixture.repositoryWrapper
-                .Setup(x => x.User.GetUserId(new ClaimsPrincipal()))
+                .Setup(x => x.Employee.GetUserId(new ClaimsPrincipal()))
                 .ReturnsAsync("A test");
 
             fixture.mapper.Setup(x => x.Map<SaleManagementDTO>(It.IsAny<Sale>())).

@@ -14,9 +14,9 @@ namespace CordEstates.Profiles
             CreateMap<Address, AddressDTO>().ReverseMap();
 
 
-         CreateMap<ApplicationUser, UserManagementDTO>()
+         CreateMap<ApplicationUser, EmployeeManagementDTO>()
                     .ForMember(des => des.HeadShot, o => o.MapFrom(src => src.HeadShot)).ReverseMap();
-            CreateMap<List<ApplicationUser>, UserManagementDTO>().ReverseMap();
+            CreateMap<List<ApplicationUser>, EmployeeManagementDTO>().ReverseMap();
             CreateMap<ApplicationUser, UserDTO>()
                 .ForMember(des => des.FirstName, o => o.MapFrom(src => src.FirstName))
                 .ForMember(des => des.LastName, o => o.MapFrom(src => src.LastName))

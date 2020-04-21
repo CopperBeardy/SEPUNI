@@ -63,7 +63,7 @@ namespace CordEstates.Areas.Staff.Controllers
         {
             List<SelectListItem> list = await ParseListingForSelectList();
             CreateAppointmentDTO app = new CreateAppointmentDTO()
-            { StaffId = await _repositoryWrapper.User.GetUserId(User) };
+            { StaffId = await _repositoryWrapper.Employee.GetUserId(User) };
 
             ViewBag.listing = list;
 

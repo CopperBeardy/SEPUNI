@@ -80,7 +80,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.PhotoControllerTests
 
 
         [Fact]
-        public async void CallDeleteEventModelWithAValidModel()
+        public async void CallDeletePhotoWithAValidModel()
         {
             var result = await sut.DeleteConfirmed(It.IsAny<int>());
 

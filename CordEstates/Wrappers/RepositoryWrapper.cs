@@ -18,7 +18,7 @@ namespace CordEstates.Wrappers
         private ListingRepository _listing;
         private ServiceRepository _service;
         private TicketRepository _ticket;
-        private UserRepository _user;
+        private EmployeeRepository _employee;
         private PhotoRepository _photo;
         private BuyerRepository _buyer;
         private SaleRepository _sale;
@@ -84,16 +84,16 @@ namespace CordEstates.Wrappers
                 return _event;
             }
         }
-        public IUserRepository User
+        public IEmployeeRepository Employee
         {
             get
             {
-                if (_user == null)
+                if (_employee == null)
                 {
-                    _user = new UserRepository(_context, _userManager);
+                    _employee = new EmployeeRepository(_context, _userManager);
                 }
 
-                return _user;
+                return _employee;
             }
         }
         public IAppointmentRepository Appointment

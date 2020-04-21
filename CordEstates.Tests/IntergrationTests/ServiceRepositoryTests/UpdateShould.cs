@@ -1,6 +1,4 @@
-﻿using CordEstates.Areas.Identity.Data;
-using CordEstates.Entities;
-using CordEstates.Repositories;
+﻿using CordEstates.Repositories;
 using CordEstates.Tests.Setup;
 using Microsoft.EntityFrameworkCore;
 using System;

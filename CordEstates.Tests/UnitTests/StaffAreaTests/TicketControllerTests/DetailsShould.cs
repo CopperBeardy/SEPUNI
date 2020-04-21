@@ -26,7 +26,8 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.TicketControllerTests
             fixture.repositoryWrapper
              .Setup(x => x.Ticket.GetTicketByIdAsync(It.IsAny<string>()))
              .ReturnsAsync(new Ticket());
-            fixture.mapper.Setup(x => x.Map<TicketManagementDTO>(It.IsAny<Ticket>())).Returns(new TicketManagementDTO());
+            fixture.mapper.Setup(x => x.Map<TicketManagementDTO>(It.IsAny<Ticket>()))
+                .Returns(new TicketManagementDTO());
 
         }
 
@@ -37,6 +38,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.TicketControllerTests
         [InlineData("sdfsd")]
         public async void ReturnValidModelForCorrectId(string id)
         {
+
 
             var result = await sut.Details(id);
             var vr = Assert.IsType<ViewResult>(result);

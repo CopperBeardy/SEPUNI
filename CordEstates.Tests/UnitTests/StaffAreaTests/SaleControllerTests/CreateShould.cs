@@ -33,14 +33,11 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.SaleControllerTests
             fixture.repositoryWrapper
                 .Setup(x => x.Listing.GetListingsIdByAddressID(It.IsAny<int>())).Returns(new Listing() { Id = 1 });
 
-
             fixture.repositoryWrapper
                 .Setup(x => x.Address.GetAllAddressesAsync()).ReturnsAsync(new List<Address>() { new Address() { Id=1,Number="23",FirstLine="test"} });
 
-
-
             fixture.repositoryWrapper
-                .Setup(x => x.User.GetUserId(new ClaimsPrincipal()))
+                .Setup(x => x.Employee.GetUserId(new ClaimsPrincipal()))
                 .ReturnsAsync("a test");
 
             fixture.mapper
@@ -78,7 +75,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.SaleControllerTests
 
 
         [Fact]
-        public async void CallCreateEventInRepository()
+        public async void CallCreateSaleInRepository()
         {
 
             fixture.repositoryWrapper.Setup(x => x.Sale.CreateSale(It.IsAny<Sale>()));

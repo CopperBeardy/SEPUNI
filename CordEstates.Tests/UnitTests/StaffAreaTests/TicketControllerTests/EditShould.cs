@@ -27,7 +27,8 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.TicketControllerTests
             fixture.repositoryWrapper
              .Setup(x => x.Ticket.GetTicketByIdAsync(It.IsAny<string>()))
              .ReturnsAsync(new Ticket());
-            fixture.mapper.Setup(x => x.Map<TicketManagementDTO>(It.IsAny<Ticket>())).Returns(new TicketManagementDTO());
+            fixture.mapper.Setup(x => x.Map<TicketManagementDTO>(It.IsAny<Ticket>()))
+                .Returns(new TicketManagementDTO());
 
         }
 
@@ -89,10 +90,11 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.TicketControllerTests
 
 
         [Fact]
-        public async void UpdateModel()
+        public async void CallUpdateTicketInRepository()
         {
+
             string id = "Matching";
-            TicketManagementDTO tm = new TicketManagementDTO() { Id = "Matching" };
+            TicketManagementDTO tm = new TicketManagementDTO() { Id = "Matching",Actioned=true };
 
             var result = await sut.Edit(id, tm);
             Assert.IsAssignableFrom<RedirectToActionResult>(result);

@@ -37,7 +37,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AppointmentControllerTests
                 .ReturnsAsync(new List<Listing>());
 
             fixture.repositoryWrapper
-                .Setup(x => x.User.GetUserId(new ClaimsPrincipal()))
+                .Setup(x => x.Employee.GetUserId(new ClaimsPrincipal()))
                 .ReturnsAsync(string.Empty);
 
             fixture.mapper.Setup(x => x.Map<AppointmentManagementDTO>(It.IsAny<Appointment>()))

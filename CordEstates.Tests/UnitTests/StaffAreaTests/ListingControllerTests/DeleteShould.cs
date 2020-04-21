@@ -1,12 +1,15 @@
-﻿using CordEstates.Areas.Staff.Controllers;
+﻿using CordEstates.Areas.Identity.Data;
+using CordEstates.Areas.Staff.Controllers;
 using CordEstates.Areas.Staff.Models.DTOs;
 using CordEstates.Entities;
 using CordEstates.Tests.Setup;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting;
 using Moq;
 using System;
+using System.Security.Claims;
 using Xunit;
 using static CordEstates.Helpers.ImageUpload;
 
@@ -18,6 +21,9 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.ListingControllerTests
         private readonly ListingController sut;
         private readonly Mock<IHostEnvironment> env;
         private readonly Mock<IImageUploadWrapper> imageUploadWrapper;
+   
+        
+        
         public DeleteShould()
         {
 
@@ -31,6 +37,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.ListingControllerTests
                                       fixture.mapper.Object,
                                       env.Object,
                                       imageUploadWrapper.Object);
+
             fixture.repositoryWrapper.Setup(x => x.Listing.GetListingByIdAsync(It.IsAny<int>())).ReturnsAsync(new Listing());
             fixture.mapper.Setup(x => x.Map<ListingManagementDTO>(It.IsAny<Listing>())).Returns(new ListingManagementDTO()).Verifiable();
             imageUploadWrapper.Setup(x => x.Upload(It.IsAny<IFormFile>(), It.IsAny<IHostEnvironment>()))
@@ -66,7 +73,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.ListingControllerTests
 
         }
         [Fact]
-        public async void CallDeleteEventModelWithAValidModel()
+        public async void CallDeleteListingWithAValidModel()
         {
             var result = await sut.DeleteConfirmed(It.IsAny<int>());
 
@@ -75,6 +82,19 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.ListingControllerTests
             Assert.IsAssignableFrom<RedirectToActionResult>(result);
 
         }
+
+        [Fact]
+        public async void ShouldNotCallDeleteListingIfUserRoleIsStaff()
+        {
+
+            var result = await sut.DeleteConfirmed(It.IsAny<int>());
+
+            fixture.repositoryWrapper.Verify(x => x.Listing.DeleteListing(It.IsAny<Listing>()), Times.Once);
+            fixture.repositoryWrapper.Verify(y => y.SaveAsync(), Times.Once);
+            Assert.IsAssignableFrom<RedirectToActionResult>(result);
+
+        }
+
         [Fact]
         public async void ThrowExceptionIfUnableToDeleteListing()
         {

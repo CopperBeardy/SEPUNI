@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using CordEstates.Areas.Identity.Data;
 using CordEstates.Entities;
 using AutoMapper;
 using CordEstates.Wrappers.Interfaces;

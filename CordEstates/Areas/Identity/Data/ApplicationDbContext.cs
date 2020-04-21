@@ -36,6 +36,8 @@ namespace CordEstates.Areas.Identity.Data
         public DbSet<Sale> Sales { get; set; }
         public DbSet<Buyer> Buyers { get; set; }
 
+        public DbSet<Customer> Customers { get; set; }
+ 
 
 
 
