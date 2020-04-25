@@ -17,12 +17,15 @@ namespace CordEstates.Profiles
          CreateMap<ApplicationUser, EmployeeManagementDTO>()
                     .ForMember(des => des.HeadShot, o => o.MapFrom(src => src.HeadShot)).ReverseMap();
             CreateMap<List<ApplicationUser>, EmployeeManagementDTO>().ReverseMap();
+
             CreateMap<ApplicationUser, UserDTO>()
                 .ForMember(des => des.FirstName, o => o.MapFrom(src => src.FirstName))
                 .ForMember(des => des.LastName, o => o.MapFrom(src => src.LastName))
                 .ForMember(des => des.Bio, o => o.MapFrom(src => src.Bio))
                 .ForMember(des => des.HeadShotUrl, o => o.MapFrom(src => src.HeadShot.ImageLink));
       
+
+
             CreateMap<Appointment, CreateAppointmentDTO>()
                 .ForMember(desc => desc.Time, o => o.MapFrom(src => src.Time))
                 .ReverseMap();
@@ -47,7 +50,8 @@ namespace CordEstates.Profiles
                 .ForMember(des => des.Image, o => o.MapFrom(src => src.Image))
                   .ForMember(des => des.Address, o => o.MapFrom(src => src.Address)).ReverseMap();
             CreateMap<List<Listing>, ListingManagementDTO>() .ReverseMap();
-            CreateMap<Listing, ListingDTO>().ForMember(desc => desc.Url, o => o.MapFrom(src => src.Image.ImageLink));
+            CreateMap<Listing, ListingDTO>()
+                .ForMember(desc => desc.Url, o => o.MapFrom(src => src.Image.ImageLink));
             CreateMap<Listing, ListingDetailDTO>().ForMember(desc => desc.Url, o => o.MapFrom(src => src.Image.ImageLink));
             CreateMap<Listing, ExtendedListingDTO>().ForMember(desc => desc.Url, o => o.MapFrom(src => src.Image.ImageLink));
             

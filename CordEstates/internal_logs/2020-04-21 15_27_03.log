@@ -1,3 +1,7 @@
-2020-04-21 15:27:03.9116 CordEstates.Helpers.LoggerManager Error creating Sale: System.NullReferenceException: Object reference not set to an instance of an object.
-   at CordEstates.Areas.Staff.Controllers.SaleController.UpdateListing(SaleManagementDTO sale) in C:\Projects\SEPUNI\CordEstates\Areas\Staff\Controllers\SaleController.cs:line 119
-   at CordEstates.Areas.Staff.Controllers.SaleController.Edit(Int32 id, SaleManagementDTO sale) in C:\Projects\SEPUNI\CordEstates\Areas\Staff\Controllers\SaleController.cs:line 158
+2020-04-21 15:27:03.9116 CordEstates.Helpers.LoggerManager
+Error creating Sale: System.NullReferenceException: Object reference not 
+set to an instance of an object.at 
+CordEstates.Areas.Staff.Controllers.SaleController.UpdateListing(SaleManagementDTO sale)
+in C:\Projects\SEPUNI\CordEstates\Areas\Staff\Controllers\SaleController.cs:line
+119  at CordEstates.Areas.Staff.Controllers.SaleController.Edit(Int32 id, SaleManagementDTO sale) 
+in C:\Projects\SEPUNI\CordEstates\Areas\Staff\Controllers\SaleController.cs:line 158

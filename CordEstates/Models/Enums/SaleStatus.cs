@@ -5,6 +5,5 @@
         ForSale = 0,
         Sold = 2,
         UnderContract = 4
-
     }
 }

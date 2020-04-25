@@ -1,6 +1,7 @@
 ﻿using CordEstates.Areas.Identity.Data;
 using CordEstates.Entities;
 using CordEstates.Repositories.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace CordEstates.Repositories
 {
+    [Authorize(Roles = "Admin,Staff")]
     public class AddressRepository : RepositoryBase<Address>, IAddressRepository
     {
 

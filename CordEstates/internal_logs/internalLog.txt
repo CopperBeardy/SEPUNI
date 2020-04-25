@@ -28619,3 +28619,1178 @@
 2020-04-21 17:43:31.7863 Debug Warn => file
 2020-04-21 17:43:31.8016 Debug Error => file
 2020-04-21 17:43:31.8016 Debug Fatal => file
+2020-04-24 19:36:29.5450 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-04-24 19:36:29.6623 Debug Found assembly location directory: 'C:\Projects\SEPUNI\CordEstates\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2020-04-24 19:36:29.6623 Debug Search for auto loading files in location: C:\Projects\SEPUNI\CordEstates\bin\Debug\netcoreapp3.1
+2020-04-24 19:36:29.6832 Debug Start auto loading, location: C:\Projects\SEPUNI\CordEstates\bin\Debug\netcoreapp3.1
+2020-04-24 19:36:29.6832 Info Auto loading assembly file: C:\Projects\SEPUNI\CordEstates\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-04-24 19:36:29.6953 Info Loading assembly file: C:\Projects\SEPUNI\CordEstates\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-04-24 19:36:29.7228 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.6.2.1321. Product version: 1.6.2.
+2020-04-24 19:36:29.7228 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-04-24 19:36:29.7228 Info Auto loading assembly file: C:\Projects\SEPUNI\CordEstates\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll succeeded!
+2020-04-24 19:36:29.7433 Info Auto loading assembly file: C:\Projects\SEPUNI\CordEstates\bin\Debug\netcoreapp3.1\NLog.Web.AspNetCore.dll
+2020-04-24 19:36:29.7433 Info Loading assembly file: C:\Projects\SEPUNI\CordEstates\bin\Debug\netcoreapp3.1\NLog.Web.AspNetCore.dll
+2020-04-24 19:36:29.7631 Info NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.9.1.1587. Product version: 4.9.1.
+2020-04-24 19:36:29.7631 Debug ScanAssembly('NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-04-24 19:36:29.7760 Info Auto loading assembly file: C:\Projects\SEPUNI\CordEstates\bin\Debug\netcoreapp3.1\NLog.Web.AspNetCore.dll succeeded!
+2020-04-24 19:36:29.7760 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-04-24 19:36:29.7886 Trace Assembly 'NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2020-04-24 19:36:29.7886 Trace Assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2020-04-24 19:36:29.7886 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-04-24 19:36:29.8045 Debug Auto loading done
+2020-04-24 19:36:29.8045 Info Message Template Auto Format enabled
+2020-04-24 19:36:29.8187 Info Loading assembly: NLog.Web.AspNetCore
+2020-04-24 19:36:29.8187 Debug ScanAssembly('NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-04-24 19:36:29.8407 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-04-24 19:36:29.8407 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-04-24 19:36:29.8591 Debug Setting 'UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-04-24 19:36:29.8834 Trace Wrapping LevelLayoutRenderer with UppercaseLayoutRendererWrapper
+2020-04-24 19:36:29.8834 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-04-24 19:36:29.8834 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-04-24 19:36:29.8996 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-04-24 19:36:29.8996 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-04-24 19:36:29.9129 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-04-24 19:36:29.9129 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-04-24 19:36:29.9129 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-04-24 19:36:29.9302 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-04-24 19:36:29.9302 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-04-24 19:36:29.9510 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2020-04-24 19:36:29.9577 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-04-24 19:36:29.9577 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-04-24 19:36:29.9748 Debug Setting 'FileTarget.name' to 'file'
+2020-04-24 19:36:30.0026 Debug Setting 'FileTarget.layout' to '${longdate} ${logger} ${message}${exception:format=ToString}'
+2020-04-24 19:36:30.0090 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-04-24 19:36:30.0090 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-04-24 19:36:30.0237 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-04-24 19:36:30.0429 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2020-04-24 19:36:30.0759 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-04-24 19:36:30.0847 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-04-24 19:36:30.1059 Debug Setting 'ExceptionLayoutRenderer.format' to 'ToString'
+2020-04-24 19:36:30.1359 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-04-24 19:36:30.1359 Trace Scanning ExceptionLayoutRenderer 'Layout Renderer: ${exception}'
+2020-04-24 19:36:30.1471 Trace  Scanning Property Formats 'System.Collections.Generic.List`1[NLog.Config.ExceptionRenderingFormat]' System.Collections.Generic
+2020-04-24 19:36:30.1471 Debug Setting 'FileTarget.fileName' to 'C:\Projects\SEPUNI\CordEstates\internal_logs\${date:format=yyyy-MM-dd HH_mm_ss}.log'
+2020-04-24 19:36:30.1654 Debug Setting 'DateLayoutRenderer.format' to 'yyyy-MM-dd HH_mm_ss'
+2020-04-24 19:36:30.1875 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-04-24 19:36:30.1959 Trace Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2020-04-24 19:36:30.1959 Debug Setting 'FileTarget.archiveFileName' to '${basedir}/{#}.log'
+2020-04-24 19:36:30.2105 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-04-24 19:36:30.2105 Trace Scanning BaseDirLayoutRenderer 'Layout Renderer: ${basedir}'
+2020-04-24 19:36:30.2230 Debug Setting 'FileTarget.archiveDateFormat' to 'yyyy-MM-dd HH_mm_ss'
+2020-04-24 19:36:30.2230 Debug Setting 'FileTarget.archiveNumbering' to 'Date'
+2020-04-24 19:36:30.2419 Debug Setting 'FileTarget.archiveEvery' to 'Day'
+2020-04-24 19:36:30.2419 Info Adding target FileTarget(Name=file)
+2020-04-24 19:36:30.2542 Debug Registered target file: NLog.Targets.FileTarget
+2020-04-24 19:36:30.2542 Trace ParseRulesElement
+2020-04-24 19:36:30.2767 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2020-04-24 19:36:30.2869 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2020-04-24 19:36:30.2869 Debug Watching path 'C:\Projects\SEPUNI\CordEstates' filter 'nlog.config' for changes.
+2020-04-24 19:36:30.3062 Debug --- NLog configuration dump ---
+2020-04-24 19:36:30.3062 Debug Targets:
+2020-04-24 19:36:30.3174 Debug File Target[file]
+2020-04-24 19:36:30.3174 Debug Rules:
+2020-04-24 19:36:30.3332 Debug logNamePattern: (:All) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ file ]
+2020-04-24 19:36:30.3332 Debug --- End of NLog configuration dump ---
+2020-04-24 19:36:30.3494 Trace FindReachableObject<System.Object>:
+2020-04-24 19:36:30.3494 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ file ]'
+2020-04-24 19:36:30.3641 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2020-04-24 19:36:30.3641 Trace  Scanning FileTarget 'File Target[file]'
+2020-04-24 19:36:30.3641 Trace   Scanning Property Layout ''${longdate} ${logger} ${message}${exception:format=ToString}'' NLog.Layouts
+2020-04-24 19:36:30.3840 Trace   Scanning SimpleLayout ''${longdate} ${logger} ${message}${exception:format=ToString}''
+2020-04-24 19:36:30.3840 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-04-24 19:36:30.3959 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-04-24 19:36:30.3959 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-04-24 19:36:30.3959 Trace    Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2020-04-24 19:36:30.4153 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-04-24 19:36:30.4153 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-04-24 19:36:30.4270 Trace    Scanning ExceptionLayoutRenderer 'Layout Renderer: ${exception}'
+2020-04-24 19:36:30.4270 Trace     Scanning Property Formats 'System.Collections.Generic.List`1[NLog.Config.ExceptionRenderingFormat]' System.Collections.Generic
+2020-04-24 19:36:30.4270 Trace   Scanning Property FileName ''C:\Projects\SEPUNI\CordEstates\internal_logs\${date:format=yyyy-MM-dd HH_mm_ss}.log'' NLog.Layouts
+2020-04-24 19:36:30.4455 Trace   Scanning SimpleLayout ''C:\Projects\SEPUNI\CordEstates\internal_logs\${date:format=yyyy-MM-dd HH_mm_ss}.log''
+2020-04-24 19:36:30.4455 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-04-24 19:36:30.4573 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-04-24 19:36:30.4573 Trace    Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2020-04-24 19:36:30.4573 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-04-24 19:36:30.4741 Trace   Scanning Property ArchiveFileName ''${basedir}/{#}.log'' NLog.Layouts
+2020-04-24 19:36:30.4741 Trace   Scanning SimpleLayout ''${basedir}/{#}.log''
+2020-04-24 19:36:30.4889 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-04-24 19:36:30.4889 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-04-24 19:36:30.4889 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2020-04-24 19:36:30.5089 Trace   Scanning Property Encoding 'System.Text.UTF8Encoding+UTF8EncodingSealed' System.Text
+2020-04-24 19:36:30.5089 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2020-04-24 19:36:30.5217 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2020-04-24 19:36:30.5217 Info Found 15 configuration items
+2020-04-24 19:36:30.5360 Trace Initializing Layout Renderer: ${literal}
+2020-04-24 19:36:30.5360 Trace Initializing '${basedir}/{#}.log'
+2020-04-24 19:36:30.5360 Trace FindReachableObject<System.Object>:
+2020-04-24 19:36:30.5569 Trace Scanning SimpleLayout ''${basedir}/{#}.log''
+2020-04-24 19:36:30.5569 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-04-24 19:36:30.5683 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-04-24 19:36:30.5683 Trace Initializing Layout Renderer: ${literal}
+2020-04-24 19:36:30.5857 Trace Initializing Layout Renderer: ${date}
+2020-04-24 19:36:30.6007 Trace Initializing Layout Renderer: ${literal}
+2020-04-24 19:36:30.6007 Trace Initializing 'C:\Projects\SEPUNI\CordEstates\internal_logs\${date:format=yyyy-MM-dd HH_mm_ss}.log'
+2020-04-24 19:36:30.6140 Trace FindReachableObject<System.Object>:
+2020-04-24 19:36:30.6140 Trace Scanning SimpleLayout ''C:\Projects\SEPUNI\CordEstates\internal_logs\${date:format=yyyy-MM-dd HH_mm_ss}.log''
+2020-04-24 19:36:30.6140 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-04-24 19:36:30.6322 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-04-24 19:36:30.6322 Trace  Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2020-04-24 19:36:30.6443 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-04-24 19:36:30.6443 Trace Initializing Layout Renderer: ${exception}
+2020-04-24 19:36:30.6443 Trace Initializing Layout Renderer: ${message}
+2020-04-24 19:36:30.6675 Trace Initializing Layout Renderer: ${literal}
+2020-04-24 19:36:30.6675 Trace Initializing Layout Renderer: ${logger}
+2020-04-24 19:36:30.6812 Trace Initializing Layout Renderer: ${literal}
+2020-04-24 19:36:30.6812 Trace Initializing Layout Renderer: ${longdate}
+2020-04-24 19:36:30.6930 Trace Initializing '${longdate} ${logger} ${message}${exception:format=ToString}'
+2020-04-24 19:36:30.6930 Trace FindReachableObject<System.Object>:
+2020-04-24 19:36:30.7071 Trace Scanning SimpleLayout ''${longdate} ${logger} ${message}${exception:format=ToString}''
+2020-04-24 19:36:30.7071 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-04-24 19:36:30.7071 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-04-24 19:36:30.7280 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-04-24 19:36:30.7280 Trace  Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2020-04-24 19:36:30.7410 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-04-24 19:36:30.7410 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-04-24 19:36:30.7410 Trace  Scanning ExceptionLayoutRenderer 'Layout Renderer: ${exception}'
+2020-04-24 19:36:30.7601 Trace   Scanning Property Formats 'System.Collections.Generic.List`1[NLog.Config.ExceptionRenderingFormat]' System.Collections.Generic
+2020-04-24 19:36:30.7601 Trace Initializing File Target[file]
+2020-04-24 19:36:30.7731 Trace FindReachableObject<NLog.Layouts.Layout>:
+2020-04-24 19:36:30.7731 Trace Scanning FileTarget 'File Target[file]'
+2020-04-24 19:36:30.7853 Trace  Scanning Property Layout ''${longdate} ${logger} ${message}${exception:format=ToString}'' NLog.Layouts
+2020-04-24 19:36:30.7853 Trace  Scanning SimpleLayout ''${longdate} ${logger} ${message}${exception:format=ToString}''
+2020-04-24 19:36:30.7853 Trace  Scanning Property FileName ''C:\Projects\SEPUNI\CordEstates\internal_logs\${date:format=yyyy-MM-dd HH_mm_ss}.log'' NLog.Layouts
+2020-04-24 19:36:30.8054 Trace  Scanning SimpleLayout ''C:\Projects\SEPUNI\CordEstates\internal_logs\${date:format=yyyy-MM-dd HH_mm_ss}.log''
+2020-04-24 19:36:30.8054 Trace  Scanning Property ArchiveFileName ''${basedir}/{#}.log'' NLog.Layouts
+2020-04-24 19:36:30.8213 Trace  Scanning SimpleLayout ''${basedir}/{#}.log''
+2020-04-24 19:36:30.8361 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2020-04-24 19:36:30.8584 Trace  Scanning Property Encoding 'System.Text.UTF8Encoding+UTF8EncodingSealed' System.Text
+2020-04-24 19:36:30.8647 Trace File Target[file] has 3 layouts
+2020-04-24 19:36:30.8647 Trace FileTarget(Name=file): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2020-04-24 19:36:31.9521 Debug ScanAssembly('NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-04-24 19:36:32.0113 Debug Hide assemblies for callsite
+2020-04-24 19:36:32.0113 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-04-24 19:36:32.0357 Debug Targets for Microsoft.Extensions.Hosting.Internal.ApplicationLifetime by level:
+2020-04-24 19:36:32.0357 Debug Trace => file
+2020-04-24 19:36:32.0357 Debug Debug => file
+2020-04-24 19:36:32.0502 Debug Info => file
+2020-04-24 19:36:32.0502 Debug Warn => file
+2020-04-24 19:36:32.0502 Debug Error => file
+2020-04-24 19:36:32.0502 Debug Fatal => file
+2020-04-24 19:36:32.0749 Debug Targets for Microsoft.Extensions.Hosting.Internal.Host by level:
+2020-04-24 19:36:32.0749 Debug Trace => file
+2020-04-24 19:36:32.0850 Debug Debug => file
+2020-04-24 19:36:32.0850 Debug Info => file
+2020-04-24 19:36:32.0850 Debug Warn => file
+2020-04-24 19:36:32.1001 Debug Error => file
+2020-04-24 19:36:32.1001 Debug Fatal => file
+2020-04-24 19:36:32.1001 Debug Targets for Microsoft.Hosting.Lifetime by level:
+2020-04-24 19:36:32.1175 Debug Trace => file
+2020-04-24 19:36:32.1175 Debug Debug => file
+2020-04-24 19:36:32.1293 Debug Info => file
+2020-04-24 19:36:32.1293 Debug Warn => file
+2020-04-24 19:36:32.1293 Debug Error => file
+2020-04-24 19:36:32.1293 Debug Fatal => file
+2020-04-24 19:36:32.1497 Debug Targets for Microsoft.AspNetCore.DataProtection.TypeForwardingActivator by level:
+2020-04-24 19:36:32.1497 Debug Trace => file
+2020-04-24 19:36:32.1609 Debug Debug => file
+2020-04-24 19:36:32.1609 Debug Info => file
+2020-04-24 19:36:32.1609 Debug Warn => file
+2020-04-24 19:36:32.1765 Debug Error => file
+2020-04-24 19:36:32.1765 Debug Fatal => file
+2020-04-24 19:36:32.2105 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager by level:
+2020-04-24 19:36:32.2105 Debug Trace => file
+2020-04-24 19:36:32.2105 Debug Debug => file
+2020-04-24 19:36:32.2233 Debug Info => file
+2020-04-24 19:36:32.2233 Debug Warn => file
+2020-04-24 19:36:32.2233 Debug Error => file
+2020-04-24 19:36:32.2387 Debug Fatal => file
+2020-04-24 19:36:32.2387 Debug Targets for Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory by level:
+2020-04-24 19:36:32.2387 Debug Trace => file
+2020-04-24 19:36:32.2564 Debug Debug => file
+2020-04-24 19:36:32.2564 Debug Info => file
+2020-04-24 19:36:32.2564 Debug Warn => file
+2020-04-24 19:36:32.2733 Debug Error => file
+2020-04-24 19:36:32.2733 Debug Fatal => file
+2020-04-24 19:36:32.2733 Debug Targets for Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory by level:
+2020-04-24 19:36:32.2860 Debug Trace => file
+2020-04-24 19:36:32.2860 Debug Debug => file
+2020-04-24 19:36:32.2860 Debug Info => file
+2020-04-24 19:36:32.2860 Debug Warn => file
+2020-04-24 19:36:32.3023 Debug Error => file
+2020-04-24 19:36:32.3023 Debug Fatal => file
+2020-04-24 19:36:32.3023 Debug Targets for Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory by level:
+2020-04-24 19:36:32.3189 Debug Trace => file
+2020-04-24 19:36:32.3189 Debug Debug => file
+2020-04-24 19:36:32.3371 Debug Info => file
+2020-04-24 19:36:32.3371 Debug Warn => file
+2020-04-24 19:36:32.3478 Debug Error => file
+2020-04-24 19:36:32.3478 Debug Fatal => file
+2020-04-24 19:36:32.3670 Debug Targets for Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor by level:
+2020-04-24 19:36:32.3670 Debug Trace => file
+2020-04-24 19:36:32.3670 Debug Debug => file
+2020-04-24 19:36:32.3802 Debug Info => file
+2020-04-24 19:36:32.3802 Debug Warn => file
+2020-04-24 19:36:32.3802 Debug Error => file
+2020-04-24 19:36:32.3802 Debug Fatal => file
+2020-04-24 19:36:32.4002 Debug Targets for Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository by level:
+2020-04-24 19:36:32.4002 Debug Trace => file
+2020-04-24 19:36:32.4113 Debug Debug => file
+2020-04-24 19:36:32.4113 Debug Info => file
+2020-04-24 19:36:32.4113 Debug Warn => file
+2020-04-24 19:36:32.4295 Debug Error => file
+2020-04-24 19:36:32.4295 Debug Fatal => file
+2020-04-24 19:36:32.4446 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver by level:
+2020-04-24 19:36:32.4446 Debug Trace => file
+2020-04-24 19:36:32.4613 Debug Debug => file
+2020-04-24 19:36:32.4743 Debug Info => file
+2020-04-24 19:36:32.4743 Debug Warn => file
+2020-04-24 19:36:32.4743 Debug Error => file
+2020-04-24 19:36:32.5003 Debug Fatal => file
+2020-04-24 19:36:32.5105 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider by level:
+2020-04-24 19:36:32.5105 Debug Trace => file
+2020-04-24 19:36:32.5212 Debug Debug => file
+2020-04-24 19:36:32.5212 Debug Info => file
+2020-04-24 19:36:32.5358 Debug Warn => file
+2020-04-24 19:36:32.5358 Debug Error => file
+2020-04-24 19:36:32.5358 Debug Fatal => file
+2020-04-24 19:36:32.5582 Debug Targets for Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService by level:
+2020-04-24 19:36:32.5582 Debug Trace => file
+2020-04-24 19:36:32.5676 Debug Debug => file
+2020-04-24 19:36:32.5676 Debug Info => file
+2020-04-24 19:36:32.5676 Debug Warn => file
+2020-04-24 19:36:32.5880 Debug Error => file
+2020-04-24 19:36:32.5880 Debug Fatal => file
+2020-04-24 19:36:32.5980 Debug Targets for Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets by level:
+2020-04-24 19:36:32.5980 Debug Trace => file
+2020-04-24 19:36:32.5980 Debug Debug => file
+2020-04-24 19:36:32.5980 Debug Info => file
+2020-04-24 19:36:32.6137 Debug Warn => file
+2020-04-24 19:36:32.6137 Debug Error => file
+2020-04-24 19:36:32.6137 Debug Fatal => file
+2020-04-24 19:36:32.6447 Debug Targets for Microsoft.AspNetCore.Server.Kestrel by level:
+2020-04-24 19:36:32.6447 Debug Trace => file
+2020-04-24 19:36:32.6447 Debug Debug => file
+2020-04-24 19:36:32.6447 Debug Info => file
+2020-04-24 19:36:32.6604 Debug Warn => file
+2020-04-24 19:36:32.6604 Debug Error => file
+2020-04-24 19:36:32.6604 Debug Fatal => file
+2020-04-24 19:36:32.6604 Debug Targets for Microsoft.AspNetCore.Hosting.Diagnostics by level:
+2020-04-24 19:36:32.6785 Debug Trace => file
+2020-04-24 19:36:32.6785 Debug Debug => file
+2020-04-24 19:36:32.6785 Debug Info => file
+2020-04-24 19:36:32.6911 Debug Warn => file
+2020-04-24 19:36:32.6911 Debug Error => file
+2020-04-24 19:36:32.6911 Debug Fatal => file
+2020-04-24 19:36:32.7758 Debug Targets for Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor by level:
+2020-04-24 19:36:32.7758 Debug Trace => file
+2020-04-24 19:36:32.7849 Debug Debug => file
+2020-04-24 19:36:32.7849 Debug Info => file
+2020-04-24 19:36:32.7849 Debug Warn => file
+2020-04-24 19:36:32.7849 Debug Error => file
+2020-04-24 19:36:32.8021 Debug Fatal => file
+2020-04-24 19:36:32.8728 Debug Targets for Microsoft.AspNetCore.Mvc.MvcOptions by level:
+2020-04-24 19:36:32.8728 Debug Trace => file
+2020-04-24 19:36:32.8801 Debug Debug => file
+2020-04-24 19:36:32.8801 Debug Info => file
+2020-04-24 19:36:32.8801 Debug Warn => file
+2020-04-24 19:36:32.8801 Debug Error => file
+2020-04-24 19:36:32.8984 Debug Fatal => file
+2020-04-24 19:36:32.8984 Debug Targets for Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter by level:
+2020-04-24 19:36:32.9115 Debug Trace => file
+2020-04-24 19:36:32.9115 Debug Debug => file
+2020-04-24 19:36:32.9115 Debug Info => file
+2020-04-24 19:36:32.9267 Debug Warn => file
+2020-04-24 19:36:32.9267 Debug Error => file
+2020-04-24 19:36:32.9267 Debug Fatal => file
+2020-04-24 19:36:32.9682 Debug Targets for Microsoft.AspNetCore.Mvc.ApplicationModels.CompiledPageRouteModelProvider by level:
+2020-04-24 19:36:32.9682 Debug Trace => file
+2020-04-24 19:36:32.9755 Debug Debug => file
+2020-04-24 19:36:32.9755 Debug Info => file
+2020-04-24 19:36:32.9755 Debug Warn => file
+2020-04-24 19:36:32.9755 Debug Error => file
+2020-04-24 19:36:32.9915 Debug Fatal => file
+2020-04-24 19:36:33.0854 Debug Targets for Microsoft.AspNetCore.Routing.EndpointMiddleware by level:
+2020-04-24 19:36:33.0854 Debug Trace => file
+2020-04-24 19:36:33.0854 Debug Debug => file
+2020-04-24 19:36:33.0854 Debug Info => file
+2020-04-24 19:36:33.1003 Debug Warn => file
+2020-04-24 19:36:33.1003 Debug Error => file
+2020-04-24 19:36:33.1003 Debug Fatal => file
+2020-04-24 19:36:33.1136 Debug Targets for Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware by level:
+2020-04-24 19:36:33.1136 Debug Trace => file
+2020-04-24 19:36:33.1136 Debug Debug => file
+2020-04-24 19:36:33.1136 Debug Info => file
+2020-04-24 19:36:33.1290 Debug Warn => file
+2020-04-24 19:36:33.1290 Debug Error => file
+2020-04-24 19:36:33.1290 Debug Fatal => file
+2020-04-24 19:36:33.1290 Debug Targets for Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware by level:
+2020-04-24 19:36:33.1460 Debug Trace => file
+2020-04-24 19:36:33.1460 Debug Debug => file
+2020-04-24 19:36:33.1460 Debug Info => file
+2020-04-24 19:36:33.1460 Debug Warn => file
+2020-04-24 19:36:33.1602 Debug Error => file
+2020-04-24 19:36:33.1602 Debug Fatal => file
+2020-04-24 19:36:33.1831 Debug Targets for Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware by level:
+2020-04-24 19:36:33.1831 Debug Trace => file
+2020-04-24 19:36:33.1911 Debug Debug => file
+2020-04-24 19:36:33.1911 Debug Info => file
+2020-04-24 19:36:33.1911 Debug Warn => file
+2020-04-24 19:36:33.1911 Debug Error => file
+2020-04-24 19:36:33.2091 Debug Fatal => file
+2020-04-24 19:36:33.2327 Debug Targets for Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware by level:
+2020-04-24 19:36:33.2327 Debug Trace => file
+2020-04-24 19:36:33.2405 Debug Debug => file
+2020-04-24 19:36:33.2405 Debug Info => file
+2020-04-24 19:36:33.2405 Debug Warn => file
+2020-04-24 19:36:33.2405 Debug Error => file
+2020-04-24 19:36:33.2563 Debug Fatal => file
+2020-04-24 19:36:33.2563 Debug Targets for Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware by level:
+2020-04-24 19:36:33.2563 Debug Trace => file
+2020-04-24 19:36:33.2563 Debug Debug => file
+2020-04-24 19:36:33.2731 Debug Info => file
+2020-04-24 19:36:33.2731 Debug Warn => file
+2020-04-24 19:36:33.2731 Debug Error => file
+2020-04-24 19:36:33.2855 Debug Fatal => file
+2020-04-24 19:36:33.2855 Debug Targets for Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer by level:
+2020-04-24 19:36:33.2855 Debug Trace => file
+2020-04-24 19:36:33.3017 Debug Debug => file
+2020-04-24 19:36:33.3017 Debug Info => file
+2020-04-24 19:36:33.3017 Debug Warn => file
+2020-04-24 19:36:33.3017 Debug Error => file
+2020-04-24 19:36:33.3168 Debug Fatal => file
+2020-04-24 19:36:33.4401 Debug Targets for Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware by level:
+2020-04-24 19:36:33.4438 Debug Trace => file
+2020-04-24 19:36:33.4438 Debug Debug => file
+2020-04-24 19:36:33.4438 Debug Info => file
+2020-04-24 19:36:33.4594 Debug Warn => file
+2020-04-24 19:36:33.4594 Debug Error => file
+2020-04-24 19:36:33.4594 Debug Fatal => file
+2020-04-24 19:36:33.5294 Debug FileTarget(Name=file): Process file 'C:\Projects\SEPUNI\CordEstates\internal_logs\2020-04-24 19_36_33.log' on startup
+2020-04-24 19:36:33.5469 Debug Creating file appender: C:\Projects\SEPUNI\CordEstates\internal_logs\2020-04-24 19_36_33.log
+2020-04-24 19:36:33.5547 Trace Opening C:\Projects\SEPUNI\CordEstates\internal_logs\2020-04-24 19_36_33.log with allowFileSharedWriting=False
+2020-04-24 19:36:33.5668 Trace Opening C:\Projects\SEPUNI\CordEstates\internal_logs\2020-04-24 19_36_33.log with allowFileSharedWriting=False
+2020-04-24 19:36:33.5668 Trace Opening C:\Projects\SEPUNI\CordEstates\internal_logs\2020-04-24 19_36_33.log with allowFileSharedWriting=False
+2020-04-24 19:36:33.5894 Trace Opening C:\Projects\SEPUNI\CordEstates\internal_logs\2020-04-24 19_36_33.log with allowFileSharedWriting=False
+2020-04-24 19:36:33.6010 Trace Opening C:\Projects\SEPUNI\CordEstates\internal_logs\2020-04-24 19_36_33.log with allowFileSharedWriting=False
+2020-04-24 19:36:34.9128 Debug Targets for Microsoft.AspNetCore.Mvc.Razor.Compilation.DefaultViewCompiler by level:
+2020-04-24 19:36:34.9128 Debug Trace => file
+2020-04-24 19:36:34.9128 Debug Debug => file
+2020-04-24 19:36:34.9310 Debug Info => file
+2020-04-24 19:36:34.9310 Debug Warn => file
+2020-04-24 19:36:34.9441 Debug Error => file
+2020-04-24 19:36:34.9441 Debug Fatal => file
+2020-04-24 19:36:34.9847 Debug Targets for Microsoft.AspNetCore.Routing.Matching.DfaMatcher by level:
+2020-04-24 19:36:34.9951 Debug Trace => file
+2020-04-24 19:36:35.0041 Debug Debug => file
+2020-04-24 19:36:35.0041 Debug Info => file
+2020-04-24 19:36:35.0041 Debug Warn => file
+2020-04-24 19:36:35.0234 Debug Error => file
+2020-04-24 19:36:35.0234 Debug Fatal => file
+2020-04-24 19:36:35.0474 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector by level:
+2020-04-24 19:36:35.0531 Debug Trace => file
+2020-04-24 19:36:35.0531 Debug Debug => file
+2020-04-24 19:36:35.0664 Debug Info => file
+2020-04-24 19:36:35.0664 Debug Warn => file
+2020-04-24 19:36:35.0664 Debug Error => file
+2020-04-24 19:36:35.0911 Debug Fatal => file
+2020-04-24 19:36:35.1016 Debug Targets for Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler by level:
+2020-04-24 19:36:35.1016 Debug Trace => file
+2020-04-24 19:36:35.1178 Debug Debug => file
+2020-04-24 19:36:35.1178 Debug Info => file
+2020-04-24 19:36:35.1313 Debug Warn => file
+2020-04-24 19:36:35.1313 Debug Error => file
+2020-04-24 19:36:35.1478 Debug Fatal => file
+2020-04-24 19:36:35.3330 Debug Targets for Microsoft.EntityFrameworkCore.Infrastructure by level:
+2020-04-24 19:36:35.3330 Debug Trace => file
+2020-04-24 19:36:35.3330 Debug Debug => file
+2020-04-24 19:36:35.3330 Debug Info => file
+2020-04-24 19:36:35.3508 Debug Warn => file
+2020-04-24 19:36:35.3508 Debug Error => file
+2020-04-24 19:36:35.3508 Debug Fatal => file
+2020-04-24 19:36:35.4093 Debug Targets for Microsoft.AspNetCore.Identity.UserManager by level:
+2020-04-24 19:36:35.4157 Debug Trace => file
+2020-04-24 19:36:35.4157 Debug Debug => file
+2020-04-24 19:36:35.4280 Debug Info => file
+2020-04-24 19:36:35.4280 Debug Warn => file
+2020-04-24 19:36:35.4280 Debug Error => file
+2020-04-24 19:36:35.4440 Debug Fatal => file
+2020-04-24 19:36:35.4440 Debug Targets for Microsoft.AspNetCore.Identity.DataProtectorTokenProvider by level:
+2020-04-24 19:36:35.4611 Debug Trace => file
+2020-04-24 19:36:35.4611 Debug Debug => file
+2020-04-24 19:36:35.4725 Debug Info => file
+2020-04-24 19:36:35.4725 Debug Warn => file
+2020-04-24 19:36:35.4725 Debug Error => file
+2020-04-24 19:36:35.4725 Debug Fatal => file
+2020-04-24 19:36:35.4938 Debug Targets for Microsoft.AspNetCore.Identity.RoleManager by level:
+2020-04-24 19:36:35.4938 Debug Trace => file
+2020-04-24 19:36:35.4938 Debug Debug => file
+2020-04-24 19:36:35.5084 Debug Info => file
+2020-04-24 19:36:35.5084 Debug Warn => file
+2020-04-24 19:36:35.5084 Debug Error => file
+2020-04-24 19:36:35.5217 Debug Fatal => file
+2020-04-24 19:36:35.5217 Debug Targets for Microsoft.AspNetCore.Identity.SignInManager by level:
+2020-04-24 19:36:35.5217 Debug Trace => file
+2020-04-24 19:36:35.5366 Debug Debug => file
+2020-04-24 19:36:35.5366 Debug Info => file
+2020-04-24 19:36:35.5366 Debug Warn => file
+2020-04-24 19:36:35.5523 Debug Error => file
+2020-04-24 19:36:35.5523 Debug Fatal => file
+2020-04-24 19:36:35.5523 Debug Targets for Microsoft.AspNetCore.Identity.SecurityStampValidator`1[[CordEstates.Areas.Identity.Data.ApplicationUser, CordEstates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] by level:
+2020-04-24 19:36:35.5523 Debug Trace => file
+2020-04-24 19:36:35.5695 Debug Debug => file
+2020-04-24 19:36:35.5695 Debug Info => file
+2020-04-24 19:36:35.5695 Debug Warn => file
+2020-04-24 19:36:35.5823 Debug Error => file
+2020-04-24 19:36:35.5823 Debug Fatal => file
+2020-04-24 19:36:35.5823 Debug Targets for Microsoft.EntityFrameworkCore.ChangeTracking by level:
+2020-04-24 19:36:35.6015 Debug Trace => file
+2020-04-24 19:36:35.6015 Debug Debug => file
+2020-04-24 19:36:35.6015 Debug Info => file
+2020-04-24 19:36:35.6130 Debug Warn => file
+2020-04-24 19:36:35.6130 Debug Error => file
+2020-04-24 19:36:35.6130 Debug Fatal => file
+2020-04-24 19:36:35.6465 Debug Targets for Microsoft.EntityFrameworkCore.Model by level:
+2020-04-24 19:36:35.6465 Debug Trace => file
+2020-04-24 19:36:35.6465 Debug Debug => file
+2020-04-24 19:36:35.6465 Debug Info => file
+2020-04-24 19:36:35.6616 Debug Warn => file
+2020-04-24 19:36:35.6616 Debug Error => file
+2020-04-24 19:36:35.6616 Debug Fatal => file
+2020-04-24 19:36:35.6616 Debug Targets for Microsoft.EntityFrameworkCore.Model.Validation by level:
+2020-04-24 19:36:35.6766 Debug Trace => file
+2020-04-24 19:36:35.6766 Debug Debug => file
+2020-04-24 19:36:35.6766 Debug Info => file
+2020-04-24 19:36:35.6766 Debug Warn => file
+2020-04-24 19:36:35.6915 Debug Error => file
+2020-04-24 19:36:35.6915 Debug Fatal => file
+2020-04-24 19:36:36.1972 Debug Targets for Microsoft.EntityFrameworkCore.Database.Command by level:
+2020-04-24 19:36:36.1972 Debug Trace => file
+2020-04-24 19:36:36.1972 Debug Debug => file
+2020-04-24 19:36:36.2081 Debug Info => file
+2020-04-24 19:36:36.2081 Debug Warn => file
+2020-04-24 19:36:36.2081 Debug Error => file
+2020-04-24 19:36:36.2081 Debug Fatal => file
+2020-04-24 19:36:36.2231 Debug Targets for Microsoft.EntityFrameworkCore.Query by level:
+2020-04-24 19:36:36.2231 Debug Trace => file
+2020-04-24 19:36:36.2231 Debug Debug => file
+2020-04-24 19:36:36.2231 Debug Info => file
+2020-04-24 19:36:36.2231 Debug Warn => file
+2020-04-24 19:36:36.2407 Debug Error => file
+2020-04-24 19:36:36.2407 Debug Fatal => file
+2020-04-24 19:36:36.2407 Debug Targets for Microsoft.EntityFrameworkCore.Database.Transaction by level:
+2020-04-24 19:36:36.2407 Debug Trace => file
+2020-04-24 19:36:36.2558 Debug Debug => file
+2020-04-24 19:36:36.2558 Debug Info => file
+2020-04-24 19:36:36.2558 Debug Warn => file
+2020-04-24 19:36:36.2558 Debug Error => file
+2020-04-24 19:36:36.2711 Debug Fatal => file
+2020-04-24 19:36:36.2711 Debug Targets for Microsoft.EntityFrameworkCore.Database.Connection by level:
+2020-04-24 19:36:36.2711 Debug Trace => file
+2020-04-24 19:36:36.2711 Debug Debug => file
+2020-04-24 19:36:36.2859 Debug Info => file
+2020-04-24 19:36:36.2859 Debug Warn => file
+2020-04-24 19:36:36.2859 Debug Error => file
+2020-04-24 19:36:36.2859 Debug Fatal => file
+2020-04-24 19:36:36.3145 Debug Targets for Microsoft.EntityFrameworkCore.Update by level:
+2020-04-24 19:36:36.3180 Debug Trace => file
+2020-04-24 19:36:36.3180 Debug Debug => file
+2020-04-24 19:36:36.3180 Debug Info => file
+2020-04-24 19:36:36.3180 Debug Warn => file
+2020-04-24 19:36:36.3180 Debug Error => file
+2020-04-24 19:36:36.3354 Debug Fatal => file
+2020-04-24 19:36:37.6338 Debug Targets for Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory by level:
+2020-04-24 19:36:37.6338 Debug Trace => file
+2020-04-24 19:36:37.6338 Debug Debug => file
+2020-04-24 19:36:37.6455 Debug Info => file
+2020-04-24 19:36:37.6455 Debug Warn => file
+2020-04-24 19:36:37.6455 Debug Error => file
+2020-04-24 19:36:37.6455 Debug Fatal => file
+2020-04-24 19:36:37.6666 Debug Targets for Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder by level:
+2020-04-24 19:36:37.6666 Debug Trace => file
+2020-04-24 19:36:37.6759 Debug Debug => file
+2020-04-24 19:36:37.6759 Debug Info => file
+2020-04-24 19:36:37.6759 Debug Warn => file
+2020-04-24 19:36:37.6759 Debug Error => file
+2020-04-24 19:36:37.6924 Debug Fatal => file
+2020-04-24 19:36:37.6924 Debug Targets for Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker by level:
+2020-04-24 19:36:37.6924 Debug Trace => file
+2020-04-24 19:36:37.7072 Debug Debug => file
+2020-04-24 19:36:37.7072 Debug Info => file
+2020-04-24 19:36:37.7072 Debug Warn => file
+2020-04-24 19:36:37.7072 Debug Error => file
+2020-04-24 19:36:37.7228 Debug Fatal => file
+2020-04-24 19:36:37.7228 Debug Targets for Microsoft.AspNetCore.Mvc.ViewFeatures.CookieTempDataProvider by level:
+2020-04-24 19:36:37.7228 Debug Trace => file
+2020-04-24 19:36:37.7228 Debug Debug => file
+2020-04-24 19:36:37.7385 Debug Info => file
+2020-04-24 19:36:37.7385 Debug Warn => file
+2020-04-24 19:36:37.7385 Debug Error => file
+2020-04-24 19:36:37.7385 Debug Fatal => file
+2020-04-24 19:36:37.7566 Debug Targets for Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine by level:
+2020-04-24 19:36:37.7566 Debug Trace => file
+2020-04-24 19:36:37.7566 Debug Debug => file
+2020-04-24 19:36:37.7697 Debug Info => file
+2020-04-24 19:36:37.7697 Debug Warn => file
+2020-04-24 19:36:37.7697 Debug Error => file
+2020-04-24 19:36:37.7697 Debug Fatal => file
+2020-04-24 19:36:37.7877 Debug Targets for Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker by level:
+2020-04-24 19:36:37.7877 Debug Trace => file
+2020-04-24 19:36:37.7877 Debug Debug => file
+2020-04-24 19:36:37.8010 Debug Info => file
+2020-04-24 19:36:37.8010 Debug Warn => file
+2020-04-24 19:36:37.8010 Debug Error => file
+2020-04-24 19:36:37.8010 Debug Fatal => file
+2020-04-24 19:36:38.2049 Debug Targets for Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor by level:
+2020-04-24 19:36:38.2086 Debug Trace => file
+2020-04-24 19:36:38.2086 Debug Debug => file
+2020-04-24 19:36:38.2086 Debug Info => file
+2020-04-24 19:36:38.2086 Debug Warn => file
+2020-04-24 19:36:38.2242 Debug Error => file
+2020-04-24 19:36:38.2242 Debug Fatal => file
+2020-04-24 19:36:38.2458 Debug Targets for Microsoft.AspNetCore.Routing.DefaultLinkGenerator by level:
+2020-04-24 19:36:38.2458 Debug Trace => file
+2020-04-24 19:36:38.2458 Debug Debug => file
+2020-04-24 19:36:38.2561 Debug Info => file
+2020-04-24 19:36:38.2561 Debug Warn => file
+2020-04-24 19:36:38.2561 Debug Error => file
+2020-04-24 19:36:38.2561 Debug Fatal => file
+2020-04-24 19:36:38.2724 Debug Targets for Microsoft.AspNetCore.Mvc.Routing.EndpointRoutingUrlHelper by level:
+2020-04-24 19:36:38.2724 Debug Trace => file
+2020-04-24 19:36:38.2724 Debug Debug => file
+2020-04-24 19:36:38.2859 Debug Info => file
+2020-04-24 19:36:38.2859 Debug Warn => file
+2020-04-24 19:36:38.2859 Debug Error => file
+2020-04-24 19:36:38.3023 Debug Fatal => file
+2020-04-24 19:36:38.3023 Debug Targets for Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentInvoker by level:
+2020-04-24 19:36:38.3023 Debug Trace => file
+2020-04-24 19:36:38.3023 Debug Debug => file
+2020-04-24 19:36:38.3188 Debug Info => file
+2020-04-24 19:36:38.3188 Debug Warn => file
+2020-04-24 19:36:38.3188 Debug Error => file
+2020-04-24 19:36:38.3188 Debug Fatal => file
+2020-04-24 19:36:38.3377 Debug Targets for Microsoft.AspNetCore.Antiforgery.DefaultAntiforgery by level:
+2020-04-24 19:36:38.3377 Debug Trace => file
+2020-04-24 19:36:38.3377 Debug Debug => file
+2020-04-24 19:36:38.3488 Debug Info => file
+2020-04-24 19:36:38.3488 Debug Warn => file
+2020-04-24 19:36:38.3488 Debug Error => file
+2020-04-24 19:36:38.3488 Debug Fatal => file
+2020-04-24 19:36:38.4206 Debug Targets for Microsoft.AspNetCore.Mvc.Razor.TagHelpers.HeadTagHelper by level:
+2020-04-24 19:36:38.4206 Debug Trace => file
+2020-04-24 19:36:38.4282 Debug Debug => file
+2020-04-24 19:36:38.4282 Debug Info => file
+2020-04-24 19:36:38.4282 Debug Warn => file
+2020-04-24 19:36:38.4282 Debug Error => file
+2020-04-24 19:36:38.4426 Debug Fatal => file
+2020-04-24 19:36:38.4426 Debug Targets for Microsoft.AspNetCore.Mvc.Razor.TagHelpers.BodyTagHelper by level:
+2020-04-24 19:36:38.4426 Debug Trace => file
+2020-04-24 19:36:38.4599 Debug Debug => file
+2020-04-24 19:36:38.4599 Debug Info => file
+2020-04-24 19:36:38.4599 Debug Warn => file
+2020-04-24 19:36:38.4599 Debug Error => file
+2020-04-24 19:36:38.4761 Debug Fatal => file
+2020-04-25 12:00:37.1971 Debug ScanAssembly('NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-04-25 12:00:37.3980 Debug Found assembly location directory: 'C:\Projects\SEPUNI\CordEstates\bin\Debug\netcoreapp3.1' (NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c)
+2020-04-25 12:00:37.4049 Debug Search for auto loading files in location: C:\Projects\SEPUNI\CordEstates\bin\Debug\netcoreapp3.1
+2020-04-25 12:00:37.4049 Debug Start auto loading, location: C:\Projects\SEPUNI\CordEstates\bin\Debug\netcoreapp3.1
+2020-04-25 12:00:37.4279 Info Auto loading assembly file: C:\Projects\SEPUNI\CordEstates\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-04-25 12:00:37.4279 Info Loading assembly file: C:\Projects\SEPUNI\CordEstates\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+2020-04-25 12:00:37.4733 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.6.2.1321. Product version: 1.6.2.
+2020-04-25 12:00:37.4733 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-04-25 12:00:37.4875 Info Auto loading assembly file: C:\Projects\SEPUNI\CordEstates\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll succeeded!
+2020-04-25 12:00:37.4875 Info Auto loading assembly file: C:\Projects\SEPUNI\CordEstates\bin\Debug\netcoreapp3.1\NLog.Web.AspNetCore.dll
+2020-04-25 12:00:37.5022 Info Loading assembly file: C:\Projects\SEPUNI\CordEstates\bin\Debug\netcoreapp3.1\NLog.Web.AspNetCore.dll
+2020-04-25 12:00:37.5022 Info NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.9.1.1587. Product version: 4.9.1.
+2020-04-25 12:00:37.5022 Debug ScanAssembly('NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-04-25 12:00:37.5202 Info Auto loading assembly file: C:\Projects\SEPUNI\CordEstates\bin\Debug\netcoreapp3.1\NLog.Web.AspNetCore.dll succeeded!
+2020-04-25 12:00:37.5202 Trace Assembly 'Microsoft.Extensions.Logging, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-04-25 12:00:37.5354 Trace Assembly 'NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2020-04-25 12:00:37.5354 Trace Assembly 'NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c' will be hidden in callsite stacktrace
+2020-04-25 12:00:37.5473 Trace Assembly 'Microsoft.Extensions.Logging.Abstractions, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60' will be hidden in callsite stacktrace
+2020-04-25 12:00:37.5473 Debug Auto loading done
+2020-04-25 12:00:37.5473 Info Message Template Auto Format enabled
+2020-04-25 12:00:37.5708 Info Loading assembly: NLog.Web.AspNetCore
+2020-04-25 12:00:37.5797 Debug ScanAssembly('NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-04-25 12:00:37.6019 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-04-25 12:00:37.6144 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-04-25 12:00:37.6263 Debug Setting 'UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2020-04-25 12:00:37.6838 Trace Wrapping LevelLayoutRenderer with UppercaseLayoutRendererWrapper
+2020-04-25 12:00:37.6895 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-04-25 12:00:37.6895 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-04-25 12:00:37.7040 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-04-25 12:00:37.7040 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2020-04-25 12:00:37.7208 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2020-04-25 12:00:37.7208 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2020-04-25 12:00:37.7388 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-04-25 12:00:37.7388 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2020-04-25 12:00:37.7515 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-04-25 12:00:37.7515 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2020-04-25 12:00:37.7651 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-04-25 12:00:37.7651 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-04-25 12:00:37.7852 Debug Setting 'FileTarget.name' to 'file'
+2020-04-25 12:00:37.7852 Debug Setting 'FileTarget.layout' to '${longdate} ${logger} ${message}${exception:format=ToString}'
+2020-04-25 12:00:37.8015 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-04-25 12:00:37.8015 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-04-25 12:00:37.8169 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-04-25 12:00:37.8298 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2020-04-25 12:00:37.8298 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-04-25 12:00:37.8436 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-04-25 12:00:37.8647 Debug Setting 'ExceptionLayoutRenderer.format' to 'ToString'
+2020-04-25 12:00:37.8647 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-04-25 12:00:37.8802 Trace Scanning ExceptionLayoutRenderer 'Layout Renderer: ${exception}'
+2020-04-25 12:00:37.8802 Trace  Scanning Property Formats 'System.Collections.Generic.List`1[NLog.Config.ExceptionRenderingFormat]' System.Collections.Generic
+2020-04-25 12:00:37.8936 Debug Setting 'FileTarget.fileName' to 'C:\Projects\SEPUNI\CordEstates\internal_logs\${date:format=yyyy-MM-dd HH_mm_ss}.log'
+2020-04-25 12:00:37.8936 Debug Setting 'DateLayoutRenderer.format' to 'yyyy-MM-dd HH_mm_ss'
+2020-04-25 12:00:37.9068 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-04-25 12:00:37.9068 Trace Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2020-04-25 12:00:37.9274 Debug Setting 'FileTarget.archiveFileName' to '${basedir}/{#}.log'
+2020-04-25 12:00:37.9428 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2020-04-25 12:00:37.9428 Trace Scanning BaseDirLayoutRenderer 'Layout Renderer: ${basedir}'
+2020-04-25 12:00:37.9733 Debug Setting 'FileTarget.archiveDateFormat' to 'yyyy-MM-dd HH_mm_ss'
+2020-04-25 12:00:37.9733 Debug Setting 'FileTarget.archiveNumbering' to 'Date'
+2020-04-25 12:00:37.9890 Debug Setting 'FileTarget.archiveEvery' to 'Day'
+2020-04-25 12:00:37.9984 Info Adding target FileTarget(Name=file)
+2020-04-25 12:00:37.9984 Debug Registered target file: NLog.Targets.FileTarget
+2020-04-25 12:00:38.0185 Trace ParseRulesElement
+2020-04-25 12:00:38.0370 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2020-04-25 12:00:38.0504 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2020-04-25 12:00:38.0721 Debug Watching path 'C:\Projects\SEPUNI\CordEstates' filter 'nlog.config' for changes.
+2020-04-25 12:00:38.0808 Debug --- NLog configuration dump ---
+2020-04-25 12:00:38.0808 Debug Targets:
+2020-04-25 12:00:38.1019 Debug File Target[file]
+2020-04-25 12:00:38.1090 Debug Rules:
+2020-04-25 12:00:38.1241 Debug logNamePattern: (:All) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ file ]
+2020-04-25 12:00:38.1241 Debug --- End of NLog configuration dump ---
+2020-04-25 12:00:38.1460 Trace FindReachableObject<System.Object>:
+2020-04-25 12:00:38.1460 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ file ]'
+2020-04-25 12:00:38.1746 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2020-04-25 12:00:38.1746 Trace  Scanning FileTarget 'File Target[file]'
+2020-04-25 12:00:38.1939 Trace   Scanning Property Layout ''${longdate} ${logger} ${message}${exception:format=ToString}'' NLog.Layouts
+2020-04-25 12:00:38.2059 Trace   Scanning SimpleLayout ''${longdate} ${logger} ${message}${exception:format=ToString}''
+2020-04-25 12:00:38.2059 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-04-25 12:00:38.2275 Trace    Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-04-25 12:00:38.2384 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-04-25 12:00:38.2384 Trace    Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2020-04-25 12:00:38.2535 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-04-25 12:00:38.2535 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-04-25 12:00:38.2717 Trace    Scanning ExceptionLayoutRenderer 'Layout Renderer: ${exception}'
+2020-04-25 12:00:38.2717 Trace     Scanning Property Formats 'System.Collections.Generic.List`1[NLog.Config.ExceptionRenderingFormat]' System.Collections.Generic
+2020-04-25 12:00:38.2870 Trace   Scanning Property FileName ''C:\Projects\SEPUNI\CordEstates\internal_logs\${date:format=yyyy-MM-dd HH_mm_ss}.log'' NLog.Layouts
+2020-04-25 12:00:38.2982 Trace   Scanning SimpleLayout ''C:\Projects\SEPUNI\CordEstates\internal_logs\${date:format=yyyy-MM-dd HH_mm_ss}.log''
+2020-04-25 12:00:38.2982 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-04-25 12:00:38.3141 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-04-25 12:00:38.3285 Trace    Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2020-04-25 12:00:38.3428 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-04-25 12:00:38.3428 Trace   Scanning Property ArchiveFileName ''${basedir}/{#}.log'' NLog.Layouts
+2020-04-25 12:00:38.3581 Trace   Scanning SimpleLayout ''${basedir}/{#}.log''
+2020-04-25 12:00:38.3581 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-04-25 12:00:38.3785 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-04-25 12:00:38.3785 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2020-04-25 12:00:38.4042 Trace   Scanning Property Encoding 'System.Text.UTF8Encoding+UTF8EncodingSealed' System.Text
+2020-04-25 12:00:38.4152 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2020-04-25 12:00:38.4276 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2020-04-25 12:00:38.4276 Info Found 15 configuration items
+2020-04-25 12:00:38.4417 Trace Initializing Layout Renderer: ${literal}
+2020-04-25 12:00:38.4417 Trace Initializing '${basedir}/{#}.log'
+2020-04-25 12:00:38.4588 Trace FindReachableObject<System.Object>:
+2020-04-25 12:00:38.4707 Trace Scanning SimpleLayout ''${basedir}/{#}.log''
+2020-04-25 12:00:38.4707 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-04-25 12:00:38.4851 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-04-25 12:00:38.4851 Trace Initializing Layout Renderer: ${literal}
+2020-04-25 12:00:38.5071 Trace Initializing Layout Renderer: ${date}
+2020-04-25 12:00:38.5141 Trace Initializing Layout Renderer: ${literal}
+2020-04-25 12:00:38.5141 Trace Initializing 'C:\Projects\SEPUNI\CordEstates\internal_logs\${date:format=yyyy-MM-dd HH_mm_ss}.log'
+2020-04-25 12:00:38.5390 Trace FindReachableObject<System.Object>:
+2020-04-25 12:00:38.5467 Trace Scanning SimpleLayout ''C:\Projects\SEPUNI\CordEstates\internal_logs\${date:format=yyyy-MM-dd HH_mm_ss}.log''
+2020-04-25 12:00:38.5467 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-04-25 12:00:38.5623 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-04-25 12:00:38.5623 Trace  Scanning DateLayoutRenderer 'Layout Renderer: ${date}'
+2020-04-25 12:00:38.5838 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-04-25 12:00:38.5838 Trace Initializing Layout Renderer: ${exception}
+2020-04-25 12:00:38.5974 Trace Initializing Layout Renderer: ${message}
+2020-04-25 12:00:38.5974 Trace Initializing Layout Renderer: ${literal}
+2020-04-25 12:00:38.6106 Trace Initializing Layout Renderer: ${logger}
+2020-04-25 12:00:38.6106 Trace Initializing Layout Renderer: ${literal}
+2020-04-25 12:00:38.6285 Trace Initializing Layout Renderer: ${longdate}
+2020-04-25 12:00:38.6285 Trace Initializing '${longdate} ${logger} ${message}${exception:format=ToString}'
+2020-04-25 12:00:38.6427 Trace FindReachableObject<System.Object>:
+2020-04-25 12:00:38.6427 Trace Scanning SimpleLayout ''${longdate} ${logger} ${message}${exception:format=ToString}''
+2020-04-25 12:00:38.6574 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2020-04-25 12:00:38.6574 Trace  Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2020-04-25 12:00:38.6730 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-04-25 12:00:38.6730 Trace  Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2020-04-25 12:00:38.6877 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2020-04-25 12:00:38.6877 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2020-04-25 12:00:38.7052 Trace  Scanning ExceptionLayoutRenderer 'Layout Renderer: ${exception}'
+2020-04-25 12:00:38.7052 Trace   Scanning Property Formats 'System.Collections.Generic.List`1[NLog.Config.ExceptionRenderingFormat]' System.Collections.Generic
+2020-04-25 12:00:38.7247 Trace Initializing File Target[file]
+2020-04-25 12:00:38.7402 Trace FindReachableObject<NLog.Layouts.Layout>:
+2020-04-25 12:00:38.7573 Trace Scanning FileTarget 'File Target[file]'
+2020-04-25 12:00:38.7692 Trace  Scanning Property Layout ''${longdate} ${logger} ${message}${exception:format=ToString}'' NLog.Layouts
+2020-04-25 12:00:38.7796 Trace  Scanning SimpleLayout ''${longdate} ${logger} ${message}${exception:format=ToString}''
+2020-04-25 12:00:38.7796 Trace  Scanning Property FileName ''C:\Projects\SEPUNI\CordEstates\internal_logs\${date:format=yyyy-MM-dd HH_mm_ss}.log'' NLog.Layouts
+2020-04-25 12:00:38.8026 Trace  Scanning SimpleLayout ''C:\Projects\SEPUNI\CordEstates\internal_logs\${date:format=yyyy-MM-dd HH_mm_ss}.log''
+2020-04-25 12:00:38.8138 Trace  Scanning Property ArchiveFileName ''${basedir}/{#}.log'' NLog.Layouts
+2020-04-25 12:00:38.8138 Trace  Scanning SimpleLayout ''${basedir}/{#}.log''
+2020-04-25 12:00:38.8325 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2020-04-25 12:00:38.8325 Trace  Scanning Property Encoding 'System.Text.UTF8Encoding+UTF8EncodingSealed' System.Text
+2020-04-25 12:00:38.8492 Trace File Target[file] has 3 layouts
+2020-04-25 12:00:38.8577 Trace FileTarget(Name=file): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2020-04-25 12:00:40.5417 Debug ScanAssembly('NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-04-25 12:00:40.6101 Debug Hide assemblies for callsite
+2020-04-25 12:00:40.6101 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2020-04-25 12:00:40.6365 Debug Targets for Microsoft.Extensions.Hosting.Internal.ApplicationLifetime by level:
+2020-04-25 12:00:40.6443 Debug Trace => file
+2020-04-25 12:00:40.6443 Debug Debug => file
+2020-04-25 12:00:40.6563 Debug Info => file
+2020-04-25 12:00:40.6563 Debug Warn => file
+2020-04-25 12:00:40.6721 Debug Error => file
+2020-04-25 12:00:40.6721 Debug Fatal => file
+2020-04-25 12:00:40.6897 Debug Targets for Microsoft.Extensions.Hosting.Internal.Host by level:
+2020-04-25 12:00:40.6897 Debug Trace => file
+2020-04-25 12:00:40.7024 Debug Debug => file
+2020-04-25 12:00:40.7024 Debug Info => file
+2020-04-25 12:00:40.7024 Debug Warn => file
+2020-04-25 12:00:40.7211 Debug Error => file
+2020-04-25 12:00:40.7211 Debug Fatal => file
+2020-04-25 12:00:40.7378 Debug Targets for Microsoft.Hosting.Lifetime by level:
+2020-04-25 12:00:40.7775 Debug Trace => file
+2020-04-25 12:00:40.7837 Debug Debug => file
+2020-04-25 12:00:40.7837 Debug Info => file
+2020-04-25 12:00:40.7971 Debug Warn => file
+2020-04-25 12:00:40.7971 Debug Error => file
+2020-04-25 12:00:40.8151 Debug Fatal => file
+2020-04-25 12:00:40.8151 Debug Targets for Microsoft.AspNetCore.DataProtection.TypeForwardingActivator by level:
+2020-04-25 12:00:40.8331 Debug Trace => file
+2020-04-25 12:00:40.8331 Debug Debug => file
+2020-04-25 12:00:40.8440 Debug Info => file
+2020-04-25 12:00:40.8440 Debug Warn => file
+2020-04-25 12:00:40.8580 Debug Error => file
+2020-04-25 12:00:40.8580 Debug Fatal => file
+2020-04-25 12:00:40.9115 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager by level:
+2020-04-25 12:00:40.9115 Debug Trace => file
+2020-04-25 12:00:40.9221 Debug Debug => file
+2020-04-25 12:00:40.9221 Debug Info => file
+2020-04-25 12:00:40.9221 Debug Warn => file
+2020-04-25 12:00:40.9394 Debug Error => file
+2020-04-25 12:00:40.9394 Debug Fatal => file
+2020-04-25 12:00:40.9539 Debug Targets for Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory by level:
+2020-04-25 12:00:40.9539 Debug Trace => file
+2020-04-25 12:00:40.9706 Debug Debug => file
+2020-04-25 12:00:40.9706 Debug Info => file
+2020-04-25 12:00:40.9832 Debug Warn => file
+2020-04-25 12:00:40.9832 Debug Error => file
+2020-04-25 12:00:41.0023 Debug Fatal => file
+2020-04-25 12:00:41.0023 Debug Targets for Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory by level:
+2020-04-25 12:00:41.0148 Debug Trace => file
+2020-04-25 12:00:41.0148 Debug Debug => file
+2020-04-25 12:00:41.0148 Debug Info => file
+2020-04-25 12:00:41.0322 Debug Warn => file
+2020-04-25 12:00:41.0322 Debug Error => file
+2020-04-25 12:00:41.0445 Debug Fatal => file
+2020-04-25 12:00:41.0445 Debug Targets for Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory by level:
+2020-04-25 12:00:41.0445 Debug Trace => file
+2020-04-25 12:00:41.0631 Debug Debug => file
+2020-04-25 12:00:41.0631 Debug Info => file
+2020-04-25 12:00:41.0631 Debug Warn => file
+2020-04-25 12:00:41.0800 Debug Error => file
+2020-04-25 12:00:41.0800 Debug Fatal => file
+2020-04-25 12:00:41.1018 Debug Targets for Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor by level:
+2020-04-25 12:00:41.1085 Debug Trace => file
+2020-04-25 12:00:41.1085 Debug Debug => file
+2020-04-25 12:00:41.1085 Debug Info => file
+2020-04-25 12:00:41.1246 Debug Warn => file
+2020-04-25 12:00:41.1246 Debug Error => file
+2020-04-25 12:00:41.1246 Debug Fatal => file
+2020-04-25 12:00:41.1441 Debug Targets for Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository by level:
+2020-04-25 12:00:41.1441 Debug Trace => file
+2020-04-25 12:00:41.1548 Debug Debug => file
+2020-04-25 12:00:41.1548 Debug Info => file
+2020-04-25 12:00:41.1548 Debug Warn => file
+2020-04-25 12:00:41.1734 Debug Error => file
+2020-04-25 12:00:41.1734 Debug Fatal => file
+2020-04-25 12:00:41.1958 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver by level:
+2020-04-25 12:00:41.2067 Debug Trace => file
+2020-04-25 12:00:41.2067 Debug Debug => file
+2020-04-25 12:00:41.2201 Debug Info => file
+2020-04-25 12:00:41.2201 Debug Warn => file
+2020-04-25 12:00:41.2343 Debug Error => file
+2020-04-25 12:00:41.2343 Debug Fatal => file
+2020-04-25 12:00:41.2343 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider by level:
+2020-04-25 12:00:41.2532 Debug Trace => file
+2020-04-25 12:00:41.2532 Debug Debug => file
+2020-04-25 12:00:41.2663 Debug Info => file
+2020-04-25 12:00:41.2663 Debug Warn => file
+2020-04-25 12:00:41.2789 Debug Error => file
+2020-04-25 12:00:41.2789 Debug Fatal => file
+2020-04-25 12:00:41.2789 Debug Targets for Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService by level:
+2020-04-25 12:00:41.2992 Debug Trace => file
+2020-04-25 12:00:41.2992 Debug Debug => file
+2020-04-25 12:00:41.3120 Debug Info => file
+2020-04-25 12:00:41.3120 Debug Warn => file
+2020-04-25 12:00:41.3120 Debug Error => file
+2020-04-25 12:00:41.3344 Debug Fatal => file
+2020-04-25 12:00:41.3344 Debug Targets for Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets by level:
+2020-04-25 12:00:41.3467 Debug Trace => file
+2020-04-25 12:00:41.3467 Debug Debug => file
+2020-04-25 12:00:41.3582 Debug Info => file
+2020-04-25 12:00:41.3582 Debug Warn => file
+2020-04-25 12:00:41.3582 Debug Error => file
+2020-04-25 12:00:41.3775 Debug Fatal => file
+2020-04-25 12:00:41.4189 Debug Targets for Microsoft.AspNetCore.Server.Kestrel by level:
+2020-04-25 12:00:41.4255 Debug Trace => file
+2020-04-25 12:00:41.4255 Debug Debug => file
+2020-04-25 12:00:41.4396 Debug Info => file
+2020-04-25 12:00:41.4396 Debug Warn => file
+2020-04-25 12:00:41.4520 Debug Error => file
+2020-04-25 12:00:41.4520 Debug Fatal => file
+2020-04-25 12:00:41.4736 Debug Targets for Microsoft.AspNetCore.Hosting.Diagnostics by level:
+2020-04-25 12:00:41.4736 Debug Trace => file
+2020-04-25 12:00:41.4871 Debug Debug => file
+2020-04-25 12:00:41.4871 Debug Info => file
+2020-04-25 12:00:41.4993 Debug Warn => file
+2020-04-25 12:00:41.4993 Debug Error => file
+2020-04-25 12:00:41.4993 Debug Fatal => file
+2020-04-25 12:00:41.6358 Debug Targets for Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor by level:
+2020-04-25 12:00:41.6435 Debug Trace => file
+2020-04-25 12:00:41.6435 Debug Debug => file
+2020-04-25 12:00:41.6595 Debug Info => file
+2020-04-25 12:00:41.6595 Debug Warn => file
+2020-04-25 12:00:41.6739 Debug Error => file
+2020-04-25 12:00:41.6739 Debug Fatal => file
+2020-04-25 12:00:41.9317 Debug Targets for Microsoft.AspNetCore.Mvc.MvcOptions by level:
+2020-04-25 12:00:41.9385 Debug Trace => file
+2020-04-25 12:00:41.9609 Debug Debug => file
+2020-04-25 12:00:41.9724 Debug Info => file
+2020-04-25 12:00:41.9724 Debug Warn => file
+2020-04-25 12:00:41.9860 Debug Error => file
+2020-04-25 12:00:41.9860 Debug Fatal => file
+2020-04-25 12:00:42.0064 Debug Targets for Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter by level:
+2020-04-25 12:00:42.0064 Debug Trace => file
+2020-04-25 12:00:42.0208 Debug Debug => file
+2020-04-25 12:00:42.0208 Debug Info => file
+2020-04-25 12:00:42.0348 Debug Warn => file
+2020-04-25 12:00:42.0348 Debug Error => file
+2020-04-25 12:00:42.0473 Debug Fatal => file
+2020-04-25 12:00:42.1069 Debug Targets for Microsoft.AspNetCore.Mvc.ApplicationModels.CompiledPageRouteModelProvider by level:
+2020-04-25 12:00:42.1193 Debug Trace => file
+2020-04-25 12:00:42.1319 Debug Debug => file
+2020-04-25 12:00:42.1448 Debug Info => file
+2020-04-25 12:00:42.1448 Debug Warn => file
+2020-04-25 12:00:42.1581 Debug Error => file
+2020-04-25 12:00:42.1698 Debug Fatal => file
+2020-04-25 12:00:42.6966 Debug Targets for Microsoft.AspNetCore.Routing.EndpointMiddleware by level:
+2020-04-25 12:00:42.7044 Debug Trace => file
+2020-04-25 12:00:42.7044 Debug Debug => file
+2020-04-25 12:00:42.7206 Debug Info => file
+2020-04-25 12:00:42.7206 Debug Warn => file
+2020-04-25 12:00:42.7381 Debug Error => file
+2020-04-25 12:00:42.7381 Debug Fatal => file
+2020-04-25 12:00:42.7648 Debug Targets for Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware by level:
+2020-04-25 12:00:42.7648 Debug Trace => file
+2020-04-25 12:00:42.7801 Debug Debug => file
+2020-04-25 12:00:42.7801 Debug Info => file
+2020-04-25 12:00:42.7988 Debug Warn => file
+2020-04-25 12:00:42.7988 Debug Error => file
+2020-04-25 12:00:42.8126 Debug Fatal => file
+2020-04-25 12:00:42.8126 Debug Targets for Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware by level:
+2020-04-25 12:00:42.8288 Debug Trace => file
+2020-04-25 12:00:42.8288 Debug Debug => file
+2020-04-25 12:00:42.8288 Debug Info => file
+2020-04-25 12:00:42.8489 Debug Warn => file
+2020-04-25 12:00:42.8489 Debug Error => file
+2020-04-25 12:00:42.8624 Debug Fatal => file
+2020-04-25 12:00:42.8624 Debug Targets for Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware by level:
+2020-04-25 12:00:42.8775 Debug Trace => file
+2020-04-25 12:00:42.8775 Debug Debug => file
+2020-04-25 12:00:42.9001 Debug Info => file
+2020-04-25 12:00:42.9136 Debug Warn => file
+2020-04-25 12:00:42.9213 Debug Error => file
+2020-04-25 12:00:42.9213 Debug Fatal => file
+2020-04-25 12:00:42.9995 Debug Targets for Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware by level:
+2020-04-25 12:00:42.9995 Debug Trace => file
+2020-04-25 12:00:43.0179 Debug Debug => file
+2020-04-25 12:00:43.0179 Debug Info => file
+2020-04-25 12:00:43.0322 Debug Warn => file
+2020-04-25 12:00:43.0322 Debug Error => file
+2020-04-25 12:00:43.0474 Debug Fatal => file
+2020-04-25 12:00:43.0474 Debug Targets for Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware by level:
+2020-04-25 12:00:43.0643 Debug Trace => file
+2020-04-25 12:00:43.0643 Debug Debug => file
+2020-04-25 12:00:43.0816 Debug Info => file
+2020-04-25 12:00:43.0816 Debug Warn => file
+2020-04-25 12:00:43.1019 Debug Error => file
+2020-04-25 12:00:43.1019 Debug Fatal => file
+2020-04-25 12:00:43.1178 Debug Targets for Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer by level:
+2020-04-25 12:00:43.1178 Debug Trace => file
+2020-04-25 12:00:43.1316 Debug Debug => file
+2020-04-25 12:00:43.1316 Debug Info => file
+2020-04-25 12:00:43.1429 Debug Warn => file
+2020-04-25 12:00:43.1429 Debug Error => file
+2020-04-25 12:00:43.1552 Debug Fatal => file
+2020-04-25 12:00:43.3254 Debug Targets for Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware by level:
+2020-04-25 12:00:43.3323 Debug Trace => file
+2020-04-25 12:00:43.3323 Debug Debug => file
+2020-04-25 12:00:43.3449 Debug Info => file
+2020-04-25 12:00:43.3449 Debug Warn => file
+2020-04-25 12:00:43.3449 Debug Error => file
+2020-04-25 12:00:43.3617 Debug Fatal => file
+2020-04-25 12:00:43.4540 Debug FileTarget(Name=file): Process file 'C:\Projects\SEPUNI\CordEstates\internal_logs\2020-04-25 12_00_43.log' on startup
+2020-04-25 12:00:43.4691 Debug Creating file appender: C:\Projects\SEPUNI\CordEstates\internal_logs\2020-04-25 12_00_43.log
+2020-04-25 12:00:43.4691 Trace Opening C:\Projects\SEPUNI\CordEstates\internal_logs\2020-04-25 12_00_43.log with allowFileSharedWriting=False
+2020-04-25 12:00:43.4984 Trace Opening C:\Projects\SEPUNI\CordEstates\internal_logs\2020-04-25 12_00_43.log with allowFileSharedWriting=False
+2020-04-25 12:00:43.4984 Trace Opening C:\Projects\SEPUNI\CordEstates\internal_logs\2020-04-25 12_00_43.log with allowFileSharedWriting=False
+2020-04-25 12:00:43.5260 Trace Opening C:\Projects\SEPUNI\CordEstates\internal_logs\2020-04-25 12_00_43.log with allowFileSharedWriting=False
+2020-04-25 12:00:43.5384 Trace Opening C:\Projects\SEPUNI\CordEstates\internal_logs\2020-04-25 12_00_43.log with allowFileSharedWriting=False
+2020-04-25 12:00:45.0931 Debug Targets for Microsoft.AspNetCore.Mvc.Razor.Compilation.DefaultViewCompiler by level:
+2020-04-25 12:00:45.0931 Debug Trace => file
+2020-04-25 12:00:45.0931 Debug Debug => file
+2020-04-25 12:00:45.1107 Debug Info => file
+2020-04-25 12:00:45.1107 Debug Warn => file
+2020-04-25 12:00:45.1107 Debug Error => file
+2020-04-25 12:00:45.1242 Debug Fatal => file
+2020-04-25 12:00:45.1519 Debug Targets for Microsoft.AspNetCore.Routing.Matching.DfaMatcher by level:
+2020-04-25 12:00:45.1610 Debug Trace => file
+2020-04-25 12:00:45.1610 Debug Debug => file
+2020-04-25 12:00:45.1721 Debug Info => file
+2020-04-25 12:00:45.1721 Debug Warn => file
+2020-04-25 12:00:45.1721 Debug Error => file
+2020-04-25 12:00:45.1862 Debug Fatal => file
+2020-04-25 12:00:45.1862 Debug Targets for Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector by level:
+2020-04-25 12:00:45.2040 Debug Trace => file
+2020-04-25 12:00:45.2040 Debug Debug => file
+2020-04-25 12:00:45.2040 Debug Info => file
+2020-04-25 12:00:45.2179 Debug Warn => file
+2020-04-25 12:00:45.2179 Debug Error => file
+2020-04-25 12:00:45.2179 Debug Fatal => file
+2020-04-25 12:00:45.2373 Debug Targets for Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler by level:
+2020-04-25 12:00:45.2373 Debug Trace => file
+2020-04-25 12:00:45.2373 Debug Debug => file
+2020-04-25 12:00:45.2528 Debug Info => file
+2020-04-25 12:00:45.2528 Debug Warn => file
+2020-04-25 12:00:45.2637 Debug Error => file
+2020-04-25 12:00:45.2637 Debug Fatal => file
+2020-04-25 12:00:45.4907 Debug Targets for Microsoft.EntityFrameworkCore.Infrastructure by level:
+2020-04-25 12:00:45.4907 Debug Trace => file
+2020-04-25 12:00:45.5039 Debug Debug => file
+2020-04-25 12:00:45.5039 Debug Info => file
+2020-04-25 12:00:45.5039 Debug Warn => file
+2020-04-25 12:00:45.5197 Debug Error => file
+2020-04-25 12:00:45.5197 Debug Fatal => file
+2020-04-25 12:00:45.5898 Debug Targets for Microsoft.AspNetCore.Identity.UserManager by level:
+2020-04-25 12:00:45.5955 Debug Trace => file
+2020-04-25 12:00:45.5955 Debug Debug => file
+2020-04-25 12:00:45.5955 Debug Info => file
+2020-04-25 12:00:45.6121 Debug Warn => file
+2020-04-25 12:00:45.6121 Debug Error => file
+2020-04-25 12:00:45.6121 Debug Fatal => file
+2020-04-25 12:00:45.6329 Debug Targets for Microsoft.AspNetCore.Identity.DataProtectorTokenProvider by level:
+2020-04-25 12:00:45.6784 Debug Trace => file
+2020-04-25 12:00:45.6784 Debug Debug => file
+2020-04-25 12:00:45.6939 Debug Info => file
+2020-04-25 12:00:45.6939 Debug Warn => file
+2020-04-25 12:00:45.7062 Debug Error => file
+2020-04-25 12:00:45.7062 Debug Fatal => file
+2020-04-25 12:00:45.7459 Debug Targets for Microsoft.AspNetCore.Identity.RoleManager by level:
+2020-04-25 12:00:45.7521 Debug Trace => file
+2020-04-25 12:00:45.7521 Debug Debug => file
+2020-04-25 12:00:45.7805 Debug Info => file
+2020-04-25 12:00:45.7805 Debug Warn => file
+2020-04-25 12:00:45.8004 Debug Error => file
+2020-04-25 12:00:45.8121 Debug Fatal => file
+2020-04-25 12:00:45.8121 Debug Targets for Microsoft.AspNetCore.Identity.SignInManager by level:
+2020-04-25 12:00:45.8338 Debug Trace => file
+2020-04-25 12:00:45.8491 Debug Debug => file
+2020-04-25 12:00:45.8922 Debug Info => file
+2020-04-25 12:00:45.8922 Debug Warn => file
+2020-04-25 12:00:45.9103 Debug Error => file
+2020-04-25 12:00:45.9103 Debug Fatal => file
+2020-04-25 12:00:45.9240 Debug Targets for Microsoft.AspNetCore.Identity.SecurityStampValidator`1[[CordEstates.Areas.Identity.Data.ApplicationUser, CordEstates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] by level:
+2020-04-25 12:00:45.9547 Debug Trace => file
+2020-04-25 12:00:45.9547 Debug Debug => file
+2020-04-25 12:00:45.9708 Debug Info => file
+2020-04-25 12:00:45.9708 Debug Warn => file
+2020-04-25 12:00:45.9838 Debug Error => file
+2020-04-25 12:00:45.9838 Debug Fatal => file
+2020-04-25 12:00:46.0149 Debug Targets for Microsoft.EntityFrameworkCore.ChangeTracking by level:
+2020-04-25 12:00:46.0149 Debug Trace => file
+2020-04-25 12:00:46.0149 Debug Debug => file
+2020-04-25 12:00:46.0357 Debug Info => file
+2020-04-25 12:00:46.0357 Debug Warn => file
+2020-04-25 12:00:46.0490 Debug Error => file
+2020-04-25 12:00:46.0490 Debug Fatal => file
+2020-04-25 12:00:46.0921 Debug Targets for Microsoft.EntityFrameworkCore.Model by level:
+2020-04-25 12:00:46.0921 Debug Trace => file
+2020-04-25 12:00:46.1079 Debug Debug => file
+2020-04-25 12:00:46.1079 Debug Info => file
+2020-04-25 12:00:46.1079 Debug Warn => file
+2020-04-25 12:00:46.1309 Debug Error => file
+2020-04-25 12:00:46.1409 Debug Fatal => file
+2020-04-25 12:00:46.1409 Debug Targets for Microsoft.EntityFrameworkCore.Model.Validation by level:
+2020-04-25 12:00:46.1571 Debug Trace => file
+2020-04-25 12:00:46.1736 Debug Debug => file
+2020-04-25 12:00:46.1736 Debug Info => file
+2020-04-25 12:00:46.1893 Debug Warn => file
+2020-04-25 12:00:46.1893 Debug Error => file
+2020-04-25 12:00:46.2080 Debug Fatal => file
+2020-04-25 12:00:47.1344 Debug Targets for Microsoft.EntityFrameworkCore.Database.Command by level:
+2020-04-25 12:00:47.1404 Debug Trace => file
+2020-04-25 12:00:47.1404 Debug Debug => file
+2020-04-25 12:00:47.1404 Debug Info => file
+2020-04-25 12:00:47.1612 Debug Warn => file
+2020-04-25 12:00:47.1612 Debug Error => file
+2020-04-25 12:00:47.1750 Debug Fatal => file
+2020-04-25 12:00:47.1750 Debug Targets for Microsoft.EntityFrameworkCore.Query by level:
+2020-04-25 12:00:47.1905 Debug Trace => file
+2020-04-25 12:00:47.1905 Debug Debug => file
+2020-04-25 12:00:47.2045 Debug Info => file
+2020-04-25 12:00:47.2045 Debug Warn => file
+2020-04-25 12:00:47.2186 Debug Error => file
+2020-04-25 12:00:47.2186 Debug Fatal => file
+2020-04-25 12:00:47.2368 Debug Targets for Microsoft.EntityFrameworkCore.Database.Transaction by level:
+2020-04-25 12:00:47.2368 Debug Trace => file
+2020-04-25 12:00:47.2510 Debug Debug => file
+2020-04-25 12:00:47.2510 Debug Info => file
+2020-04-25 12:00:47.2663 Debug Warn => file
+2020-04-25 12:00:47.2663 Debug Error => file
+2020-04-25 12:00:47.2663 Debug Fatal => file
+2020-04-25 12:00:47.2857 Debug Targets for Microsoft.EntityFrameworkCore.Database.Connection by level:
+2020-04-25 12:00:47.2857 Debug Trace => file
+2020-04-25 12:00:47.3001 Debug Debug => file
+2020-04-25 12:00:47.3001 Debug Info => file
+2020-04-25 12:00:47.3161 Debug Warn => file
+2020-04-25 12:00:47.3161 Debug Error => file
+2020-04-25 12:00:47.3303 Debug Fatal => file
+2020-04-25 12:00:47.3640 Debug Targets for Microsoft.EntityFrameworkCore.Update by level:
+2020-04-25 12:00:47.3640 Debug Trace => file
+2020-04-25 12:00:47.3751 Debug Debug => file
+2020-04-25 12:00:47.3751 Debug Info => file
+2020-04-25 12:00:47.3751 Debug Warn => file
+2020-04-25 12:00:47.3944 Debug Error => file
+2020-04-25 12:00:47.3944 Debug Fatal => file
+2020-04-25 12:00:49.5618 Debug Targets for Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory by level:
+2020-04-25 12:00:49.5618 Debug Trace => file
+2020-04-25 12:00:49.5763 Debug Debug => file
+2020-04-25 12:00:49.5763 Debug Info => file
+2020-04-25 12:00:49.5763 Debug Warn => file
+2020-04-25 12:00:49.5967 Debug Error => file
+2020-04-25 12:00:49.5967 Debug Fatal => file
+2020-04-25 12:00:49.6177 Debug Targets for Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder by level:
+2020-04-25 12:00:49.6236 Debug Trace => file
+2020-04-25 12:00:49.6236 Debug Debug => file
+2020-04-25 12:00:49.6429 Debug Info => file
+2020-04-25 12:00:49.6429 Debug Warn => file
+2020-04-25 12:00:49.6587 Debug Error => file
+2020-04-25 12:00:49.6587 Debug Fatal => file
+2020-04-25 12:00:49.6773 Debug Targets for Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker by level:
+2020-04-25 12:00:49.6773 Debug Trace => file
+2020-04-25 12:00:49.6975 Debug Debug => file
+2020-04-25 12:00:49.7035 Debug Info => file
+2020-04-25 12:00:49.7035 Debug Warn => file
+2020-04-25 12:00:49.7035 Debug Error => file
+2020-04-25 12:00:49.7207 Debug Fatal => file
+2020-04-25 12:00:49.7207 Debug Targets for Microsoft.AspNetCore.Mvc.ViewFeatures.CookieTempDataProvider by level:
+2020-04-25 12:00:49.7373 Debug Trace => file
+2020-04-25 12:00:49.7373 Debug Debug => file
+2020-04-25 12:00:49.7499 Debug Info => file
+2020-04-25 12:00:49.7499 Debug Warn => file
+2020-04-25 12:00:49.7638 Debug Error => file
+2020-04-25 12:00:49.7638 Debug Fatal => file
+2020-04-25 12:00:49.7826 Debug Targets for Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine by level:
+2020-04-25 12:00:49.7826 Debug Trace => file
+2020-04-25 12:00:49.7983 Debug Debug => file
+2020-04-25 12:00:49.7983 Debug Info => file
+2020-04-25 12:00:49.7983 Debug Warn => file
+2020-04-25 12:00:49.8157 Debug Error => file
+2020-04-25 12:00:49.8157 Debug Fatal => file
+2020-04-25 12:00:49.8322 Debug Targets for Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker by level:
+2020-04-25 12:00:49.8322 Debug Trace => file
+2020-04-25 12:00:49.8427 Debug Debug => file
+2020-04-25 12:00:49.8427 Debug Info => file
+2020-04-25 12:00:49.8427 Debug Warn => file
+2020-04-25 12:00:49.8622 Debug Error => file
+2020-04-25 12:00:49.8622 Debug Fatal => file
+2020-04-25 12:00:50.4815 Debug Targets for Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor by level:
+2020-04-25 12:00:50.4891 Debug Trace => file
+2020-04-25 12:00:50.4891 Debug Debug => file
+2020-04-25 12:00:50.5049 Debug Info => file
+2020-04-25 12:00:50.5049 Debug Warn => file
+2020-04-25 12:00:50.5179 Debug Error => file
+2020-04-25 12:00:50.5179 Debug Fatal => file
+2020-04-25 12:00:50.5590 Debug Targets for Microsoft.AspNetCore.Routing.DefaultLinkGenerator by level:
+2020-04-25 12:00:50.5663 Debug Trace => file
+2020-04-25 12:00:50.5663 Debug Debug => file
+2020-04-25 12:00:50.5813 Debug Info => file
+2020-04-25 12:00:50.5813 Debug Warn => file
+2020-04-25 12:00:50.5979 Debug Error => file
+2020-04-25 12:00:50.5979 Debug Fatal => file
+2020-04-25 12:00:50.6149 Debug Targets for Microsoft.AspNetCore.Mvc.Routing.EndpointRoutingUrlHelper by level:
+2020-04-25 12:00:50.6228 Debug Trace => file
+2020-04-25 12:00:50.6228 Debug Debug => file
+2020-04-25 12:00:50.6228 Debug Info => file
+2020-04-25 12:00:50.6474 Debug Warn => file
+2020-04-25 12:00:50.6474 Debug Error => file
+2020-04-25 12:00:50.6622 Debug Fatal => file
+2020-04-25 12:00:50.6731 Debug Targets for Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentInvoker by level:
+2020-04-25 12:00:50.6731 Debug Trace => file
+2020-04-25 12:00:50.6878 Debug Debug => file
+2020-04-25 12:00:50.6878 Debug Info => file
+2020-04-25 12:00:50.7042 Debug Warn => file
+2020-04-25 12:00:50.7042 Debug Error => file
+2020-04-25 12:00:50.7178 Debug Fatal => file
+2020-04-25 12:00:50.7178 Debug Targets for Microsoft.AspNetCore.Antiforgery.DefaultAntiforgery by level:
+2020-04-25 12:00:50.7385 Debug Trace => file
+2020-04-25 12:00:50.7385 Debug Debug => file
+2020-04-25 12:00:50.7503 Debug Info => file
+2020-04-25 12:00:50.7503 Debug Warn => file
+2020-04-25 12:00:50.7644 Debug Error => file
+2020-04-25 12:00:50.7644 Debug Fatal => file
+2020-04-25 12:00:50.8894 Debug Targets for Microsoft.AspNetCore.Mvc.Razor.TagHelpers.HeadTagHelper by level:
+2020-04-25 12:00:50.8894 Debug Trace => file
+2020-04-25 12:00:50.8894 Debug Debug => file
+2020-04-25 12:00:50.9116 Debug Info => file
+2020-04-25 12:00:50.9199 Debug Warn => file
+2020-04-25 12:00:50.9199 Debug Error => file
+2020-04-25 12:00:50.9364 Debug Fatal => file
+2020-04-25 12:00:50.9630 Debug Targets for Microsoft.AspNetCore.Mvc.Razor.TagHelpers.BodyTagHelper by level:
+2020-04-25 12:00:50.9713 Debug Trace => file
+2020-04-25 12:00:50.9713 Debug Debug => file
+2020-04-25 12:00:50.9853 Debug Info => file
+2020-04-25 12:00:50.9853 Debug Warn => file
+2020-04-25 12:00:51.0017 Debug Error => file
+2020-04-25 12:00:51.0017 Debug Fatal => file
+2020-04-25 12:01:02.6812 Debug Targets for Microsoft.AspNetCore.Authorization.DefaultAuthorizationService by level:
+2020-04-25 12:01:02.6873 Debug Trace => file
+2020-04-25 12:01:02.6873 Debug Debug => file
+2020-04-25 12:01:02.7026 Debug Info => file
+2020-04-25 12:01:02.7026 Debug Warn => file
+2020-04-25 12:01:02.7026 Debug Error => file
+2020-04-25 12:01:02.7229 Debug Fatal => file
+2020-04-25 12:01:23.8299 Debug Targets for Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinder by level:
+2020-04-25 12:01:23.8299 Debug Trace => file
+2020-04-25 12:01:23.8299 Debug Debug => file
+2020-04-25 12:01:23.8457 Debug Info => file
+2020-04-25 12:01:23.8457 Debug Warn => file
+2020-04-25 12:01:23.8457 Debug Error => file
+2020-04-25 12:01:23.8656 Debug Fatal => file
+2020-04-25 12:01:28.0892 Debug Targets for Microsoft.AspNetCore.Mvc.RedirectToActionResult by level:
+2020-04-25 12:01:28.0943 Debug Trace => file
+2020-04-25 12:01:28.0943 Debug Debug => file
+2020-04-25 12:01:28.0943 Debug Info => file
+2020-04-25 12:01:28.1099 Debug Warn => file
+2020-04-25 12:01:28.1099 Debug Error => file
+2020-04-25 12:01:28.1099 Debug Fatal => file
+2020-04-25 12:05:01.5066 Debug Targets for Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinder by level:
+2020-04-25 12:05:01.5066 Debug Trace => file
+2020-04-25 12:05:01.5232 Debug Debug => file
+2020-04-25 12:05:01.5232 Debug Info => file
+2020-04-25 12:05:01.5348 Debug Warn => file
+2020-04-25 12:05:01.5348 Debug Error => file
+2020-04-25 12:05:01.5482 Debug Fatal => file
+2020-04-25 12:05:01.5482 Debug Targets for Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinder by level:
+2020-04-25 12:05:01.5604 Debug Trace => file
+2020-04-25 12:05:01.5604 Debug Debug => file
+2020-04-25 12:05:01.5604 Debug Info => file
+2020-04-25 12:05:01.5810 Debug Warn => file
+2020-04-25 12:05:01.5810 Debug Error => file
+2020-04-25 12:05:01.5966 Debug Fatal => file

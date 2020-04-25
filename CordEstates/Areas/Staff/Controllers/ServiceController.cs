@@ -32,7 +32,8 @@ namespace CordEstates.Areas.Staff.Controllers
         // GET: Employees/Service
         public async Task<IActionResult> Index()
         {
-            List<ServiceDTO> result = _mapper.Map<List<ServiceDTO>>(await _repositoryWrapper.Service.GetAllServicesAsync());
+            List<ServiceDTO> result = _mapper.Map<List<ServiceDTO>>(
+                await _repositoryWrapper.Service.GetAllServicesAsync());
 
             return View(nameof(Index), result);
         }
@@ -95,7 +96,7 @@ namespace CordEstates.Areas.Staff.Controllers
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError($"Error occured whilst attempting to update Service with id- {id}: {ex}");
+                    _logger.LogError($"Error occurred whilst attempting to update Service with id- {id}: {ex}");
                 }
                 return RedirectToAction(nameof(Index));
             }
