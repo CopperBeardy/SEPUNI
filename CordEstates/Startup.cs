@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NLog;
+using ReflectionIT.Mvc.Paging;
 using System.IO;
 
 namespace CordEstates
@@ -39,7 +40,7 @@ namespace CordEstates
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-
+         
 
             services.Configure<AuthMessageSenderOptions>(Configuration);
 

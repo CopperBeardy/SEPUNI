@@ -12,6 +12,7 @@ using CordEstates.Wrappers.Interfaces;
 using AutoMapper;
 using System.Reflection.Metadata;
 using CordEstates.Entities;
+using CordEstates.Models;
 
 namespace CordEstates.Areas.Staff.Controllers
 {
@@ -30,9 +31,11 @@ namespace CordEstates.Areas.Staff.Controllers
         }
 
         // GET: Staff/Customer
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int pageNumber =1)
         {
             List<CustomerManagementDTO> data = _mapper.Map<List<CustomerManagementDTO>>(await _repositoryWrapper.Customer.GetAllCustomersAsync());
+            IQueryable<CustomerManagementDTO> dataQuerable = data.AsQueryable();
+            var model = PaginatedList<CustomerManagementDTO>.Create(dataQuerable, pageNumber, 5);
             return View(data);
         }
 

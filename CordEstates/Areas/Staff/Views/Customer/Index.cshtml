@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CustomerManagementDTO>
+﻿@model PaginatedList<CustomerManagementDTO>
 
 @{
     ViewData["Title"] = "Index";
@@ -11,41 +11,59 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.User.Id)
+                User
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.User.FirstName)
+                FirstName
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.User.LastName)
+                LastName
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.User.Email)
+                Email
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.User.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.User.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.User.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.User.Email)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.Email)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+@{
+    var prevDisabled = !Model.PreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.NextPage ? "disabled" : "";
+}
+<nav>
+    <a asp-action="Index"
+       asp-route-pageNumber="@(Model.PageIndex-1)"
+       class="btn btn-lg btn-info @prevDisabled">
+        <
+    </a>
+    <a asp-action="Index"
+       asp-route-pageNumber="@(Model.PageIndex+1)"
+       class="btn btn-lg btn-info @nextDisabled">
+        >
+    </a>
+</nav>

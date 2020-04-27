@@ -11,6 +11,7 @@ using CordEstates.Wrappers.Interfaces;
 using CordEstates.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using CordEstates.Areas.Staff.Models.DTOs;
+using CordEstates.Models;
 
 namespace CordEstates.Areas.Staff.Controllers
 {
@@ -31,10 +32,12 @@ namespace CordEstates.Areas.Staff.Controllers
         }
 
         // GET: Staff/Buyer
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int pageNumber =1)
         {
-            var result = _mapper.Map<List<BuyerManagementDTO>>(await _repositoryWrapper.Buyer.GetAllBuyersAsync());
-            return View(nameof(Index),result);
+            var data = _mapper.Map<List<BuyerManagementDTO>>(await _repositoryWrapper.Buyer.GetAllBuyersAsync());
+            IQueryable<BuyerManagementDTO> dataQuerable = data.AsQueryable();
+            var model = PaginatedList<BuyerManagementDTO>.Create(dataQuerable, pageNumber, 5);
+            return View(nameof(Index),model);
         }
 
         // GET: Staff/Buyer/Details/5

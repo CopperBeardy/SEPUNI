@@ -1,4 +1,4 @@
-﻿@model IEnumerable<AppointmentManagementDTO>
+﻿@model PaginatedList<AppointmentManagementDTO>
 
 @{
     ViewData["Title"] = "Appointment Management";
@@ -18,10 +18,10 @@
                     User
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Time)
+                    Time
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Listing)
+                   Listing
                 </th>
                 <th></th>
             </tr>
@@ -49,6 +49,7 @@
             }
         </tbody>
     </table>
+
 }
 else
 {
@@ -56,7 +57,7 @@ else
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Time)
+                    Time
                 </th>
                 <th>
                     Appointment Location
@@ -85,3 +86,20 @@ else
     </table>
 
 }
+
+@{ 
+    var prevDisabled = !Model.PreviousPage ? "disabled":"";
+    var nextDisabled = !Model.NextPage ? "disabled":"";
+}
+<nav>
+    <a asp-action="Index"
+       asp-route-pageNumber="@(Model.PageIndex-1)"
+       class="btn btn-lg btn-info @prevDisabled">
+   <
+    </a>
+    <a asp-action="Index"
+       asp-route-pageNumber="@(Model.PageIndex+1)"
+       class="btn btn-lg btn-info @nextDisabled">
+    >
+    </a>
+</nav>

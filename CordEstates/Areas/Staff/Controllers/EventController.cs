@@ -2,6 +2,7 @@
 using CordEstates.Areas.Staff.Models.DTOs;
 using CordEstates.Entities;
 using CordEstates.Helpers;
+using CordEstates.Models;
 using CordEstates.Wrappers.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -36,11 +37,12 @@ namespace CordEstates.Areas.Staff.Controllers
         }
 
         // GET: Staff/Event
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int pageNumber =1)
         {
-            List<EventManagementDTO> eventList = _mapper.Map<List<EventManagementDTO>>(await _repositoryWrapper.Event.GetAllEventsAsync()).ToList();
-
-            return View(nameof(Index), eventList);
+            List<EventManagementDTO> data = _mapper.Map<List<EventManagementDTO>>(await _repositoryWrapper.Event.GetAllEventsAsync()).ToList();
+            IQueryable<EventManagementDTO> dataQuerable = data.AsQueryable();
+            var model = PaginatedList<EventManagementDTO>.Create(dataQuerable, pageNumber, 5);
+            return View(nameof(Index), model);
         }
 
         // GET: Staff/Event/Details/5

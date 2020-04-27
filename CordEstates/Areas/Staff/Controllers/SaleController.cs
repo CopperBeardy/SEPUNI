@@ -11,6 +11,7 @@ using AutoMapper;
 using CordEstates.Wrappers.Interfaces;
 using CordEstates.Helpers;
 using CordEstates.Areas.Staff.Models.DTOs;
+using CordEstates.Models;
 
 namespace CordEstates.Areas.Staff.Controllers
 {
@@ -32,11 +33,12 @@ namespace CordEstates.Areas.Staff.Controllers
 
 
         // GET: Staff/Sale
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int pageNumber =1 )
         {
-            var result = _mapper.Map<List<SaleManagementDTO>>(await _repositoryWrapper.Sale.GetAllSalesAsync());
-       
-            return View(nameof(Index),result);
+            var data = _mapper.Map<List<SaleManagementDTO>>(await _repositoryWrapper.Sale.GetAllSalesAsync());
+            IQueryable<SaleManagementDTO> dataQuerable = data.AsQueryable();
+            var model = PaginatedList<SaleManagementDTO>.Create(dataQuerable, pageNumber, 5);
+            return View(nameof(Index),model);
         }
 
         // GET: Staff/Sale/Details/5

@@ -3,11 +3,13 @@ using CordEstates.Areas.Identity.Data;
 using CordEstates.Areas.Staff.Models.DTOs;
 using CordEstates.Entities;
 using CordEstates.Helpers;
+using CordEstates.Models;
 using CordEstates.Wrappers.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using static CordEstates.Helpers.ImageUpload;
 
@@ -37,11 +39,12 @@ namespace CordEstates.Areas.Staff.Controllers
         }
 
         // GET: Staff/User
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int pageNumber =1)
         {
-            List<EmployeeManagementDTO>  users = _mapper.Map<List<EmployeeManagementDTO>>(await _repositoryWrapper.Employee.GetAllUsers());
- 
-            return View(users);
+            List<EmployeeManagementDTO>  data = _mapper.Map<List<EmployeeManagementDTO>>(await _repositoryWrapper.Employee.GetAllUsers());
+            IQueryable<EmployeeManagementDTO> dataQuerable = data.AsQueryable();
+            var model = PaginatedList<EmployeeManagementDTO>.Create(dataQuerable, pageNumber, 5);
+            return View(nameof(Index),model);
         }
 
         // GET: Staff/User/Details/5

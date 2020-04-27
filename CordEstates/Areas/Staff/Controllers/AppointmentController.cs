@@ -2,10 +2,12 @@
 using CordEstates.Areas.Staff.Models.DTOs;
 using CordEstates.Entities;
 using CordEstates.Helpers;
+using CordEstates.Models;
 using CordEstates.Wrappers.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using ReflectionIT.Mvc.Paging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +28,7 @@ namespace CordEstates.Areas.Staff.Controllers
         readonly ILoggerManager _logger;
 
 
+
         public AppointmentController(ILoggerManager logger, IRepositoryWrapper repositoryWrapper, IMapper mapper)
         {
             _logger = logger;
@@ -35,12 +38,14 @@ namespace CordEstates.Areas.Staff.Controllers
         }
 
         // GET: Admin/Appointment
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int pageNumber =1)
         {
-            var appointments = _mapper.Map<List<AppointmentManagementDTO>>(await _repositoryWrapper.Appointment.GetAllAppointmentsAsync());
-            appointments = appointments.OrderBy(x => x.Time).ToList();
-
-            return View(nameof(Index), appointments);
+            var data = _mapper.Map<List<AppointmentManagementDTO>>(await _repositoryWrapper.Appointment.GetAllAppointmentsAsync());
+            IQueryable<AppointmentManagementDTO> appointments = data.AsQueryable();
+            var model =  PaginatedList<AppointmentManagementDTO>.Create(appointments,pageNumber,5);
+            
+           
+            return View(nameof(Index), model);
         }
 
         // GET: Admin/Appointment/Details/5

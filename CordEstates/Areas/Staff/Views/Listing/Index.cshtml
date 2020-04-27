@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ListingManagementDTO>
+﻿@model PaginatedList<ListingManagementDTO>
 
 @{
     ViewData["Title"] = "Listing Management";
@@ -13,33 +13,52 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Address)
-            </th>                      
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
+                Address
             </th>
-          
+            <th>
+                Status
+            </th>
+
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @item.ToString()
-            </td>    
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-         
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                @if(User.IsInRole("Admin")){
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                }
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.ToString()
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    }
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+@{
+    var prevDisabled = !Model.PreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.NextPage ? "disabled" : "";
+}
+<nav>
+    <a asp-action="Index"
+       asp-route-pageNumber="@(Model.PageIndex-1)"
+       class="btn btn-lg btn-info @prevDisabled">
+        <
+    </a>
+    <a asp-action="Index"
+       asp-route-pageNumber="@(Model.PageIndex+1)"
+       class="btn btn-lg btn-info @nextDisabled">
+        >
+    </a>
+</nav>

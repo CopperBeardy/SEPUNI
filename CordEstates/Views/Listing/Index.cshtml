@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ExtendedListingDTO>
+﻿@model PaginatedList<ExtendedListingDTO>
 @{
     ViewData["Title"] = "Properties";
 }
@@ -21,7 +21,7 @@
                         <span>Start From:</span>
                         <h5>£ @listing.Price</h5>
                     </div>
-                
+
                     <a type="button" class="btn btn-info" asp-action="Details"
                        asp-route-id="@listing.Id">Details</a>
                 </div>
@@ -30,3 +30,19 @@
     }
 </div>
 
+@{
+    var prevDisabled = !Model.PreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.NextPage ? "disabled" : "";
+}
+<nav>
+    <a asp-action="Index"
+       asp-route-pageNumber="@(Model.PageIndex-1)"
+       class="btn btn-lg btn-info @prevDisabled">
+        <
+    </a>
+    <a asp-action="Index"
+       asp-route-pageNumber="@(Model.PageIndex+1)"
+       class="btn btn-lg btn-info @nextDisabled">
+        >
+    </a>
+</nav>

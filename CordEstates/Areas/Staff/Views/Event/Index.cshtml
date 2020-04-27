@@ -1,4 +1,4 @@
-﻿@model IEnumerable<EventManagementDTO>
+﻿@model PaginatedList<EventManagementDTO>
 
 @{
     ViewData["Title"] = "Event Management";
@@ -17,15 +17,15 @@
                 <th>
                     Title
                 </th>
-                
+
                 <th>
-                    @Html.DisplayNameFor(model => model.Time)
+                    Time
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Active)
+                    Active
                 </th>
                 <th></th>
-             
+
             </tr>
         </thead>
         <tbody>
@@ -35,8 +35,8 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.EventName)
                     </td>
-                    
-                   
+
+
                     <td>
                         @Html.DisplayFor(modelItem => item.Time)
                     </td>
@@ -44,10 +44,10 @@
                         @Html.DisplayFor(modelItem => item.Active)
                     </td>
                     <td width="20%">
-                        <a asp-action="Edit" asp-route-id="@item.Id">Edit </a> | 
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit </a> |
                         <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                         <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                    
+
                     </td>
                 </tr>
             }
@@ -60,11 +60,11 @@ else
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.EventName)
+                   EventName
                 </th>
 
                 <th>
-                    @Html.DisplayNameFor(model => model.Time)
+                    Time
                 </th>
                 <th></th>
             </tr>
@@ -90,3 +90,20 @@ else
     </table>
 
 }
+
+@{
+    var prevDisabled = !Model.PreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.NextPage ? "disabled" : "";
+}
+<nav>
+    <a asp-action="Index"
+       asp-route-pageNumber="@(Model.PageIndex-1)"
+       class="btn btn-lg btn-info @prevDisabled">
+        <
+    </a>
+    <a asp-action="Index"
+       asp-route-pageNumber="@(Model.PageIndex+1)"
+       class="btn btn-lg btn-info @nextDisabled">
+        >
+    </a>
+</nav>

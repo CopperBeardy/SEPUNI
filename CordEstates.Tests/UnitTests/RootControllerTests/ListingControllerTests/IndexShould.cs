@@ -1,5 +1,6 @@
 ﻿using CordEstates.Controllers;
 using CordEstates.Entities;
+using CordEstates.Models;
 using CordEstates.Models.DTOs;
 using CordEstates.Tests.Setup;
 using Microsoft.AspNetCore.Mvc;
@@ -48,7 +49,7 @@ namespace CordEstates.Tests.UnitTests.RootControllerTests.ListingControllerTests
 
             var vr = Assert.IsType<ViewResult>(result);
             Assert.NotNull(vr.Model);
-            Assert.IsType<List<ExtendedListingDTO>>(vr.Model);
+            Assert.IsType<PaginatedList<ExtendedListingDTO>>(vr.Model);
         }
 
         //[Fact]

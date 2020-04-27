@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CordEstates.Entities;
 using CordEstates.Helpers;
+using CordEstates.Models;
 using CordEstates.Models.DTOs;
 using CordEstates.Wrappers.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -8,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using static CordEstates.Helpers.ImageUpload;
 
@@ -38,10 +40,15 @@ namespace CordEstates.Areas.Staff.Controllers
         }
 
         // GET: Admin/Photo
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int pageNumber =1 )
         {
-            List<PhotoDTO> viewResult = _mapper.Map<List<PhotoDTO>>(await _repositoryWrapper.Photo.GetAllPhotosAsync());
-            return View(nameof(Index), viewResult);
+
+            var  data = _mapper.Map<List<PhotoDTO>>(await _repositoryWrapper.Photo.GetAllPhotosAsync());
+            IQueryable<PhotoDTO> dataQuerable = data.AsQueryable();
+            var model = PaginatedList<PhotoDTO>.Create(dataQuerable, pageNumber, 5);
+
+
+            return View(nameof(Index), model);
         }
 
 

@@ -2,10 +2,12 @@
 using CordEstates.Areas.Staff.Models.DTOs;
 using CordEstates.Entities;
 using CordEstates.Helpers;
+using CordEstates.Models;
 using CordEstates.Wrappers.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace CordEstates.Areas.Staff.Controllers
@@ -28,11 +30,12 @@ namespace CordEstates.Areas.Staff.Controllers
         }
 
         // GET: Admin/Ticket
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int pageNumber =1)
         {
-            var tickets = _mapper.Map<List<TicketManagementDTO>>(await _repositoryWrapper.Ticket.GetAllTicketsAsync());
-
-            return View(nameof(Index), tickets);
+            var data = _mapper.Map<List<TicketManagementDTO>>(await _repositoryWrapper.Ticket.GetAllTicketsAsync());
+            IQueryable<TicketManagementDTO> dataQuerable = data.AsQueryable();
+            var model = PaginatedList<TicketManagementDTO>.Create(dataQuerable, pageNumber, 5);
+            return View(nameof(Index), model);
         }
 
         // GET: Admin/Ticket/Details/5

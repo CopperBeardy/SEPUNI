@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
 using CordEstates.Helpers;
+using CordEstates.Models;
 using CordEstates.Models.DTOs;
 using CordEstates.Wrappers.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace CordEstates.Controllers
@@ -27,12 +29,14 @@ namespace CordEstates.Controllers
         }
 
         // GET: Listing
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int pageNumber =1)
         {
             try
             {
-                var listings = _mapper.Map<List<ExtendedListingDTO>>(await _repositoryWrapper.Listing.GetAllListingsForSaleAsync());
-                return View(nameof(Index), listings);
+                var data = _mapper.Map<List<ExtendedListingDTO>>(await _repositoryWrapper.Listing.GetAllListingsForSaleAsync());
+                IQueryable<ExtendedListingDTO> dataQuerable = data.AsQueryable();
+                var model = PaginatedList<ExtendedListingDTO>.Create(dataQuerable, pageNumber, 5);
+                return View(nameof(Index), model);
             }
             catch (Exception ex)
             {

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ServiceDTO>
+﻿@model PaginatedList<ServiceDTO>
 
 @{
     ViewData["Title"] = "Service Management";
@@ -8,17 +8,17 @@
 
 <p>
     <a asp-action="Create">Create New</a>
-</p> 
+</p>
 
 
 <table class="table">
     <thead>
         <tr>
             <th width="15%">
-               Service Name
+                Service Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Description)
+                Description
             </th>
             <th width="15%"></th>
         </tr>
@@ -45,3 +45,20 @@
         }
     </tbody>
 </table>
+
+@{
+    var prevDisabled = !Model.PreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.NextPage ? "disabled" : "";
+}
+<nav>
+    <a asp-action="Index"
+       asp-route-pageNumber="@(Model.PageIndex-1)"
+       class="btn btn-lg btn-info @prevDisabled">
+        <
+    </a>
+    <a asp-action="Index"
+       asp-route-pageNumber="@(Model.PageIndex+1)"
+       class="btn btn-lg btn-info @nextDisabled">
+        >
+    </a>
+</nav>

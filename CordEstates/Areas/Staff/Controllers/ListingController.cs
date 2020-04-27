@@ -2,6 +2,7 @@
 using CordEstates.Areas.Staff.Models.DTOs;
 using CordEstates.Entities;
 using CordEstates.Helpers;
+using CordEstates.Models;
 using CordEstates.Wrappers.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -9,6 +10,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using static CordEstates.Helpers.ImageUpload;
 
@@ -40,12 +42,13 @@ namespace CordEstates.Areas.Staff.Controllers
         }
 
         // GET: Admin/Listing
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int pageNumber =1)
         {
-            List<ListingManagementDTO> listing = _mapper.Map<List<ListingManagementDTO>>(await _repositoryWrapper.Listing.GetAllListingsAsync());
+            List<ListingManagementDTO> data = _mapper.Map<List<ListingManagementDTO>>(await _repositoryWrapper.Listing.GetAllListingsAsync());
+            IQueryable<ListingManagementDTO> dataQuerable = data.AsQueryable();
+            var model = PaginatedList<ListingManagementDTO>.Create(dataQuerable, pageNumber, 5);
 
-
-            return View(nameof(Index), listing);
+            return View(nameof(Index), model);
         }
 
         // GET: Admin/Listing/Details/5

@@ -1,6 +1,7 @@
 ﻿using CordEstates.Areas.Staff.Controllers;
 using CordEstates.Areas.Staff.Models.DTOs;
 using CordEstates.Entities;
+using CordEstates.Models;
 using CordEstates.Tests.Setup;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -54,7 +55,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.ListingControllerTests
 
             var result = await sut.Index();
             var vr = Assert.IsType<ViewResult>(result);
-            Assert.IsType<List<ListingManagementDTO>>(vr.Model);
+            Assert.IsType<PaginatedList<ListingManagementDTO>>(vr.Model);
 
         }
 

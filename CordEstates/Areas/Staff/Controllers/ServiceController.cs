@@ -1,12 +1,14 @@
 ﻿using AutoMapper;
 using CordEstates.Entities;
 using CordEstates.Helpers;
+using CordEstates.Models;
 using CordEstates.Models.DTOs;
 using CordEstates.Wrappers.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace CordEstates.Areas.Staff.Controllers
@@ -30,12 +32,12 @@ namespace CordEstates.Areas.Staff.Controllers
         }
 
         // GET: Employees/Service
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int pageNumber=1)
         {
-            List<ServiceDTO> result = _mapper.Map<List<ServiceDTO>>(
-                await _repositoryWrapper.Service.GetAllServicesAsync());
-
-            return View(nameof(Index), result);
+            List<ServiceDTO> data = _mapper.Map<List<ServiceDTO>>( await _repositoryWrapper.Service.GetAllServicesAsync());
+            IQueryable<ServiceDTO> dataQuerable = data.AsQueryable();
+            var model = PaginatedList<ServiceDTO>.Create(dataQuerable, pageNumber, 5);
+            return View(nameof(Index), model);
         }
 
 

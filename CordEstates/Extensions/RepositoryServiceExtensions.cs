@@ -29,6 +29,7 @@ namespace CordEstates.Extensions
             services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
             services.AddTransient<IEmailSender, EmailSender>();
             services.AddTransient<IImageUploadWrapper, ImageUploadWrapper>();
+         
 
         }
     }

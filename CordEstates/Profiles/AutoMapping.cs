@@ -4,6 +4,7 @@ using CordEstates.Areas.Staff.Models.DTOs;
 using CordEstates.Entities;
 using CordEstates.Models.DTOs;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CordEstates.Profiles
 {
@@ -33,6 +34,7 @@ namespace CordEstates.Profiles
             CreateMap<Appointment, AppointmentDTO>().ReverseMap();
             CreateMap<Appointment, AppointmentManagementDTO>().ReverseMap();
             CreateMap<Appointment, EditAppointmentManagementDTO>().ReverseMap();
+            CreateMap<List<Appointment>, AppointmentManagementDTO>().ReverseMap();
 
             CreateMap<Buyer, BuyerManagementDTO>().ReverseMap();
             CreateMap<List<Buyer>, BuyerManagementDTO>().ReverseMap();
