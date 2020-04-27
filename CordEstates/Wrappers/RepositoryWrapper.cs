@@ -22,6 +22,7 @@ namespace CordEstates.Wrappers
         private PhotoRepository _photo;
         private BuyerRepository _buyer;
         private SaleRepository _sale;
+        private CustomerRepository _customer;
 
 
 
@@ -45,7 +46,18 @@ namespace CordEstates.Wrappers
                 return _ticket;
             }
         }
+        public ICustomerRepository Customer
+        {
+            get
+            {
+                if (_customer == null)
+                {
+                    _customer = new CustomerRepository(_context);
+                }
 
+                return _customer;
+            }
+        }
 
         public IListingRepository Listing
         {

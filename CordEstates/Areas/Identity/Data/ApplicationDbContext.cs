@@ -1,6 +1,7 @@
 ﻿using CordEstates.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using CordEstates.Areas.Staff.Models.DTOs;
 
 
 namespace CordEstates.Areas.Identity.Data
@@ -37,8 +38,8 @@ namespace CordEstates.Areas.Identity.Data
         public DbSet<Buyer> Buyers { get; set; }
 
         public DbSet<Customer> Customers { get; set; }
- 
 
+       
 
 
     }

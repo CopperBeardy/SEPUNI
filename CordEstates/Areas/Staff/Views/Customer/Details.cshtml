@@ -1,0 +1,42 @@
+﻿@model CustomerManagementDTO
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.User.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.User.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.User.FirstName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.User.FirstName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.User.LastName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.User.LastName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.User.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.User.Email)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

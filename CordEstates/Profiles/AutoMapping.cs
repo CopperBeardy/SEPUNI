@@ -23,8 +23,9 @@ namespace CordEstates.Profiles
                 .ForMember(des => des.LastName, o => o.MapFrom(src => src.LastName))
                 .ForMember(des => des.Bio, o => o.MapFrom(src => src.Bio))
                 .ForMember(des => des.HeadShotUrl, o => o.MapFrom(src => src.HeadShot.ImageLink));
-      
 
+            CreateMap<Customer, CustomerManagementDTO>().ReverseMap();
+            CreateMap<List<Customer>, CustomerManagementDTO>().ReverseMap();
 
             CreateMap<Appointment, CreateAppointmentDTO>()
                 .ForMember(desc => desc.Time, o => o.MapFrom(src => src.Time))

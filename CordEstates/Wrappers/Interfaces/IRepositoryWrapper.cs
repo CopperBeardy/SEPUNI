@@ -22,7 +22,8 @@ namespace CordEstates.Wrappers.Interfaces
         IPhotoRepository Photo { get; }
 
         IBuyerRepository Buyer{ get;   }
-        ISaleRepository Sale { get;}
+        ISaleRepository Sale { get; }
+        ICustomerRepository Customer { get; }
         Task SaveAsync();
     }
 }
