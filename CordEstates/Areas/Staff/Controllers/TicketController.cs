@@ -30,12 +30,57 @@ namespace CordEstates.Areas.Staff.Controllers
         }
 
         // GET: Admin/Ticket
-        public async Task<IActionResult> Index(int pageNumber =1)
+        public async Task<IActionResult> Index(string sortOrder,int pageNumber =1)
         {
             var data = _mapper.Map<List<TicketManagementDTO>>(await _repositoryWrapper.Ticket.GetAllTicketsAsync());
-            IQueryable<TicketManagementDTO> dataQuerable = data.AsQueryable();
-            var model = PaginatedList<TicketManagementDTO>.Create(dataQuerable, pageNumber, 5);
+            IQueryable<TicketManagementDTO> sorted = data.AsQueryable();
+
+
+            ViewData["FirstNameSortParm"] = string.IsNullOrEmpty(sortOrder) ? "first_name_desc" : "";
+            ViewData["LastNameSortParm"] = sortOrder == "Last Name" ? "last_name_desc" : "Last Name";
+            ViewData["CreationDateSortParm"] = sortOrder == "Creation Date" ? "creation_date_desc" : "Creation Date";
+            ViewData["ActionedSortParm"] = sortOrder == "Actioned" ? "actioned_desc" : "Actioned";
+            ViewData["currentSort"] = sortOrder;
+
+            sorted = SortList(sortOrder, sorted);
+
+            var model = PaginatedList<TicketManagementDTO>.Create(sorted, pageNumber, 5);
             return View(nameof(Index), model);
+        }
+
+        private static IQueryable<TicketManagementDTO> SortList(string sortOrder, IQueryable<TicketManagementDTO> sorted)
+        {
+            switch (sortOrder)
+            {
+                case "Last Name":
+                    sorted = sorted.OrderBy(ln => ln.LastName).AsQueryable();
+                    break;
+                case "last_name_desc":
+                    sorted = sorted.OrderByDescending(l => l.LastName).AsQueryable();
+                    break;
+                case "Creation Date":
+                    sorted = sorted.OrderBy(c => c.SentAt).AsQueryable();
+                    break;
+                case "creation_date_desc":
+                    sorted = sorted.OrderByDescending(c => c.SentAt).AsQueryable();
+                    break;
+               
+
+                case "Actioned":
+                    sorted = sorted.OrderBy(a => a.Actioned).AsQueryable();
+                    break;
+                case "actioned_desc":
+                    sorted = sorted.OrderByDescending(a =>a.Actioned).AsQueryable();
+                    break;
+                case "first_name_desc":
+                    sorted = sorted.OrderByDescending(f => f.FirstName).AsQueryable();
+                    break;
+                default:
+                    sorted = sorted.OrderBy(f => f.FirstName).AsQueryable();
+                    break;
+            }
+
+            return sorted;
         }
 
         // GET: Admin/Ticket/Details/5

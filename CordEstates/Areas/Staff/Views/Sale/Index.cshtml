@@ -14,14 +14,14 @@
         <tr>
 
             <th>
-               Buyer
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["BuyerSortParm"]">Buyer</a>
             </th>
             <th>
-               AgreedPrice
+               <a asp-action="Index" asp-route-sortOrder="@ViewData["PriceSortParm"]">Agreed Price</a>
             </th>
 
             <th>
-               SoldProperty
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["SoldPropertySortParm"]">Sold Property</a> 
             </th>
             <th></th>
         </tr>
@@ -62,11 +62,15 @@
 <nav>
     <a asp-action="Index"
        asp-route-pageNumber="@(Model.PageIndex-1)"
+       asp-route-sortOrder="@ViewData["currentSort"]"
+
        class="btn btn-lg btn-info @prevDisabled">
         <
     </a>
     <a asp-action="Index"
        asp-route-pageNumber="@(Model.PageIndex+1)"
+       asp-route-sortOrder="@ViewData["currentSort"]"
+
        class="btn btn-lg btn-info @nextDisabled">
         >
     </a>

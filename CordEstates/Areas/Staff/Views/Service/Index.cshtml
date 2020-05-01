@@ -15,7 +15,7 @@
     <thead>
         <tr>
             <th width="15%">
-                Service Name
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["ServiceNameSortParm"]">Service Name</a> 
             </th>
             <th>
                 Description
@@ -53,11 +53,13 @@
 <nav>
     <a asp-action="Index"
        asp-route-pageNumber="@(Model.PageIndex-1)"
+       asp-route-sortOrder="@ViewData["currentSort"]"
        class="btn btn-lg btn-info @prevDisabled">
         <
     </a>
     <a asp-action="Index"
        asp-route-pageNumber="@(Model.PageIndex+1)"
+       asp-route-sortOrder="@ViewData["currentSort"]"
        class="btn btn-lg btn-info @nextDisabled">
         >
     </a>

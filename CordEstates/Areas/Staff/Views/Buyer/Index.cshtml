@@ -13,25 +13,26 @@
     <thead>
         <tr>
             <th>
-                Title
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["TitleSortParm"]">Title</a>
             </th>
             <th>
-               FirstName
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["FirstNameSortParm"]">First Name</a>
             </th>
             <th>
-                LastName
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["LastNameSortParm"]">Last Name</a>
+
             </th>
             <th>
-                HouseNumber
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["HouseNumberSortParm"]">House Number</a>
             </th>
             <th>
-                FirstLine
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["FirstLineSortParm"]">First Line</a>
             </th>
             <th>
-                Postcode
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["PostCodeSortParm"]">PostCode</a>
             </th>
             <th>
-                PhoneNumber
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["PhoneNumberSortParm"]">Phone Number</a>
             </th>
             <th></th>
         </tr>
@@ -82,11 +83,13 @@
 <nav>
     <a asp-action="Index"
        asp-route-pageNumber="@(Model.PageIndex-1)"
+       asp-route-sortOrder="@ViewData["currentSort"]"
        class="btn btn-lg btn-info @prevDisabled">
         <
     </a>
     <a asp-action="Index"
        asp-route-pageNumber="@(Model.PageIndex+1)"
+       asp-route-sortOrder="@ViewData["currentSort"]"
        class="btn btn-lg btn-info @nextDisabled">
         >
     </a>

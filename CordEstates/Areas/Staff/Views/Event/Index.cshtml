@@ -15,14 +15,14 @@
         <thead>
             <tr>
                 <th>
-                    Title
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["TitleSortParm"]">Title</a>
                 </th>
 
                 <th>
-                    Time
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["TimeSortParm"]">Time</a>
                 </th>
                 <th>
-                    Active
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["ActiveSortParm"]">Active</a>
                 </th>
                 <th></th>
 
@@ -60,11 +60,11 @@ else
         <thead>
             <tr>
                 <th>
-                   EventName
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["TitleSortParm"]">Title</a>
                 </th>
 
                 <th>
-                    Time
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["TimeSortParm"]">Time</a>
                 </th>
                 <th></th>
             </tr>
@@ -98,11 +98,13 @@ else
 <nav>
     <a asp-action="Index"
        asp-route-pageNumber="@(Model.PageIndex-1)"
+       asp-route-sortOrder="@ViewData["currentSort"]"
        class="btn btn-lg btn-info @prevDisabled">
         <
     </a>
     <a asp-action="Index"
        asp-route-pageNumber="@(Model.PageIndex+1)"
+       asp-route-sortOrder="@ViewData["currentSort"]"
        class="btn btn-lg btn-info @nextDisabled">
         >
     </a>

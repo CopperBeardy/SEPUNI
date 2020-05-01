@@ -37,12 +37,44 @@ namespace CordEstates.Areas.Staff.Controllers
         }
 
         // GET: Staff/Event
-        public async Task<IActionResult> Index(int pageNumber =1)
+        public async Task<IActionResult> Index(string sortOrder,int pageNumber =1)
         {
             List<EventManagementDTO> data = _mapper.Map<List<EventManagementDTO>>(await _repositoryWrapper.Event.GetAllEventsAsync()).ToList();
-            IQueryable<EventManagementDTO> dataQuerable = data.AsQueryable();
-            var model = PaginatedList<EventManagementDTO>.Create(dataQuerable, pageNumber, 5);
+            IQueryable<EventManagementDTO> sorted = data.AsQueryable();
+            ViewData["TitleSortParm"] = string.IsNullOrEmpty(sortOrder) ? "title_desc" : "";
+            ViewData["TimeSortParm"] = sortOrder == "Time" ? "time_desc" : "Time";
+            ViewData["ActiveSortParm"] = sortOrder == "Active" ? "active_desc" : "Active";
+            ViewData["currentSort"] = sortOrder;
+            sorted = SortList(sortOrder, sorted);
+            var model = PaginatedList<EventManagementDTO>.Create(sorted, pageNumber, 5);
             return View(nameof(Index), model);
+        }
+
+        private static IQueryable<EventManagementDTO> SortList(string sortOrder, IQueryable<EventManagementDTO> sorted)
+        {
+            switch (sortOrder)
+            {
+                case "Time":
+                    sorted = sorted.OrderBy(t => t.Time).AsQueryable();
+                    break;
+                case "time_desc":
+                    sorted = sorted.OrderByDescending(t => t.Time).AsQueryable();
+                    break;
+                case "Active_desc":
+                    sorted = sorted.OrderByDescending(a => a.Active).AsQueryable();
+                    break;
+                case "Active":
+                    sorted = sorted.OrderBy(a => a.Active).AsQueryable();
+                    break;               
+                case "title_desc":
+                    sorted = sorted.OrderByDescending(t => t.EventName).AsQueryable();
+                    break;
+                default:
+                    sorted = sorted.OrderBy(t => t.EventName).AsQueryable();
+                    break;
+            }
+
+            return sorted;
         }
 
         // GET: Staff/Event/Details/5

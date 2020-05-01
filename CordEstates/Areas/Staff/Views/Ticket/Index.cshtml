@@ -11,17 +11,17 @@
     <thead>
         <tr>
             <th>
-                First Name
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["FirstNameSortParm"]">First Name</a>
             </th>
             <th>
-                Last Name
-            </th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["LastNameSortParm"]">Last Name</a>
 
-            <th>
-                Creation Date
             </th>
             <th>
-                Actioned
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["CreationDateSortParm"]"> Creation Date</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["ActionedSortParm"]">Actioned</a>
             </th>
             <th></th>
         </tr>
@@ -59,11 +59,13 @@
 <nav>
     <a asp-action="Index"
        asp-route-pageNumber="@(Model.PageIndex-1)"
+       asp-route-sortOrder="@ViewData["currentSort"]"
        class="btn btn-lg btn-info @prevDisabled">
         <
     </a>
     <a asp-action="Index"
        asp-route-pageNumber="@(Model.PageIndex+1)"
+       asp-route-sortOrder="@ViewData["currentSort"]"
        class="btn btn-lg btn-info @nextDisabled">
         >
     </a>

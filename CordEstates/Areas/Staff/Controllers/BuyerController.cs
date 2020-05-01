@@ -32,12 +32,77 @@ namespace CordEstates.Areas.Staff.Controllers
         }
 
         // GET: Staff/Buyer
-        public async Task<IActionResult> Index(int pageNumber =1)
+        public async Task<IActionResult> Index(string sortOrder,int pageNumber =1)
         {
             var data = _mapper.Map<List<BuyerManagementDTO>>(await _repositoryWrapper.Buyer.GetAllBuyersAsync());
-            IQueryable<BuyerManagementDTO> dataQuerable = data.AsQueryable();
-            var model = PaginatedList<BuyerManagementDTO>.Create(dataQuerable, pageNumber, 5);
+            IQueryable<BuyerManagementDTO> sorted= data.AsQueryable();
+
+            ViewData["TitleSortParm"] = string.IsNullOrEmpty(sortOrder) ? "title_desc" : "";
+            ViewData["FirstNameSortParm"] = sortOrder == "First Name" ? "first_name_desc" : "First Name";
+            ViewData["LastNameSortParm"] = sortOrder == "Last Name" ? "last_name_desc" : "Last Name";
+            ViewData["HouseNumberSortParm"] = sortOrder == "House Number" ? "house_number_desc" : "House Number";
+            ViewData["FirstLineSortParm"] = sortOrder == "First Line" ? "first_line_desc" : "First Line";
+            ViewData["PostCodeSortParm"] = sortOrder == "PostCode" ? "postcode_desc" : "PostCode";
+            ViewData["PhoneNumberSortParm"] = sortOrder == "Phone Number" ? "phone_number_desc" : "Phone Number";
+            ViewData["currentSort"] = sortOrder;
+            sorted = SortList(sortOrder, sorted);
+            var model = PaginatedList<BuyerManagementDTO>.Create(sorted, pageNumber, 5);
             return View(nameof(Index),model);
+        }
+
+        private static IQueryable<BuyerManagementDTO> SortList(string sortOrder, IQueryable<BuyerManagementDTO> sorted)
+        {
+            switch (sortOrder)
+            {
+               
+                case "First Name":
+                    sorted = sorted.OrderBy(f => f.FirstName).AsQueryable();
+                    break;
+                case "first_name_desc":
+                    sorted = sorted.OrderByDescending(f => f.FirstName).AsQueryable();
+                    break;
+                case "Last Name":
+                    sorted = sorted.OrderBy(ln => ln.LastName).AsQueryable();
+                    break;
+                case "last_name_desc":
+                    sorted = sorted.OrderByDescending(l => l.LastName).AsQueryable();
+                    break;               
+                case "House Number":
+                    sorted = sorted.OrderBy(hn => hn.HouseNumber).AsQueryable();
+                    break;
+                case "house_number_desc":
+                    sorted = sorted.OrderByDescending(hn => hn.HouseNumber).AsQueryable();
+                    break;
+
+                case "First Line":
+                    sorted = sorted.OrderBy(fl => fl.FirstLine).AsQueryable();
+                    break;
+                case "first_line_desc":
+                    sorted = sorted.OrderByDescending(fl => fl.FirstLine).AsQueryable();
+                    break;
+                case "Postcode":
+                    sorted = sorted.OrderBy(pc => pc.Postcode).AsQueryable();
+                    break;
+                case "postcode_desc":
+                    sorted = sorted.OrderByDescending(pc => pc.Postcode).AsQueryable();
+                    break;
+                case "PhoneNumber":
+                    sorted = sorted.OrderBy(pn => pn.PhoneNumber).AsQueryable();
+                    break;
+                case "Phone_number_desc":
+                    sorted = sorted.OrderByDescending(pn => pn.PhoneNumber).AsQueryable();
+                    break;
+
+
+                case "title_desc":
+                    sorted = sorted.OrderByDescending(t => t.Title).AsQueryable();
+                    break;
+                default:
+                    sorted = sorted.OrderBy(t => t.Title ).AsQueryable();
+                    break;
+            }
+
+            return sorted;
         }
 
         // GET: Staff/Buyer/Details/5

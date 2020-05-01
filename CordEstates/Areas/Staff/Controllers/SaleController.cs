@@ -33,12 +33,45 @@ namespace CordEstates.Areas.Staff.Controllers
 
 
         // GET: Staff/Sale
-        public async Task<IActionResult> Index(int pageNumber =1 )
+        public async Task<IActionResult> Index(string sortOrder,int pageNumber =1 )
         {
             var data = _mapper.Map<List<SaleManagementDTO>>(await _repositoryWrapper.Sale.GetAllSalesAsync());
-            IQueryable<SaleManagementDTO> dataQuerable = data.AsQueryable();
-            var model = PaginatedList<SaleManagementDTO>.Create(dataQuerable, pageNumber, 5);
+            IQueryable<SaleManagementDTO> sorted = data.AsQueryable();
+            ViewData["BuyerSortParm"] = string.IsNullOrEmpty(sortOrder) ? "buyer_desc" : "";
+            ViewData["PriceSortParm"] = sortOrder == "Agreed Price" ? "agreed_price_desc" : "Agreed Price";
+            ViewData["SoldPropertySortParm"] = sortOrder == "Sold Property" ? "sold_property_desc" : "Sold Property";
+            ViewData["currentSort"] = sortOrder;
+
+            sorted = SortList(sortOrder, sorted);
+            var model = PaginatedList<SaleManagementDTO>.Create(sorted, pageNumber, 5);
             return View(nameof(Index),model);
+        }
+
+        private static IQueryable<SaleManagementDTO> SortList(string sortOrder, IQueryable<SaleManagementDTO> sorted)
+        {
+            switch (sortOrder)
+            {
+                case "Agreed Price":
+                    sorted = sorted.OrderBy(ap => ap.AgreedPrice).AsQueryable();
+                    break;
+                case "agreed_price_desc":
+                    sorted = sorted.OrderByDescending(ap => ap.AgreedPrice).AsQueryable();
+                    break;
+                case "Sold Property":
+                    sorted = sorted.OrderBy(sp => sp.SoldProperty.FirstLine).AsQueryable();
+                    break;
+                case "sold_property_desc":
+                    sorted = sorted.OrderByDescending(sp => sp.SoldProperty.FirstLine).AsQueryable();
+                    break;               
+                case "buyer_desc":
+                    sorted = sorted.OrderByDescending(b => b.Buyer.FirstName).AsQueryable();
+                    break;
+                default:
+                    sorted = sorted.OrderBy(b => b.Buyer.FirstName).AsQueryable();
+                    break;
+            }
+
+            return sorted;
         }
 
         // GET: Staff/Sale/Details/5

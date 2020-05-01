@@ -32,14 +32,31 @@ namespace CordEstates.Areas.Staff.Controllers
         }
 
         // GET: Employees/Service
-        public async Task<IActionResult> Index(int pageNumber=1)
+        public async Task<IActionResult> Index(string sortOrder,int pageNumber=1)
         {
             List<ServiceDTO> data = _mapper.Map<List<ServiceDTO>>( await _repositoryWrapper.Service.GetAllServicesAsync());
-            IQueryable<ServiceDTO> dataQuerable = data.AsQueryable();
-            var model = PaginatedList<ServiceDTO>.Create(dataQuerable, pageNumber, 5);
+            IQueryable<ServiceDTO> sorted = data.AsQueryable();
+            ViewData["ServiceNameSortParm"] = string.IsNullOrEmpty(sortOrder) ? "service_name_desc" : "";          
+            ViewData["currentSort"] = sortOrder;
+
+            sorted = SortList(sortOrder, sorted);
+            var model = PaginatedList<ServiceDTO>.Create(sorted, pageNumber, 5);
             return View(nameof(Index), model);
         }
+        private static IQueryable<ServiceDTO> SortList(string sortOrder, IQueryable<ServiceDTO> sorted)
+        {
+            switch (sortOrder)
+            {
+                case "service_name_desc":
+                    sorted = sorted.OrderByDescending(s => s.ServiceName).AsQueryable();
+                    break;
+                default:
+                    sorted = sorted.OrderBy(s => s.ServiceName).AsQueryable();
+                    break;
+            }
 
+            return sorted;
+        }
 
 
         // GET: Employees/Service/Create

@@ -32,16 +32,65 @@ namespace CordEstates.Areas.Staff.Controllers
         }
 
         // GET: Employees/Address
-        public async Task<IActionResult> Index(int pageNumber =1)
+        public async Task<IActionResult> Index(string sortOrder,int pageNumber =1)
         {
             var data = _mapper.Map<List<AddressDTO>>(await _repositoryWrapper.Address.GetAllAddressesAsync());
-            IQueryable<AddressDTO> dataQuerable = data.AsQueryable();
-            var model = PaginatedList<AddressDTO>.Create(dataQuerable, pageNumber, 5);
+           
+            
+            IQueryable<AddressDTO> sorted = data.AsQueryable();
+         
+
+            ViewData["NumSortParm"] = String.IsNullOrEmpty(sortOrder) ? "number_desc" : "";
+            ViewData["FirstLineSortParm"] = sortOrder== "First Line" ? "first_line_desc" : "First Line";
+            ViewData["SecondLineSortParm"] = sortOrder == "Second Line" ? "second_line_desc" : "Second Line";
+            ViewData["TownCitySortParm"] = sortOrder == "Town/City" ? "town_city_desc" : "Town/City";
+            ViewData["PostcodeSortParm"] = sortOrder == "Postcode" ? "postcode_desc" : "Postcode";
+            ViewData["currentSort"] = sortOrder;
+            sorted = SortList(sortOrder, sorted);
+   PaginatedList<AddressDTO> model = PaginatedList<AddressDTO>.Create(sorted, pageNumber, 5);
+            
             return View(nameof(Index),model);
 
         }
 
+        private static IQueryable<AddressDTO> SortList(string sortOrder, IQueryable<AddressDTO> sorted)
+        {
+            switch (sortOrder)
+            {
+                case "First Line":
+                    sorted = sorted.OrderBy(f => f.FirstLine).AsQueryable();
+                    break;
+                case "first_line_desc":
+                    sorted = sorted.OrderByDescending(fl => fl.FirstLine).AsQueryable();
+                    break;
+                case "second_line_desc":
+                    sorted = sorted.OrderByDescending(sl => sl.SecondLine).AsQueryable();
+                    break;
+                case "Second Name":
+                    sorted = sorted.OrderBy(sl => sl.SecondLine).AsQueryable();
+                    break;
+                case "Town/City":
+                    sorted = sorted.OrderBy(t => t.TownCity).AsQueryable();
+                    break;
+                case "town_city_desc":
+                    sorted = sorted.OrderByDescending(t => t.TownCity).AsQueryable();
+                    break;
+                case "PostCode":
+                    sorted = sorted.OrderBy(p => p.Postcode).AsQueryable();
+                    break;
+                case "postcode_desc":
+                    sorted = sorted.OrderByDescending(p => p.Postcode).AsQueryable();
+                    break;
+                case "number_desc":
+                    sorted = sorted.OrderByDescending(n => n.Number).AsQueryable();
+                    break;
+                default:
+                    sorted = sorted.OrderBy(n => n.Number).AsQueryable();
+                    break;
+            }
 
+            return sorted;
+        }
 
         // GET: Employees/Address/Create
         public IActionResult Create()

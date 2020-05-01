@@ -40,15 +40,33 @@ namespace CordEstates.Areas.Staff.Controllers
         }
 
         // GET: Admin/Photo
-        public async Task<IActionResult> Index(int pageNumber =1 )
+        public async Task<IActionResult> Index(string sortOrder,int pageNumber =1 )
         {
 
             var  data = _mapper.Map<List<PhotoDTO>>(await _repositoryWrapper.Photo.GetAllPhotosAsync());
-            IQueryable<PhotoDTO> dataQuerable = data.AsQueryable();
-            var model = PaginatedList<PhotoDTO>.Create(dataQuerable, pageNumber, 5);
+            IQueryable<PhotoDTO> sorted = data.AsQueryable();
+            ViewData["ImageSortParm"] = string.IsNullOrEmpty(sortOrder) ? "image_desc" : "";       
+            ViewData["currentSort"] = sortOrder;
+            sorted = SortList(sortOrder, sorted);
+            var model = PaginatedList<PhotoDTO>.Create(sorted, pageNumber, 5);
 
 
             return View(nameof(Index), model);
+        }
+
+        private static IQueryable<PhotoDTO> SortList(string sortOrder, IQueryable<PhotoDTO> sorted)
+        {
+            switch (sortOrder)
+            {
+                case "image_desc":
+                    sorted = sorted.OrderByDescending(i => i.ImageLink).AsQueryable();
+                    break;
+                default:
+                    sorted = sorted.OrderBy(i => i.ImageLink).AsQueryable();
+                    break;
+            }
+
+            return sorted;
         }
 
 

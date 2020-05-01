@@ -13,19 +13,19 @@
     <thead>
         <tr>
             <th>
-                Number
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NumSortParm"]">Number</a>
             </th>
             <th>
-                First Line
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["FirstLineSortParm"]">First Line</a> 
             </th>
             <th>
-                Second Line
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["SecondLineSortParm"]">Second Line</a>
             </th>
             <th>
-                Town/City
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["TownCitySortParm"]">Town/City</a>
             </th>
             <th>
-                Postcode
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["PostcodeSortParm"]">Postcode</a> 
             </th>
             <th></th>
         </tr>
@@ -69,11 +69,13 @@
 <nav>
     <a asp-action="Index"
        asp-route-pageNumber="@(Model.PageIndex-1)"
+       asp-route-sortOrder="@ViewData["currentSort"]"
        class="btn btn-lg btn-info @prevDisabled">
         <
     </a>
     <a asp-action="Index"
        asp-route-pageNumber="@(Model.PageIndex+1)"
+       asp-route-sortOrder="@ViewData["currentSort"]"
        class="btn btn-lg btn-info @nextDisabled">
         >
     </a>

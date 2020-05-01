@@ -38,14 +38,48 @@ namespace CordEstates.Areas.Staff.Controllers
         }
 
         // GET: Admin/Appointment
-        public async Task<IActionResult> Index(int pageNumber =1)
+        public async Task<IActionResult> Index(string sortOrder,int pageNumber =1)
         {
             var data = _mapper.Map<List<AppointmentManagementDTO>>(await _repositoryWrapper.Appointment.GetAllAppointmentsAsync());
-            IQueryable<AppointmentManagementDTO> appointments = data.AsQueryable();
-            var model =  PaginatedList<AppointmentManagementDTO>.Create(appointments,pageNumber,5);
+            IQueryable<AppointmentManagementDTO> sorted = data.AsQueryable();
+            ViewData["UserNameSortParm"] = string.IsNullOrEmpty(sortOrder) ? "username_desc" : "";
+            ViewData["TimeSortParm"] = sortOrder == "Time" ? "time_desc" : "Time";
+            ViewData["ListingSortParm"] = sortOrder == "Listing" ? "listing_desc" : "Listing";
+            ViewData["currentSort"] = sortOrder;
+            sorted = SortList(sortOrder, sorted);
+
+
+            var model =  PaginatedList<AppointmentManagementDTO>.Create(sorted,pageNumber,5);
             
            
             return View(nameof(Index), model);
+        }
+
+        private static IQueryable<AppointmentManagementDTO> SortList(string sortOrder, IQueryable<AppointmentManagementDTO> sorted)
+        {
+            switch (sortOrder)
+            {
+                case "Time":
+                    sorted = sorted.OrderBy(t => t.Time).AsQueryable();
+                    break;
+                case "time_desc":
+                    sorted = sorted.OrderByDescending(t => t.Time).AsQueryable();
+                    break;
+                case "listing_desc":
+                    sorted = sorted.OrderByDescending(l => l.Listing.Address.FirstLine).AsQueryable();
+                    break;
+                case "Listing":
+                    sorted = sorted.OrderBy(l => l.Listing.Address.FirstLine).AsQueryable();
+                    break;               
+                case "username_desc":
+                    sorted = sorted.OrderByDescending(s => s.Staff.UserName).AsQueryable();
+                    break;
+                default:
+                    sorted = sorted.OrderBy(s => s.Staff.UserName).AsQueryable();
+                    break;
+            }
+
+            return sorted;
         }
 
         // GET: Admin/Appointment/Details/5

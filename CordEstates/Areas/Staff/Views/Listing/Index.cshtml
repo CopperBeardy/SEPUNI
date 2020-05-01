@@ -13,10 +13,10 @@
     <thead>
         <tr>
             <th>
-                Address
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["AddressSortParm"]">Address</a>
             </th>
             <th>
-                Status
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["StatusSortParm"]">Status</a>
             </th>
 
             <th></th>
@@ -53,11 +53,13 @@
 <nav>
     <a asp-action="Index"
        asp-route-pageNumber="@(Model.PageIndex-1)"
+       asp-route-sortOrder="@ViewData["currentSort"]"
        class="btn btn-lg btn-info @prevDisabled">
         <
     </a>
     <a asp-action="Index"
        asp-route-pageNumber="@(Model.PageIndex+1)"
+       asp-route-sortOrder="@ViewData["currentSort"]"
        class="btn btn-lg btn-info @nextDisabled">
         >
     </a>

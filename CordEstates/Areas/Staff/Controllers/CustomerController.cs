@@ -31,13 +31,58 @@ namespace CordEstates.Areas.Staff.Controllers
         }
 
         // GET: Staff/Customer
-        public async Task<IActionResult> Index(int pageNumber =1)
+        public async Task<IActionResult> Index(string sortOrder,int pageNumber =1)
         {
             List<CustomerManagementDTO> data = _mapper.Map<List<CustomerManagementDTO>>(await _repositoryWrapper.Customer.GetAllCustomersAsync());
-            IQueryable<CustomerManagementDTO> dataQuerable = data.AsQueryable();
-            var model = PaginatedList<CustomerManagementDTO>.Create(dataQuerable, pageNumber, 5);
-            return View(data);
+
+            ViewData["FirstNameSortParm"] = sortOrder == "First Name" ? "first_name_desc" : "First Name";
+            ViewData["LastNameSortParm"] = sortOrder == "Last Name" ? "last_name_desc" : "Last Name";
+            ViewData["EmailSortParm"] = sortOrder == "Email" ? "email_desc" : "Email";
+            ViewData["IdSortParm"] = String.IsNullOrEmpty(sortOrder) ? "id_desc" : "";
+            ViewData["currentSort"] = sortOrder;
+            IQueryable<CustomerManagementDTO> sorted = data.AsQueryable();
+            sorted = SortList(sortOrder, sorted);
+            PaginatedList<CustomerManagementDTO> model = PaginatedList<CustomerManagementDTO>.Create(sorted, pageNumber, 5);
+
+
+            return View(model);
         }
+
+        private static IQueryable<CustomerManagementDTO> SortList(string sortOrder, IQueryable<CustomerManagementDTO> sorted)
+        {
+            switch (sortOrder)
+            {
+                case "First Name":
+                    sorted = sorted.OrderBy(f => f.User.FirstName).AsQueryable();
+                    break;
+                case "first_name_desc":
+                    sorted = sorted.OrderByDescending(f => f.User.FirstName).AsQueryable();
+                    break;
+                case "Last Name":
+                    sorted = sorted.OrderBy(ln => ln.User.LastName).AsQueryable();
+                    break;
+                case "last_name_desc":
+                    sorted = sorted.OrderByDescending(l => l.User.LastName).AsQueryable();
+                    break;
+                
+                case "Email":
+                    sorted = sorted.OrderBy(e => e.User.Email).AsQueryable();
+                    break;
+                case "email_desc":
+                    sorted = sorted.OrderByDescending(e => e.User.Email).AsQueryable();
+                    break;
+                case "id_desc":
+                    sorted = sorted.OrderByDescending(e => e.Id).AsQueryable();
+                    break;
+                default:
+                    sorted = sorted.OrderBy(i => i.Id).AsQueryable();
+                    break;
+            }
+
+            return sorted;
+        }
+
+
 
         // GET: Staff/Customer/Details/5
         public async Task<IActionResult> Details(int? id)

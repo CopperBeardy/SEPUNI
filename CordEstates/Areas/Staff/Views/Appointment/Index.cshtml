@@ -15,13 +15,13 @@
         <thead>
             <tr>
                 <th>
-                    User
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["UserNameSortParm"]">User</a> 
                 </th>
                 <th>
-                    Time
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["TimeSortParm"]">Time</a>
                 </th>
                 <th>
-                   Listing
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["ListingSortParm"]">Listing</a>
                 </th>
                 <th></th>
             </tr>
@@ -56,11 +56,12 @@ else
     <table class="table">
         <thead>
             <tr>
+                
                 <th>
-                    Time
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["TimeSortParm"]">Time</a>
                 </th>
                 <th>
-                    Appointment Location
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["ListingSortParm"]">Listing</a>
                 </th>
 
                 <th></th>
@@ -94,11 +95,13 @@ else
 <nav>
     <a asp-action="Index"
        asp-route-pageNumber="@(Model.PageIndex-1)"
+       asp-route-sortOrder="@ViewData["currentSort"]"
        class="btn btn-lg btn-info @prevDisabled">
    <
     </a>
     <a asp-action="Index"
        asp-route-pageNumber="@(Model.PageIndex+1)"
+        asp-route-sortOrder="@ViewData["currentSort"]"
        class="btn btn-lg btn-info @nextDisabled">
     >
     </a>

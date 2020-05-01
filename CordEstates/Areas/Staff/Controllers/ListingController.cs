@@ -42,13 +42,39 @@ namespace CordEstates.Areas.Staff.Controllers
         }
 
         // GET: Admin/Listing
-        public async Task<IActionResult> Index(int pageNumber =1)
+        public async Task<IActionResult> Index(string sortOrder,int pageNumber =1)
         {
             List<ListingManagementDTO> data = _mapper.Map<List<ListingManagementDTO>>(await _repositoryWrapper.Listing.GetAllListingsAsync());
-            IQueryable<ListingManagementDTO> dataQuerable = data.AsQueryable();
-            var model = PaginatedList<ListingManagementDTO>.Create(dataQuerable, pageNumber, 5);
+            IQueryable<ListingManagementDTO> sorted = data.AsQueryable();
+
+            ViewData["AddressSortParm"] = String.IsNullOrEmpty(sortOrder) ? "address_desc" : "";
+            ViewData["StatusSortParm"] = sortOrder == "First Line" ? "status_desc" : "First Line";          
+            ViewData["currentSort"] = sortOrder;
+            sorted = SortList(sortOrder, sorted);
+            var model = PaginatedList<ListingManagementDTO>.Create(sorted, pageNumber, 5);
 
             return View(nameof(Index), model);
+        }
+
+        private static IQueryable<ListingManagementDTO> SortList(string sortOrder, IQueryable<ListingManagementDTO> sorted)
+        {
+            switch (sortOrder)
+            {
+                 case "Status":
+                    sorted = sorted.OrderBy(s => s.Status).AsQueryable();
+                    break;
+                case "status_desc":
+                    sorted = sorted.OrderByDescending(s => s.Status).AsQueryable();
+                    break;
+                case "address_desc":
+                    sorted = sorted.OrderByDescending(a => a.Address.FirstLine).AsQueryable();
+                    break;
+                default:
+                    sorted = sorted.OrderBy(a => a.Address.FirstLine).AsQueryable();
+                    break;
+            }
+
+            return sorted;
         }
 
         // GET: Admin/Listing/Details/5
