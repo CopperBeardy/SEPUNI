@@ -7,6 +7,7 @@ using CordEstates.Wrappers.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace CordEstates.Controllers
@@ -32,7 +33,8 @@ namespace CordEstates.Controllers
 
             try
             {
-                vm.Services = _mapper.Map<List<ServiceDTO>>(await _repositoryWrapper.Service.GetAllServicesAsync());
+                var service = await _repositoryWrapper.Service.GetAllServicesAsync();
+                vm.Services = _mapper.Map<List<ServiceDTO>>(service.Take(3));
                 vm.Listings = _mapper.Map<List<LandingListingDTO>>(await _repositoryWrapper.Listing.GetLandingPageListingsAsync(3));
                 vm.Events = _mapper.Map<EventDTO>(await _repositoryWrapper.Event.GetActiveEventAsync());
             }

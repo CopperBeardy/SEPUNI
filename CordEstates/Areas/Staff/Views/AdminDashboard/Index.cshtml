@@ -18,26 +18,13 @@
 <div class="row">
     @*summary of recent activities*@
     <div class=" col-lg-6">
-        <h3>Recent Activities</h3>
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">Activity</th>
-                    <th scope="col">Summary</th>
-                    <th scope="col">Link</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="table-active">
-                    <th scope="row">Active</th>
-                    <td>Column content</td>
-
-                    @*construct a *@
-                    <td>Column content</td>
-
-                </tr>
-            </tbody>
-        </table>
+        <h3>User's and Roles</h3>
+        <div>
+            <a type="button" class="btn btn-outline-info squarebutton" asp-controller="Buyer" asp-action="Index">Buyer</a>
+            <a type="button" class="btn btn-outline-info squarebutton" asp-controller="Customer" asp-action="Index">Customers</a>
+            <a type="button" class="btn btn-outline-info squarebutton" asp-controller="Employee" asp-action="Index">Employees</a>
+            <a type="button" class="btn btn-outline-info squarebutton" asp-controller="Role" asp-action="Index">Roles</a>
+   </div>
     </div>
     @*appoinment and section link*@
     <div class=" col-lg-6">
@@ -45,29 +32,14 @@
         <h3 class="mt-3 mb-2">Data Management</h3>
         @*Section Links*@
     <div>
-         <a type="button" class="btn btn-outline-info squarebutton" asp-controller="Event" asp-action="Index">Event</a>
-
-
-        <a type="button" class="btn btn-outline-info squarebutton" asp-controller="Appointment" asp-action="Index"> Appointments</a>
-
-        <a type="button" class="btn btn-outline-info squarebutton" asp-controller="Listing" asp-action="Index">  Listings </a>
-
-        <a type="button" class="btn btn-outline-info squarebutton" asp-controller="Service" asp-action="Index"> Services</a>
-
         <a type="button" class="btn btn-outline-info squarebutton" asp-controller="Address" asp-action="Index">Address</a>
-
-        <a type="button" class="btn btn-outline-info squarebutton" asp-controller="Ticket" asp-action="Index">Ticket</a>
-
+        <a type="button" class="btn btn-outline-info squarebutton" asp-controller="Appointment" asp-action="Index"> Appointments</a>
+        <a type="button" class="btn btn-outline-info squarebutton" asp-controller="Event" asp-action="Index">Event</a>
         <a type="button" class="btn btn-outline-info squarebutton" asp-controller="Photo" asp-action="Index">Images</a>
-
-        <a type="button" class="btn btn-outline-info squarebutton" asp-controller="Role" asp-action="Index">Roles</a>
-
-        <a type="button" class="btn btn-outline-info squarebutton" asp-controller="Employee" asp-action="Index">Employees</a>
-        <a type="button" class="btn btn-outline-info squarebutton" asp-controller="Customer" asp-action="Index">Customers</a>
-
+        <a type="button" class="btn btn-outline-info squarebutton" asp-controller="Listing" asp-action="Index">Listings</a>
         <a type="button" class="btn btn-outline-info squarebutton" asp-controller="Sale" asp-action="Index">Sale</a>
-        <a type="button" class="btn btn-outline-info squarebutton" asp-controller="Buyer" asp-action="Index">Buyer</a>
-
+        <a type="button" class="btn btn-outline-info squarebutton" asp-controller="Service" asp-action="Index"> Services</a>
+        <a type="button" class="btn btn-outline-info squarebutton" asp-controller="Ticket" asp-action="Index">Ticket</a>
     </div>
     </div>
     

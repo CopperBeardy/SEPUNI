@@ -18,8 +18,8 @@
                     <div class="">For Sale</div>
                     <h5 class="">@listing.ToString()</h5>
                     <div class="">
-                        <span>Start From:</span>
-                        <h5>£ @listing.Price</h5>
+                        <span>Price</span>
+                        <h4>£ @listing.Price</h4>
                     </div>
 
                     <a type="button" class="btn btn-info" asp-action="Details"
@@ -30,11 +30,12 @@
     }
 </div>
 
+
 @{
     var prevDisabled = !Model.PreviousPage ? "disabled" : "";
     var nextDisabled = !Model.NextPage ? "disabled" : "";
 }
-<nav>
+<nav class="mt-2">
     <a asp-action="Index"
        asp-route-pageNumber="@(Model.PageIndex-1)"
        class="btn btn-lg btn-info @prevDisabled">
