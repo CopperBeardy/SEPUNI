@@ -16,5 +16,8 @@ namespace CordEstates.Repositories.Interfaces
         void DeleteListing(Listing listing);
         void UpdateListing(Listing listing);
         bool Exists(int id);
+
+
+        Task<Listing> GetListingByIdNoTracking(int? id);
     }
 }

@@ -23,6 +23,7 @@ namespace CordEstates.Wrappers
         private BuyerRepository _buyer;
         private SaleRepository _sale;
         private CustomerRepository _customer;
+    
 
 
 

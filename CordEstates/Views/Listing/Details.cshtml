@@ -21,19 +21,41 @@
             <h6>Price</h6>
             <h5>@Model.Price</h5>
 
+            @if (User.IsInRole("Customer"))
+            {
+                <div class="row  mt-4">
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="@Model.Id" />
 
+                        <div class="form-group">
+                            <div class="col"><h6>Track Listing</h6></div>
 
-            </dl>
+                            
+                            <input asp-for="Follow"  checked="@ViewData["following"]"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Save" class="btn btn-primary" />
+                        </div>
+                    </form>
+
+              
+
+            </div>
+            }
+
         </div>
         <div class="col-6">
-            <dt class="col-sm-2">
-                Views
-            </dt>
-            <dd class="col-sm-10">
-                <img height="200" width="200" src="~/@Model.Url" />
-            </dd>
+            <dl>
+                <dt class="col-sm-2">
+                    Views
+                </dt>
+                <dd class="col-sm-10">
+                    <img height="200" width="200" src="~/@Model.Url" />
+                </dd>
+            </dl>
         </div>
-
+      
     </div>
 
 

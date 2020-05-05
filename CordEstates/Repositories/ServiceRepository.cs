@@ -30,6 +30,6 @@ namespace CordEstates.Repositories
         public void DeleteService(Service service) => Delete(service);
 
         public bool Exists(int id)
-         => _context.Services.Any(i => i.Id.Equals(id));
+         => Context.Services.Any(i => i.Id.Equals(id));
     }
 }

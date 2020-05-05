@@ -50,35 +50,17 @@ namespace CordEstates.Areas.Staff.Controllers
 
         private static IQueryable<CustomerManagementDTO> SortList(string sortOrder, IQueryable<CustomerManagementDTO> sorted)
         {
-            switch (sortOrder)
+            sorted = sortOrder switch
             {
-                case "First Name":
-                    sorted = sorted.OrderBy(f => f.User.FirstName).AsQueryable();
-                    break;
-                case "first_name_desc":
-                    sorted = sorted.OrderByDescending(f => f.User.FirstName).AsQueryable();
-                    break;
-                case "Last Name":
-                    sorted = sorted.OrderBy(ln => ln.User.LastName).AsQueryable();
-                    break;
-                case "last_name_desc":
-                    sorted = sorted.OrderByDescending(l => l.User.LastName).AsQueryable();
-                    break;
-                
-                case "Email":
-                    sorted = sorted.OrderBy(e => e.User.Email).AsQueryable();
-                    break;
-                case "email_desc":
-                    sorted = sorted.OrderByDescending(e => e.User.Email).AsQueryable();
-                    break;
-                case "id_desc":
-                    sorted = sorted.OrderByDescending(e => e.Id).AsQueryable();
-                    break;
-                default:
-                    sorted = sorted.OrderBy(i => i.Id).AsQueryable();
-                    break;
-            }
-
+                "First Name" => sorted.OrderBy(f => f.User.FirstName).AsQueryable(),
+                "first_name_desc" => sorted.OrderByDescending(f => f.User.FirstName).AsQueryable(),
+                "Last Name" => sorted.OrderBy(ln => ln.User.LastName).AsQueryable(),
+                "last_name_desc" => sorted.OrderByDescending(l => l.User.LastName).AsQueryable(),
+                "Email" => sorted.OrderBy(e => e.User.Email).AsQueryable(),
+                "email_desc" => sorted.OrderByDescending(e => e.User.Email).AsQueryable(),
+                "id_desc" => sorted.OrderByDescending(e => e.Id).AsQueryable(),
+                _ => sorted.OrderBy(i => i.Id).AsQueryable(),
+            };
             return sorted;
         }
 
@@ -104,7 +86,7 @@ namespace CordEstates.Areas.Staff.Controllers
         }
 
         // POST: Staff/Customer/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // To protect from over posting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -133,7 +115,7 @@ namespace CordEstates.Areas.Staff.Controllers
         }
 
         // POST: Staff/Customer/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // To protect from over posting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]

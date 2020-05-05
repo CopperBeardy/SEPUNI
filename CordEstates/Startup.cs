@@ -17,7 +17,7 @@ namespace CordEstates
 {
     public class Startup
     {
-
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Spellchecker", "CRRSP06:A misspelled word has been found", Justification = "<Pending>")]
         public Startup(IConfiguration configuration)
         {
             LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));

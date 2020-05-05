@@ -34,6 +34,9 @@
                         <a class="nav-link" asp-area="" asp-controller="Listing" asp-action="Index">Listings</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Event" asp-action="Index">Events</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" asp-area="" asp-controller="Service" asp-action="Index">Services</a>
                     </li>
 
@@ -48,6 +51,12 @@
                         {
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="Staff" asp-controller="AdminDashboard" asp-action="Index">Dashboard</a>
+                            </li>
+                        }
+                        else if (User.IsInRole("Customer"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="InterestedProperty" asp-action="Index">My Properties</a>
                             </li>
                         }
                         else

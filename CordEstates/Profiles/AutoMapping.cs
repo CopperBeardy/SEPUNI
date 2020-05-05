@@ -27,6 +27,10 @@ namespace CordEstates.Profiles
 
             CreateMap<Customer, CustomerManagementDTO>().ReverseMap();
             CreateMap<List<Customer>, CustomerManagementDTO>().ReverseMap();
+            CreateMap<Customer, CustomerListingDTO>()
+                .ForMember(des => des.Id, o => o.MapFrom(src => src.Id))
+                .ReverseMap();
+
 
             CreateMap<Appointment, CreateAppointmentDTO>()
                 .ForMember(desc => desc.Time, o => o.MapFrom(src => src.Time))
@@ -55,7 +59,7 @@ namespace CordEstates.Profiles
             CreateMap<List<Listing>, ListingManagementDTO>() .ReverseMap();
             CreateMap<Listing, ListingDTO>()
                 .ForMember(desc => desc.Url, o => o.MapFrom(src => src.Image.ImageLink));
-            CreateMap<Listing, ListingDetailDTO>().ForMember(desc => desc.Url, o => o.MapFrom(src => src.Image.ImageLink));
+            CreateMap<Listing, ListingDetailDTO>().ForMember(desc => desc.Url, o => o.MapFrom(src => src.Image.ImageLink)).ReverseMap();
             CreateMap<Listing, ExtendedListingDTO>().ForMember(desc => desc.Url, o => o.MapFrom(src => src.Image.ImageLink));
             
             CreateMap<Photo, PhotoDTO>().ReverseMap();

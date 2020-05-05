@@ -57,28 +57,15 @@ namespace CordEstates.Areas.Staff.Controllers
 
         private static IQueryable<AppointmentManagementDTO> SortList(string sortOrder, IQueryable<AppointmentManagementDTO> sorted)
         {
-            switch (sortOrder)
+            sorted = sortOrder switch
             {
-                case "Time":
-                    sorted = sorted.OrderBy(t => t.Time).AsQueryable();
-                    break;
-                case "time_desc":
-                    sorted = sorted.OrderByDescending(t => t.Time).AsQueryable();
-                    break;
-                case "listing_desc":
-                    sorted = sorted.OrderByDescending(l => l.Listing.Address.FirstLine).AsQueryable();
-                    break;
-                case "Listing":
-                    sorted = sorted.OrderBy(l => l.Listing.Address.FirstLine).AsQueryable();
-                    break;               
-                case "username_desc":
-                    sorted = sorted.OrderByDescending(s => s.Staff.UserName).AsQueryable();
-                    break;
-                default:
-                    sorted = sorted.OrderBy(s => s.Staff.UserName).AsQueryable();
-                    break;
-            }
-
+                "Time" => sorted.OrderBy(t => t.Time).AsQueryable(),
+                "time_desc" => sorted.OrderByDescending(t => t.Time).AsQueryable(),
+                "listing_desc" => sorted.OrderByDescending(l => l.Listing.Address.FirstLine).AsQueryable(),
+                "Listing" => sorted.OrderBy(l => l.Listing.Address.FirstLine).AsQueryable(),
+                "username_desc" => sorted.OrderByDescending(s => s.Staff.UserName).AsQueryable(),
+                _ => sorted.OrderBy(s => s.Staff.UserName).AsQueryable(),
+            };
             return sorted;
         }
 
@@ -148,11 +135,11 @@ namespace CordEstates.Areas.Staff.Controllers
             {
                 if (id == item.Id)
                 {
-                    list.Add(new SelectListItem($"{item.ToString()}", $"{item.Id}", true));
+                    list.Add(new SelectListItem($"{item}", $"{item.Id}", true));
                 }
                 else
                 {
-                    list.Add(new SelectListItem($"{item.ToString()}", $"{item.Id}"));
+                    list.Add(new SelectListItem($"{item}", $"{item.Id}"));
                 }
             }
             ViewBag.listing = list;
@@ -184,7 +171,7 @@ namespace CordEstates.Areas.Staff.Controllers
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError($"error occcured when updating {appointment.Id}. {ex}");
+                    _logger.LogError($"error occurred when updating {appointment.Id}. {ex}");
 
                 }
                 return RedirectToAction(nameof(Index));
@@ -202,7 +189,7 @@ namespace CordEstates.Areas.Staff.Controllers
 
             foreach (var item in x)
             {
-                list.Add(new SelectListItem($"{item.ToString()}", $"{item.Id}"));
+                list.Add(new SelectListItem($"{item}", $"{item.Id}"));
             }
 
             return list;

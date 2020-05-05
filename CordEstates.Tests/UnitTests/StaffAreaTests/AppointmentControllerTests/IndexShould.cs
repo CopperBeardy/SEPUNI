@@ -35,7 +35,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AppointmentControllerTests
         [Fact]
         public async void ReturnCorrectView()
         {
-            var result = await sut.Index();
+            var result = await sut.Index("", 5);
             var vr = Assert.IsType<ViewResult>(result);
             Assert.Equal("Index", vr.ViewName);
         }
@@ -45,7 +45,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AppointmentControllerTests
         public async Task ReturnListOfAllAppointments()
         {
 
-            var result = await sut.Index();
+            var result = await sut.Index("", 5);
             var vr = Assert.IsType<ViewResult>(result);
             Assert.IsAssignableFrom<List<AppointmentManagementDTO>>(vr.Model);
 

@@ -1,5 +1,7 @@
 ﻿
 using CordEstates.Models.Enums;
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -33,6 +35,7 @@ namespace CordEstates.Entities
         [ForeignKey(nameof(Image))]
         public int ImageId { get; set; }
 
+        public ICollection<CustomerProperties> InterestedCustomers   {get;set;}
 
         public override string ToString()
         {

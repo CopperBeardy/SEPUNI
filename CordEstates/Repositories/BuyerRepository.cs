@@ -32,7 +32,7 @@ namespace CordEstates.Repositories
 
         public void DeleteBuyer(Buyer BuyerItem) => Delete(BuyerItem);
 
-        public bool Exists(int id) => _context.Buyers.Any(x => x.Id.Equals(id));
+        public bool Exists(int id) => Context.Buyers.Any(x => x.Id.Equals(id));
 
 
     }

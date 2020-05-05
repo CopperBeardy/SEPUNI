@@ -1,0 +1,10 @@
+2020-05-05 10:47:20.3960 Microsoft.EntityFrameworkCore.Query An exception occurred while iterating over the results of a query for context type 'CordEstates.Areas.Identity.Data.ApplicationDbContext'.
+System.InvalidOperationException: Invalid attempt to call IsDBNull when reader is closed.
+   at Microsoft.Data.SqlClient.SqlDataReader.CheckHeaderIsReady(Int32 columnIndex, Boolean permitAsync, String methodName)
+   at Microsoft.Data.SqlClient.SqlDataReader.IsDBNull(Int32 i)
+   at lambda_method(Closure , QueryContext , DbDataReader , ResultContext , Int32[] , ResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()System.InvalidOperationException: Invalid attempt to call IsDBNull when reader is closed.
+   at Microsoft.Data.SqlClient.SqlDataReader.CheckHeaderIsReady(Int32 columnIndex, Boolean permitAsync, String methodName)
+   at Microsoft.Data.SqlClient.SqlDataReader.IsDBNull(Int32 i)
+   at lambda_method(Closure , QueryContext , DbDataReader , ResultContext , Int32[] , ResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()

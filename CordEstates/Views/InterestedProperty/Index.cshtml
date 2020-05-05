@@ -1,0 +1,33 @@
+﻿@model CustomerListingDTO
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>My Properties</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Property Address
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.PropertiesInterestedIn) {
+        <tr>
+            @{ 
+                var address = $" {item.Listing.Address.Number}, {item.Listing.Address.FirstLine}, {item.Listing.Address.Postcode}()";
+            }
+            <td>
+                <p>@address</p>
+            </td>
+            <td>
+                <a asp-controller="Listing" asp-action="Details" asp-route-id="@item.Listing.Id">Details</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

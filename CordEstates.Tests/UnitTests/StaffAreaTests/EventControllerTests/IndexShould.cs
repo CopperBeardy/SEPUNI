@@ -42,7 +42,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.EventControllerTests
         [Fact]
         public async void ReturnCorrectView()
         {
-            var result = await sut.Index();
+            var result = await sut.Index("", 5);
             var vr = Assert.IsType<ViewResult>(result);
             Assert.Equal("Index", vr.ViewName);
         }
@@ -52,7 +52,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.EventControllerTests
         public async Task ReturnListOfAllEvents()
         {
 
-            var result = await sut.Index();
+            var result = await sut.Index("", 5);
             var vr = Assert.IsType<ViewResult>(result);
             Assert.IsAssignableFrom<List<EventManagementDTO>>(vr.Model);
 

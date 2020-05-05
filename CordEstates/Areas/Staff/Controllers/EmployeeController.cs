@@ -55,30 +55,15 @@ namespace CordEstates.Areas.Staff.Controllers
         }
         private static IQueryable<EmployeeManagementDTO> SortList(string sortOrder, IQueryable<EmployeeManagementDTO> sorted)
         {
-            switch (sortOrder)
+            sorted = sortOrder switch
             {
-                
-                case "Last Name":
-                    sorted = sorted.OrderBy(ln => ln.LastName).AsQueryable();
-                    break;
-                case "last_name_desc":
-                    sorted = sorted.OrderByDescending(l => l.LastName).AsQueryable();
-                    break;
-             
-                case "Email":
-                    sorted = sorted.OrderBy(e => e.Email).AsQueryable();
-                    break;
-                case "email_desc":
-                    sorted = sorted.OrderByDescending(e => e.Email).AsQueryable();
-                    break;
-                case "first_name_desc":
-                    sorted = sorted.OrderByDescending(f => f.FirstName).AsQueryable();
-                    break;
-                default:
-                    sorted = sorted.OrderBy(f => f.FirstName).AsQueryable();
-                    break;
-            }
-
+                "Last Name" => sorted.OrderBy(ln => ln.LastName).AsQueryable(),
+                "last_name_desc" => sorted.OrderByDescending(l => l.LastName).AsQueryable(),
+                "Email" => sorted.OrderBy(e => e.Email).AsQueryable(),
+                "email_desc" => sorted.OrderByDescending(e => e.Email).AsQueryable(),
+                "first_name_desc" => sorted.OrderByDescending(f => f.FirstName).AsQueryable(),
+                _ => sorted.OrderBy(f => f.FirstName).AsQueryable(),
+            };
             return sorted;
         }
 
@@ -109,13 +94,13 @@ namespace CordEstates.Areas.Staff.Controllers
         //        return RedirectToAction(nameof(Index));
         //    }
 
-        //    var usermangagementDTO = _mapper.Map<EmployeeManagementDTO>(await _repositoryWrapper.Employee.GetStaffByIdAsync(id));
+        //    var userManagementDTO = _mapper.Map<EmployeeManagementDTO>(await _repositoryWrapper.Employee.GetStaffByIdAsync(id));
 
-        //    return View(nameof(Edit), usermangagementDTO);
+        //    return View(nameof(Edit), userManagementDTO);
         //}
 
         //// POST: Staff/User/Edit/5
-        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        //// To protect from over posting attacks, please enable the specific properties you want to bind to, for 
         //// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         //[HttpPost]
         //[ValidateAntiForgeryToken]

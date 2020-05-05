@@ -49,28 +49,15 @@ namespace CordEstates.Areas.Staff.Controllers
 
         private static IQueryable<SaleManagementDTO> SortList(string sortOrder, IQueryable<SaleManagementDTO> sorted)
         {
-            switch (sortOrder)
+            sorted = sortOrder switch
             {
-                case "Agreed Price":
-                    sorted = sorted.OrderBy(ap => ap.AgreedPrice).AsQueryable();
-                    break;
-                case "agreed_price_desc":
-                    sorted = sorted.OrderByDescending(ap => ap.AgreedPrice).AsQueryable();
-                    break;
-                case "Sold Property":
-                    sorted = sorted.OrderBy(sp => sp.SoldProperty.FirstLine).AsQueryable();
-                    break;
-                case "sold_property_desc":
-                    sorted = sorted.OrderByDescending(sp => sp.SoldProperty.FirstLine).AsQueryable();
-                    break;               
-                case "buyer_desc":
-                    sorted = sorted.OrderByDescending(b => b.Buyer.FirstName).AsQueryable();
-                    break;
-                default:
-                    sorted = sorted.OrderBy(b => b.Buyer.FirstName).AsQueryable();
-                    break;
-            }
-
+                "Agreed Price" => sorted.OrderBy(ap => ap.AgreedPrice).AsQueryable(),
+                "agreed_price_desc" => sorted.OrderByDescending(ap => ap.AgreedPrice).AsQueryable(),
+                "Sold Property" => sorted.OrderBy(sp => sp.SoldProperty.FirstLine).AsQueryable(),
+                "sold_property_desc" => sorted.OrderByDescending(sp => sp.SoldProperty.FirstLine).AsQueryable(),
+                "buyer_desc" => sorted.OrderByDescending(b => b.Buyer.FirstName).AsQueryable(),
+                _ => sorted.OrderBy(b => b.Buyer.FirstName).AsQueryable(),
+            };
             return sorted;
         }
 
@@ -119,7 +106,7 @@ namespace CordEstates.Areas.Staff.Controllers
         }
 
         // POST: Staff/Sale/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // To protect from over posting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -172,7 +159,7 @@ namespace CordEstates.Areas.Staff.Controllers
         }
 
         // POST: Staff/Sale/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // To protect from over posting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]

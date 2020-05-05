@@ -35,7 +35,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AddressControllerTests
         public async void ReturnCorrectView()
         {
 
-            var result = await sut.Index();
+            var result = await sut.Index("", 5);
             var vr = Assert.IsType<ViewResult>(result);
             Assert.Equal("Index", vr.ViewName);
 
@@ -47,7 +47,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.AddressControllerTests
         {
 
 
-            var result = await sut.Index();
+            var result = await sut.Index("",5);
             var vr = Assert.IsType<ViewResult>(result);
             Assert.IsAssignableFrom<List<AddressDTO>>(vr.Model);
 

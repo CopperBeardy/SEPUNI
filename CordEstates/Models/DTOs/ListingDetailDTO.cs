@@ -1,4 +1,5 @@
 ﻿using CordEstates.Entities;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CordEstates.Models.DTOs
 {
@@ -9,5 +10,9 @@ namespace CordEstates.Models.DTOs
         public string Description { get; set; }
         public double Price { get; set; }
         public string Url { get; set; }
+
+        [NotMapped]
+        public bool Follow { get; set; }
+        
     }
 }

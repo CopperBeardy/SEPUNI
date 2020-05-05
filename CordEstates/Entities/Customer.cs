@@ -13,7 +13,7 @@ namespace CordEstates.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public ApplicationUser User { get; set; }
-        public List<Listing> PropertiesInterestedIn { get; set; }
+        public List<CustomerProperties> PropertiesInterestedIn { get; set; }
 
         [ForeignKey(nameof(User))]
         public string UserId { get; set; }

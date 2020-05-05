@@ -9,37 +9,37 @@ namespace CordEstates.Repositories
 {
     public abstract class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
-        protected ApplicationDbContext _context { get; set; }
+        protected ApplicationDbContext Context { get; set; }
 
         public RepositoryBase(ApplicationDbContext context)
         {
-            _context = context;
+            Context = context;
         }
 
         public IQueryable<T> FindAll()
         {
-            return _context.Set<T>().AsNoTracking();
+            return Context.Set<T>().AsNoTracking();
         }
 
         public IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression)
         {
-            return _context.Set<T>()
+            return Context.Set<T>()
                 .Where(expression).AsNoTracking();
         }
 
         public void Create(T entity)
         {
-            _context.Set<T>().Add(entity);
+            Context.Set<T>().Add(entity);
         }
 
         public void Update(T entity)
         {
-            _context.Set<T>().Update(entity);
+            Context.Set<T>().Update(entity);
         }
 
         public void Delete(T entity)
         {
-            _context.Set<T>().Remove(entity);
+            Context.Set<T>().Remove(entity);
         }
 
 

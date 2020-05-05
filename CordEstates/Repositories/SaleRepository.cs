@@ -38,7 +38,7 @@ namespace CordEstates.Repositories
 
         public void DeleteSale(Sale SaleItem) => Delete(SaleItem);
 
-        public bool Exists(int id) => _context.Sales.Any(x => x.Id.Equals(id));
+        public bool Exists(int id) => Context.Sales.Any(x => x.Id.Equals(id));
 
       
     }

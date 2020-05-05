@@ -33,7 +33,7 @@ namespace CordEstates.Repositories
 
         public void DeleteEvent(Event eventItem) => Delete(eventItem);
 
-        public bool Exists(int id) => _context.Events.Any(x => x.Id.Equals(id));
+        public bool Exists(int id) => Context.Events.Any(x => x.Id.Equals(id));
 
 
     }

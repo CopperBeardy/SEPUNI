@@ -22,7 +22,7 @@ namespace CordEstates.Repositories
 
         public async Task<List<Address>> GetAllAddressesNotInUseAsync()
         {
-            List<int> addressIds = _context.Listings.Select(x => x.AddressId).ToList();
+            List<int> addressIds = Context.Listings.Select(x => x.AddressId).ToList();
             var address = await FindAll().ToListAsync();
 
             List<Address> response = new List<Address>();
@@ -47,7 +47,7 @@ namespace CordEstates.Repositories
             => Update(address);
 
         public bool Exists(int id)
-            => _context.Addresses.Any(x => x.Id.Equals(id));
+            => Context.Addresses.Any(x => x.Id.Equals(id));
 
         public void DeleteAddress(Address address)
             => Delete(address);

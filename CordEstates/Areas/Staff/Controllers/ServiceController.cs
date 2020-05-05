@@ -45,16 +45,11 @@ namespace CordEstates.Areas.Staff.Controllers
         }
         private static IQueryable<ServiceDTO> SortList(string sortOrder, IQueryable<ServiceDTO> sorted)
         {
-            switch (sortOrder)
+            sorted = sortOrder switch
             {
-                case "service_name_desc":
-                    sorted = sorted.OrderByDescending(s => s.ServiceName).AsQueryable();
-                    break;
-                default:
-                    sorted = sorted.OrderBy(s => s.ServiceName).AsQueryable();
-                    break;
-            }
-
+                "service_name_desc" => sorted.OrderByDescending(s => s.ServiceName).AsQueryable(),
+                _ => sorted.OrderBy(s => s.ServiceName).AsQueryable(),
+            };
             return sorted;
         }
 

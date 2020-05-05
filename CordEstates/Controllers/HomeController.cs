@@ -40,8 +40,8 @@ namespace CordEstates.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError($"{nameof(Index)} encounter a problem when trying to retrive all services from Database: {ex}");
-                throw new Exception($"{nameof(Index)} encounter a problem when trying to retrive all services from Database { ex}");
+                _logger.LogError($"{nameof(Index)} encounter a problem when trying to retrieve all services from Database: {ex}");
+                throw new Exception($"{nameof(Index)} encounter a problem when trying to retrieve all services from Database { ex}");
             }
             // var role = User.IsInRole("Staff");
 

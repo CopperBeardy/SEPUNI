@@ -51,7 +51,7 @@ namespace CordEstates.Repositories
         public void DeleteAppointment(Appointment appointment) => Delete(appointment);
 
         public bool Exists(int id) =>
-           _context.Appointments.Any(x => x.Id.Equals(id));
+           Context.Appointments.Any(x => x.Id.Equals(id));
 
 
     }

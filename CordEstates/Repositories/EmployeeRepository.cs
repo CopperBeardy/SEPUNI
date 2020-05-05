@@ -55,7 +55,7 @@ namespace CordEstates.Repositories
         public void DeleteUser(ApplicationUser user) => Delete(user);
 
         public bool Exists(string id)
-            => _context.Users.Any(i => i.Id.Equals(id));
+            => Context.Users.Any(i => i.Id.Equals(id));
         public async Task<string> GetUserId(ClaimsPrincipal claimsPrincipal)
         {
             ApplicationUser user = await _userManager.GetUserAsync(claimsPrincipal);

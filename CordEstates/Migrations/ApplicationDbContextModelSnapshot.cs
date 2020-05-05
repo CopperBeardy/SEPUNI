@@ -211,6 +211,28 @@ namespace CordEstates.Migrations
                     b.ToTable("Customers");
                 });
 
+            modelBuilder.Entity("CordEstates.Entities.CustomerProperties", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PropertyId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomerId");
+
+                    b.HasIndex("PropertyId");
+
+                    b.ToTable("CustomerProperty");
+                });
+
             modelBuilder.Entity("CordEstates.Entities.Event", b =>
                 {
                     b.Property<int>("Id")
@@ -254,9 +276,6 @@ namespace CordEstates.Migrations
                     b.Property<int>("AddressId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CustomerId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(300)")
@@ -274,8 +293,6 @@ namespace CordEstates.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("AddressId");
-
-                    b.HasIndex("CustomerId");
 
                     b.HasIndex("ImageId");
 
@@ -548,6 +565,21 @@ namespace CordEstates.Migrations
                         .HasForeignKey("UserId");
                 });
 
+            modelBuilder.Entity("CordEstates.Entities.CustomerProperties", b =>
+                {
+                    b.HasOne("CordEstates.Entities.Customer", "Customer")
+                        .WithMany("PropertiesInterestedIn")
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CordEstates.Entities.Listing", "Listing")
+                        .WithMany("InterestedCustomers")
+                        .HasForeignKey("PropertyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("CordEstates.Entities.Event", b =>
                 {
                     b.HasOne("CordEstates.Entities.Photo", "Photo")
@@ -564,10 +596,6 @@ namespace CordEstates.Migrations
                         .HasForeignKey("AddressId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("CordEstates.Entities.Customer", null)
-                        .WithMany("PropertiesInterestedIn")
-                        .HasForeignKey("CustomerId");
 
                     b.HasOne("CordEstates.Entities.Photo", "Image")
                         .WithMany()

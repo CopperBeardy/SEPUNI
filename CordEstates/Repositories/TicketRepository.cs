@@ -21,7 +21,7 @@ namespace CordEstates.Repositories
             => await FindAll().ToListAsync();
 
         public bool Exists(string id)
-            => _context.Tickets.Any(i => i.Id.Equals(id));
+            => Context.Tickets.Any(i => i.Id.Equals(id));
 
         public void UpdateTicket(Ticket ticketItem)
             => Update(ticketItem);

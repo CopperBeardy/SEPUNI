@@ -58,22 +58,13 @@ namespace CordEstates.Areas.Staff.Controllers
 
         private static IQueryable<ListingManagementDTO> SortList(string sortOrder, IQueryable<ListingManagementDTO> sorted)
         {
-            switch (sortOrder)
+            sorted = sortOrder switch
             {
-                 case "Status":
-                    sorted = sorted.OrderBy(s => s.Status).AsQueryable();
-                    break;
-                case "status_desc":
-                    sorted = sorted.OrderByDescending(s => s.Status).AsQueryable();
-                    break;
-                case "address_desc":
-                    sorted = sorted.OrderByDescending(a => a.Address.FirstLine).AsQueryable();
-                    break;
-                default:
-                    sorted = sorted.OrderBy(a => a.Address.FirstLine).AsQueryable();
-                    break;
-            }
-
+                "Status" => sorted.OrderBy(s => s.Status).AsQueryable(),
+                "status_desc" => sorted.OrderByDescending(s => s.Status).AsQueryable(),
+                "address_desc" => sorted.OrderByDescending(a => a.Address.FirstLine).AsQueryable(),
+                _ => sorted.OrderBy(a => a.Address.FirstLine).AsQueryable(),
+            };
             return sorted;
         }
 
@@ -128,7 +119,7 @@ namespace CordEstates.Areas.Staff.Controllers
         }
 
         // POST: Admin/Listing/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from over posting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -176,7 +167,7 @@ namespace CordEstates.Areas.Staff.Controllers
         }
 
         // POST: Admin/Listing/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // To protect from over posting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -235,7 +226,7 @@ namespace CordEstates.Areas.Staff.Controllers
         {
             if (id == null || id <= 0)
             {
-                _logger.LogError($"invaliud value passed to Listing controller, method : {nameof(Delete)}");
+                _logger.LogError($"invalid value passed to Listing controller, method : {nameof(Delete)}");
                 return RedirectToAction(nameof(Index));
             }
 

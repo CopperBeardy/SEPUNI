@@ -32,13 +32,18 @@ namespace CordEstates.Repositories
             .Include(p => p.Image)
             .FirstOrDefaultAsync();
 
+        public async Task<Listing> GetListingByIdNoTracking(int? id)
+          => await FindByCondition(x => x.Id.Equals(id)).
+            AsNoTracking()
+          .FirstOrDefaultAsync();
+
         public async Task<List<Listing>> GetLandingPageListingsAsync(int amount)
             => await FindAll().Take(amount).Include(x => x.Image).ToListAsync();
 
 
         public Listing GetListingsIdByAddressID(int id)
         {
-            return  _context.Listings.FirstOrDefault(x => x.AddressId.Equals(id));
+            return  Context.Listings.FirstOrDefault(x => x.AddressId.Equals(id));
 
         }
       
@@ -46,8 +51,8 @@ namespace CordEstates.Repositories
         public void CreateListing(Listing listing) => Create(listing);
         public void DeleteListing(Listing listing) => Delete(listing);
         public void UpdateListing(Listing listing) => Update(listing);
-        public bool Exists(int id) => _context.Listings.Any(i => i.Id.Equals(id));
+        public bool Exists(int id) => Context.Listings.Any(i => i.Id.Equals(id));
 
-
+       
     }
 }

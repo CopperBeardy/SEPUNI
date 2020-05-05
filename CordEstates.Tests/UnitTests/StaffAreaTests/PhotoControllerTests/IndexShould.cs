@@ -38,14 +38,14 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.PhotoControllerTests
             fixture.mapper.Setup(x => x.Map<List<PhotoDTO>>(It.IsAny<List<Photo>>())).
                 Returns(new List<PhotoDTO>());
             imageUploadWrapper.Setup(x => x.Upload(It.IsAny<IFormFile>(), It.IsAny<IHostEnvironment>()))
-                .Returns("imageurl");
+                .Returns("imageUrl");
         }
 
 
         [Fact]
         public async void ReturnCorrectView()
         {
-            var result = await sut.Index();
+            var result = await sut.Index("", 5);
             var vr = Assert.IsType<ViewResult>(result);
             Assert.Equal("Index", vr.ViewName);
         }
@@ -55,7 +55,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.PhotoControllerTests
         public async Task ReturnListOfAllPhotos()
         {
 
-            var result = await sut.Index();
+            var result = await sut.Index("", 5);
             var vr = Assert.IsType<ViewResult>(result);
             Assert.IsAssignableFrom<List<PhotoDTO>>(vr.Model);
 

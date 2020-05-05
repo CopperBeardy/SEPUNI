@@ -36,14 +36,14 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.ListingControllerTests
             fixture.repositoryWrapper.Setup(x => x.Listing.GetAllListingsAsync()).ReturnsAsync(It.IsAny<List<Listing>>());
             fixture.mapper.Setup(x => x.Map<List<ListingManagementDTO>>(It.IsAny<Listing>())).Returns(new List<ListingManagementDTO>());
             imageUploadWrapper.Setup(x => x.Upload(It.IsAny<IFormFile>(), It.IsAny<IHostEnvironment>()))
-                .Returns("imageurl");
+                .Returns("imageUrl");
         }
 
 
         [Fact]
         public async void ReturnCorrectView()
         {
-            var result = await sut.Index();
+            var result = await sut.Index("", 5);
             var vr = Assert.IsType<ViewResult>(result);
             Assert.Equal("Index", vr.ViewName);
         }
@@ -53,7 +53,7 @@ namespace CordEstates.Tests.UnitTests.StaffAreaTests.ListingControllerTests
         public async Task ReturnListOfAllListing()
         {
 
-            var result = await sut.Index();
+            var result = await sut.Index("", 5);
             var vr = Assert.IsType<ViewResult>(result);
             Assert.IsType<PaginatedList<ListingManagementDTO>>(vr.Model);
 

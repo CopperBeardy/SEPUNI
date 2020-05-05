@@ -1,0 +1,1 @@
+2020-05-05 10:13:35.9462 Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor The view 'Index' was not found. Searched locations: /Views/InterestedProperty/Index.cshtml, /Views/Shared/Index.cshtml, /Pages/Shared/Index.cshtml
